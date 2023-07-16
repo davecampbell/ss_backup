@@ -1,0 +1,1676 @@
+StartOffSet 0000173441
+
+%edes        sysDescr                A textual description of the entity.  This value should\n               include the full name and version identification of\n               the system's hardware type, software operating-system,\n               and networking software.
+%edes        sysObjectID             The vendor's authoritative identification of the\n               network management subsystem contained in the entity.\n               This value is allocated within the SMI enterprises\n               subtree (1.3.6.1.4.1) and provides an easy and\n               unambiguous means for determining `what kind of box' is\n               being managed.  For example, if vendor `Flintstones,\n               Inc.' was assigned the subtree 1.3.6.1.4.1.424242,\n               it could assign the identifier 1.3.6.1.4.1.424242.1.1\n               to its `Fred Router'.
+%edes        sysUpTime               The time (in hundredths of a second) since the\n               network management portion of the system was last\n               re-initialized.
+%edes        sysContact              The textual identification of the contact person for\n               this managed node, together with information on how\n               to contact this person.  If no contact information is\n               known, the value is the zero-length string.
+%edes        sysName                 An administratively-assigned name for this managed\n               node.  By convention, this is the node's fully-qualified\n               domain name.  If the name is unknown, the value is\n               the zero-length string.
+%edes        sysLocation             The physical location of this node (e.g., 'telephone\n               closet, 3rd floor').  If the location is unknown, the\n               value is the zero-length string.
+%edes        sysServices             A value which indicates the set of services that this\n               entity may potentially offer.  The value is a sum.\n               This sum initially takes the value zero. Then, for\n               each layer, L, in the range 1 through 7, that this node\n               performs transactions for, 2 raised to (L - 1) is added\n               to the sum.  For example, a node which performs only\n               routing functions would have a value of 4 (2^(3-1)).\n               In contrast, a node which is a host offering application\n               services would have a value of 72 (2^(4-1) + 2^(7-1)).\n               Note that in the context of the Internet suite of\n               protocols, values should be calculated accordingly:\n\n                    layer      functionality\n                      1        physical (e.g., repeaters)\n                      2        datalink/subnetwork (e.g., bridges)\n                      3        internet (e.g., supports the IP)\n                      4        end-to-end  (e.g., supports the TCP)\n                      7        applications (e.g., supports the SMTP)\n\n               For systems including OSI protocols, layers 5 and 6\n               may also be counted.
+%edes        sysORLastChange         The value of sysUpTime at the time of the most recent\n               change in state or value of any instance of sysORID.
+%edes        sysORTable              The (conceptual) table listing the capabilities of\n               the local SNMP application acting as a command\n               responder with respect to various MIB modules.\n               SNMP entities having dynamically-configurable support\n               of MIB modules will have a dynamically-varying number\n               of conceptual rows.
+%edes        sysOREntry              An entry (conceptual row) in the sysORTable.
+%edes        sysORIndex              The auxiliary variable used for identifying instances\n               of the columnar objects in the sysORTable.
+%edes        sysORID                 An authoritative identification of a capabilities\n               statement with respect to various MIB modules supported\n               by the local SNMP application acting as a command\n               responder.
+%edes        sysORDescr              A textual description of the capabilities identified\n               by the corresponding instance of sysORID.
+%edes        sysORUpTime             The value of sysUpTime at the time this conceptual\n               row was last instantiated.
+%edes        ifNumber                The number of network interfaces (regardless of their\n            current state) present on this system.
+%edes        ifTable                 A list of interface entries.  The number of entries is\n            given by the value of ifNumber.
+%edes        ifEntry                 An entry containing management information applicable to a\n            particular interface.
+%edes        ifIndex                 A unique value, greater than zero, for each interface.  It\n            is recommended that values are assigned contiguously\n            starting from 1.  The value for each interface sub-layer\n            must remain constant at least from one re-initialization of\n            the entity's network management system to the next re-\n            initialization.
+%edes        ifDescr                 A textual string containing information about the\n            interface.  This string should include the name of the\n            manufacturer, the product name and the version of the\n            interface hardware/software.
+%edes        ifType                  The type of interface.  Additional values for ifType are\n            assigned by the Internet Assigned Numbers Authority (IANA),\n            through updating the syntax of the IANAifType textual\n            convention.
+%edes        ifMtu                   The size of the largest packet which can be sent/received\n            on the interface, specified in octets.  For interfaces that\n            are used for transmitting network datagrams, this is the\n            size of the largest network datagram that can be sent on the\n            interface.
+%edes        ifSpeed                 An estimate of the interface's current bandwidth in bits\n            per second.  For interfaces which do not vary in bandwidth\n            or for those where no accurate estimation can be made, this\n            object should contain the nominal bandwidth.  If the\n            bandwidth of the interface is greater than the maximum value\n            reportable by this object then this object should report its\n            maximum value (4,294,967,295) and ifHighSpeed must be used\n            to report the interace's speed.  For a sub-layer which has\n            no concept of bandwidth, this object should be zero.
+%edes        ifPhysAddress           The interface's address at its protocol sub-layer.  For\n            example, for an 802.x interface, this object normally\n            contains a MAC address.  The interface's media-specific MIB\n            must define the bit and byte ordering and the format of the\n            value of this object.  For interfaces which do not have such\n            an address (e.g., a serial line), this object should contain\n            an octet string of zero length.
+%edes        ifAdminStatus           The desired state of the interface.  The testing(3) state\n            indicates that no operational packets can be passed.  When a\n            managed system initializes, all interfaces start with\n            ifAdminStatus in the down(2) state.  As a result of either\n            explicit management action or per configuration information\n            retained by the managed system, ifAdminStatus is then\n            changed to either the up(1) or testing(3) states (or remains\n            in the down(2) state).
+%edes        ifOperStatus            The current operational state of the interface.  The\n            testing(3) state indicates that no operational packets can\n            be passed.  If ifAdminStatus is down(2) then ifOperStatus\n            should be down(2).  If ifAdminStatus is changed to up(1)\n            then ifOperStatus should change to up(1) if the interface is\n            ready to transmit and receive network traffic; it should\n            change to dormant(5) if the interface is waiting for\n            external actions (such as a serial line waiting for an\n            incoming connection); it should remain in the down(2) state\n            if and only if there is a fault that prevents it from going\n            to the up(1) state; it should remain in the notPresent(6)\n            state if the interface has missing (typically, hardware)\n            components.
+%edes        ifLastChange            The value of sysUpTime at the time the interface entered\n            its current operational state.  If the current state was\n            entered prior to the last re-initialization of the local\n            network management subsystem, then this object contains a\n            zero value.
+%edes        ifInOctets              The total number of octets received on the interface,\n            including framing characters.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifInUcastPkts           The number of packets, delivered by this sub-layer to a\n            higher (sub-)layer, which were not addressed to a multicast\n            or broadcast address at this sub-layer.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifInNUcastPkts          The number of packets, delivered by this sub-layer to a\n            higher (sub-)layer, which were addressed to a multicast or\n            broadcast address at this sub-layer.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.\n\n            This object is deprecated in favour of ifInMulticastPkts and\n            ifInBroadcastPkts.
+%edes        ifInDiscards            The number of inbound packets which were chosen to be\n            discarded even though no errors had been detected to prevent\n            their being deliverable to a higher-layer protocol.  One\n            possible reason for discarding such a packet could be to\n            free up buffer space.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifInErrors              For packet-oriented interfaces, the number of inbound\n            packets that contained errors preventing them from being\n            deliverable to a higher-layer protocol.  For character-\n            oriented or fixed-length interfaces, the number of inbound\n            transmission units that contained errors preventing them\n            from being deliverable to a higher-layer protocol.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifInUnknownProtos       For packet-oriented interfaces, the number of packets\n            received via the interface which were discarded because of\n            an unknown or unsupported protocol.  For character-oriented\n            or fixed-length interfaces that support protocol\n            multiplexing the number of transmission units received via\n            the interface which were discarded because of an unknown or\n            unsupported protocol.  For any interface that does not\n            support protocol multiplexing, this counter will always be\n            0.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifOutOctets             The total number of octets transmitted out of the\n            interface, including framing characters.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifOutUcastPkts          The total number of packets that higher-level protocols\n            requested be transmitted, and which were not addressed to a\n            multicast or broadcast address at this sub-layer, including\n            those that were discarded or not sent.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifOutNUcastPkts         The total number of packets that higher-level protocols\n            requested be transmitted, and which were addressed to a\n            multicast or broadcast address at this sub-layer, including\n            those that were discarded or not sent.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.\n\n            This object is deprecated in favour of ifOutMulticastPkts\n            and ifOutBroadcastPkts.
+%edes        ifOutDiscards           The number of outbound packets which were chosen to be\n            discarded even though no errors had been detected to prevent\n            their being transmitted.  One possible reason for discarding\n            such a packet could be to free up buffer space.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifOutErrors             For packet-oriented interfaces, the number of outbound\n            packets that could not be transmitted because of errors.\n            For character-oriented or fixed-length interfaces, the\n            number of outbound transmission units that could not be\n            transmitted because of errors.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifOutQLen               The length of the output packet queue (in packets).
+%edes        ifSpecific              A reference to MIB definitions specific to the particular\n            media being used to realize the interface.  It is\n            recommended that this value point to an instance of a MIB\n            object in the media-specific MIB, i.e., that this object\n            have the semantics associated with the InstancePointer\n            textual convention defined in RFC 2579.  In fact, it is\n            recommended that the media-specific MIB specify what value\n            ifSpecific should/can take for values of ifType.  If no MIB\n            definitions specific to the particular media are available,\n            the value should be set to the OBJECT IDENTIFIER { 0 0 }.
+%edes        snmpInPkts              The total number of messages delivered to the SNMP\n               entity from the transport service.
+%edes        snmpOutPkts             The total number of SNMP Messages which were\n               passed from the SNMP protocol entity to the\n               transport service.
+%edes        snmpInBadVersions       The total number of SNMP messages which were delivered\n               to the SNMP entity and were for an unsupported SNMP\n               version.
+%edes        snmpInBadCommunityNames The total number of community-based SNMP messages (for\n              example,  SNMPv1) delivered to the SNMP entity which\n              used an SNMP community name not known to said entity.\n              Also, implementations which authenticate community-based\n              SNMP messages using check(s) in addition to matching\n              the community name (for example, by also checking\n              whether the message originated from a transport address\n              allowed to use a specified community name) MAY include\n              in this value the number of messages which failed the\n              additional check(s).  It is strongly RECOMMENDED that\n              the documentation for any security model which is used\n              to authenticate community-based SNMP messages specify\n              the precise conditions that contribute to this value.
+%edes        snmpInBadCommunityUses  The total number of community-based SNMP messages (for\n              example, SNMPv1) delivered to the SNMP entity which\n              represented an SNMP operation that was not allowed for\n              the SNMP community named in the message.  The precise\n              conditions under which this counter is incremented\n              (if at all) depend on how the SNMP entity implements\n              its access control mechanism and how its applications\n              interact with that access control mechanism.  It is\n              strongly RECOMMENDED that the documentation for any\n              access control mechanism which is used to control access\n              to and visibility of MIB instrumentation specify the\n              precise conditions that contribute to this value.
+%edes        snmpInASNParseErrs      The total number of ASN.1 or BER errors encountered by\n               the SNMP entity when decoding received SNMP messages.
+%edes        snmpInTooBigs           The total number of SNMP PDUs which were\n               delivered to the SNMP protocol entity and for\n               which the value of the error-status field was\n               `tooBig'.
+%edes        snmpInNoSuchNames       The total number of SNMP PDUs which were\n               delivered to the SNMP protocol entity and for\n               which the value of the error-status field was\n               `noSuchName'.
+%edes        snmpInBadValues         The total number of SNMP PDUs which were\n               delivered to the SNMP protocol entity and for\n               which the value of the error-status field was\n               `badValue'.
+%edes        snmpInReadOnlys         The total number valid SNMP PDUs which were delivered\n               to the SNMP protocol entity and for which the value\n               of the error-status field was `readOnly'.  It should\n               be noted that it is a protocol error to generate an\n               SNMP PDU which contains the value `readOnly' in the\n               error-status field, as such this object is provided\n               as a means of detecting incorrect implementations of\n               the SNMP.
+%edes        snmpInGenErrs           The total number of SNMP PDUs which were delivered\n               to the SNMP protocol entity and for which the value\n               of the error-status field was `genErr'.
+%edes        snmpInTotalReqVars      The total number of MIB objects which have been\n               retrieved successfully by the SNMP protocol entity\n               as the result of receiving valid SNMP Get-Request\n               and Get-Next PDUs.
+%edes        snmpInTotalSetVars      The total number of MIB objects which have been\n               altered successfully by the SNMP protocol entity as\n               the result of receiving valid SNMP Set-Request PDUs.
+%edes        snmpInGetRequests       The total number of SNMP Get-Request PDUs which\n               have been accepted and processed by the SNMP\n               protocol entity.
+%edes        snmpInGetNexts          The total number of SNMP Get-Next PDUs which have been\n               accepted and processed by the SNMP protocol entity.
+%edes        snmpInSetRequests       The total number of SNMP Set-Request PDUs which\n               have been accepted and processed by the SNMP protocol\n               entity.
+%edes        snmpInGetResponses      The total number of SNMP Get-Response PDUs which\n               have been accepted and processed by the SNMP protocol\n               entity.
+%edes        snmpInTraps             The total number of SNMP Trap PDUs which have been\n               accepted and processed by the SNMP protocol entity.
+%edes        snmpOutTooBigs          The total number of SNMP PDUs which were generated\n               by the SNMP protocol entity and for which the value\n               of the error-status field was `tooBig.'
+%edes        snmpOutNoSuchNames      The total number of SNMP PDUs which were generated\n               by the SNMP protocol entity and for which the value\n               of the error-status was `noSuchName'.
+%edes        snmpOutBadValues        The total number of SNMP PDUs which were generated\n               by the SNMP protocol entity and for which the value\n               of the error-status field was `badValue'.
+%edes        snmpOutGenErrs          The total number of SNMP PDUs which were generated\n               by the SNMP protocol entity and for which the value\n               of the error-status field was `genErr'.
+%edes        snmpOutGetRequests      The total number of SNMP Get-Request PDUs which\n               have been generated by the SNMP protocol entity.
+%edes        snmpOutGetNexts         The total number of SNMP Get-Next PDUs which have\n               been generated by the SNMP protocol entity.
+%edes        snmpOutSetRequests      The total number of SNMP Set-Request PDUs which\n               have been generated by the SNMP protocol entity.
+%edes        snmpOutGetResponses     The total number of SNMP Get-Response PDUs which\n               have been generated by the SNMP protocol entity.
+%edes        snmpOutTraps            The total number of SNMP Trap PDUs which have\n               been generated by the SNMP protocol entity.
+%edes        snmpEnableAuthenTraps   Indicates whether the SNMP entity is permitted to\n               generate authenticationFailure traps.  The value of this\n               object overrides any configuration information; as such,\n               it provides a means whereby all authenticationFailure\n               traps may be disabled.\n\n               Note that it is strongly recommended that this object\n               be stored in non-volatile memory so that it remains\n               constant across re-initializations of the network\n               management system.
+%edes        snmpSilentDrops         The total number of Confirmed Class PDUs (such as\n              GetRequest-PDUs, GetNextRequest-PDUs,\n              GetBulkRequest-PDUs, SetRequest-PDUs, and\n              InformRequest-PDUs) delivered to the SNMP entity which\n              were silently dropped because the size of a reply\n              containing an alternate Response Class PDU (such as a\n              Response-PDU) with an empty variable-bindings field\n              was greater than either a local constraint or the\n              maximum message size associated with the originator of\n              the request.
+%edes        snmpProxyDrops          The total number of Confirmed Class PDUs\n               (such as GetRequest-PDUs, GetNextRequest-PDUs,\n               GetBulkRequest-PDUs, SetRequest-PDUs, and\n               InformRequest-PDUs) delivered to the SNMP entity which\n               were silently dropped because the transmission of\n               the (possibly translated) message to a proxy target\n               failed in a manner (other than a time-out) such that\n               no Response Class PDU (such as a Response-PDU) could\n               be returned.
+%edes        hrSystemUptime          The amount of time since this host was last\n        initialized.  Note that this is different from\n        sysUpTime in the SNMPv2-MIB [RFC1907] because\n        sysUpTime is the uptime of the network management\n        portion of the system.
+%edes        hrSystemDate            The host's notion of the local date and time of day.
+%edes        hrSystemInitialLoadDevice The index of the hrDeviceEntry for the device from\n        which this host is configured to load its initial\n        operating system configuration (i.e., which operating\n        system code and/or boot parameters).\n\n        Note that writing to this object just changes the\n        configuration that will be used the next time the\n        operating system is loaded and does not actually cause\n        the reload to occur.
+%edes        hrSystemInitialLoadParameters This object contains the parameters (e.g. a pathname\n        and parameter) supplied to the load device when\n        requesting the initial operating system configuration\n        from that device.\n\n     Note that writing to this object just changes the\n     configuration that will be used the next time the\n     operating system is loaded and does not actually cause\n     the reload to occur.
+%edes        hrSystemNumUsers        The number of user sessions for which this host is\n        storing state information.  A session is a collection\n        of processes requiring a single act of user\n        authentication and possibly subject to collective job\n        control.
+%edes        hrSystemProcesses       The number of process contexts currently loaded or\n        running on this system.
+%edes        hrSystemMaxProcesses    The maximum number of process contexts this system\n        can support.  If there is no fixed maximum, the value\n        should be zero.  On systems that have a fixed maximum,\n        this object can help diagnose failures that occur when\n        this maximum is reached.
+%eunits      hrMemorySize            KBytes
+%edes        hrMemorySize            The amount of physical read-write main memory,\n        typically RAM, contained by the host.
+%edes        hrStorageTable          The (conceptual) table of logical storage areas on\n        the host.\n\n        An entry shall be placed in the storage table for each\n        logical area of storage that is allocated and has\n        fixed resource limits.  The amount of storage\n        represented in an entity is the amount actually usable\n        by the requesting entity, and excludes loss due to\n        formatting or file system reference information.\n\n        These entries are associated with logical storage\n        areas, as might be seen by an application, rather than\n        physical storage entities which are typically seen by\n        an operating system.  Storage such as tapes and\n        floppies without file systems on them are typically\n        not allocated in chunks by the operating system to\n        requesting applications, and therefore shouldn't\n        appear in this table.  Examples of valid storage for\n        this table include disk partitions, file systems, ram\n        (for some architectures this is further segmented into\n        regular memory, extended memory, and so on), backing\n        store for virtual memory (`swap space').\n\n        This table is intended to be a useful diagnostic for\n        `out of memory' and `out of buffers' types of\n        failures.  In addition, it can be a useful performance\n        monitoring tool for tracking memory, disk, or buffer\n        usage.
+%edes        hrStorageEntry          A (conceptual) entry for one logical storage area on\n        the host.  As an example, an instance of the\n        hrStorageType object might be named hrStorageType.3
+%edes        hrStorageIndex          A unique value for each logical storage area\n        contained by the host.
+%edes        hrStorageType           The type of storage represented by this entry.
+%edes        hrStorageDescr          A description of the type and instance of the storage\n        described by this entry.
+%eunits      hrStorageAllocationUnits Bytes
+%edes        hrStorageAllocationUnits The size, in bytes, of the data objects allocated\n        from this pool.  If this entry is monitoring sectors,\n        blocks, buffers, or packets, for example, this number\n        will commonly be greater than one.  Otherwise this\n        number will typically be one.
+%edes        hrStorageSize           The size of the storage represented by this entry, in\n        units of hrStorageAllocationUnits. This object is\n        writable to allow remote configuration of the size of\n        the storage area in those cases where such an\n        operation makes sense and is possible on the\n        underlying system. For example, the amount of main\n        memory allocated to a buffer pool might be modified or\n        the amount of disk space allocated to virtual memory\n        might be modified.
+%edes        hrStorageUsed           The amount of the storage represented by this entry\n        that is allocated, in units of\n        hrStorageAllocationUnits.
+%edes        hrStorageAllocationFailures The number of requests for storage represented by\n        this entry that could not be honored due to not enough\n        storage.  It should be noted that as this object has a\n        SYNTAX of Counter32, that it does not have a defined\n        initial value.  However, it is recommended that this\n        object be initialized to zero, even though management\n        stations must not depend on such an initialization.
+%edes        hrDeviceTable           The (conceptual) table of devices contained by the\n        host.
+%edes        hrDeviceEntry           A (conceptual) entry for one device contained by the\n        host.  As an example, an instance of the hrDeviceType\n        object might be named hrDeviceType.3
+%edes        hrDeviceIndex           A unique value for each device contained by the host.\n        The value for each device must remain constant at\n        least from one re-initialization of the agent to the\n        next re-initialization.
+%edes        hrDeviceType            An indication of the type of device.\n\n        If this value is\n        `hrDeviceProcessor { hrDeviceTypes 3 }' then an entry\n        exists in the hrProcessorTable which corresponds to\n        this device.\n\n        If this value is\n        `hrDeviceNetwork { hrDeviceTypes 4 }', then an entry\n        exists in the hrNetworkTable which corresponds to this\n        device.\n\n        If this value is\n        `hrDevicePrinter { hrDeviceTypes 5 }', then an entry\n        exists in the hrPrinterTable which corresponds to this\n        device.\n\n        If this value is\n        `hrDeviceDiskStorage { hrDeviceTypes 6 }', then an\n        entry exists in the hrDiskStorageTable which\n        corresponds to this device.
+%edes        hrDeviceDescr           A textual description of this device, including the\n        device's manufacturer and revision, and optionally,\n        its serial number.
+%edes        hrDeviceID              The product ID for this device.
+%edes        hrDeviceStatus          The current operational state of the device described\n        by this row of the table.  A value unknown(1)\n        indicates that the current state of the device is\n        unknown.  running(2) indicates that the device is up\n        and running and that no unusual error conditions are\n        known.  The warning(3) state indicates that agent has\n        been informed of an unusual error condition by the\n        operational software (e.g., a disk device driver) but\n        that the device is still 'operational'.  An example\n        would be a high number of soft errors on a disk.  A\n        value of testing(4), indicates that the device is not\n        available for use because it is in the testing state.\n        The state of down(5) is used only when the agent has\n        been informed that the device is not available for any\n        use.
+%edes        hrDeviceErrors          The number of errors detected on this device.  It\n        should be noted that as this object has a SYNTAX of\n        Counter32, that it does not have a defined initial\n        value.  However, it is recommended that this object be\n        initialized to zero, even though management stations\n        must not depend on such an initialization.
+%edes        hrProcessorTable        The (conceptual) table of processors contained by the\n        host.\n\n        Note that this table is potentially sparse: a\n        (conceptual) entry exists only if the correspondent\n        value of the hrDeviceType object is\n        `hrDeviceProcessor'.
+%edes        hrProcessorEntry        A (conceptual) entry for one processor contained by\n        the host.  The hrDeviceIndex in the index represents\n        the entry in the hrDeviceTable that corresponds to the\n        hrProcessorEntry.\n\n        As an example of how objects in this table are named,\n        an instance of the hrProcessorFrwID object might be\n        named hrProcessorFrwID.3
+%edes        hrProcessorFrwID        The product ID of the firmware associated with the\n        processor.
+%edes        hrProcessorLoad         The average, over the last minute, of the percentage\n        of time that this processor was not idle.\n        Implementations may approximate this one minute\n        smoothing period if necessary.
+%edes        hrNetworkTable          The (conceptual) table of network devices contained\n        by the host.\n\n        Note that this table is potentially sparse: a\n        (conceptual) entry exists only if the correspondent\n        value of the hrDeviceType object is\n        `hrDeviceNetwork'.
+%edes        hrNetworkEntry          A (conceptual) entry for one network device contained\n        by the host.  The hrDeviceIndex in the index\n        represents the entry in the hrDeviceTable that\n        corresponds to the hrNetworkEntry.\n\n        As an example of how objects in this table are named,\n        an instance of the hrNetworkIfIndex object might be\n        named hrNetworkIfIndex.3
+%edes        hrNetworkIfIndex        The value of ifIndex which corresponds to this\n        network device. If this device is not represented in\n        the ifTable, then this value shall be zero.
+%edes        hrPrinterTable          The (conceptual) table of printers local to the host.\n\n        Note that this table is potentially sparse: a\n        (conceptual) entry exists only if the correspondent\n        value of the hrDeviceType object is\n        `hrDevicePrinter'.
+%edes        hrPrinterEntry          A (conceptual) entry for one printer local to the\n        host.  The hrDeviceIndex in the index represents the\n        entry in the hrDeviceTable that corresponds to the\n        hrPrinterEntry.\n\n        As an example of how objects in this table are named,\n        an instance of the hrPrinterStatus object might be\n        named hrPrinterStatus.3
+%edes        hrPrinterStatus         The current status of this printer device.
+%edes        hrPrinterDetectedErrorState This object represents any error conditions detected\n        by the printer.  The error conditions are encoded as\n        bits in an octet string, with the following\n        definitions:\n\n             Condition         Bit #\n\n             lowPaper              0\n\n             noPaper               1\n             lowToner              2\n             noToner               3\n             doorOpen              4\n             jammed                5\n             offline               6\n             serviceRequested      7\n             inputTrayMissing      8\n             outputTrayMissing     9\n             markerSupplyMissing  10\n             outputNearFull       11\n             outputFull           12\n             inputTrayEmpty       13\n             overduePreventMaint  14\n\n        Bits are numbered starting with the most significant\n        bit of the first byte being bit 0, the least\n        significant bit of the first byte being bit 7, the\n        most significant bit of the second byte being bit 8,\n        and so on.  A one bit encodes that the condition was\n        detected, while a zero bit encodes that the condition\n        was not detected.\n\n        This object is useful for alerting an operator to\n        specific warning or error conditions that may occur,\n        especially those requiring human intervention.
+%edes        hrDiskStorageTable      The (conceptual) table of long-term storage devices\n        contained by the host.  In particular, disk devices\n        accessed remotely over a network are not included\n        here.\n\n        Note that this table is potentially sparse: a\n        (conceptual) entry exists only if the correspondent\n        value of the hrDeviceType object is\n        `hrDeviceDiskStorage'.
+%edes        hrDiskStorageEntry      A (conceptual) entry for one long-term storage device\n        contained by the host.  The hrDeviceIndex in the index\n        represents the entry in the hrDeviceTable that\n        corresponds to the hrDiskStorageEntry. As an example,\n        an instance of the hrDiskStorageCapacity object might\n        be named hrDiskStorageCapacity.3
+%edes        hrDiskStorageAccess     An indication if this long-term storage device is\n        readable and writable or only readable.  This should\n        reflect the media type, any write-protect mechanism,\n        and any device configuration that affects the entire\n        device.
+%edes        hrDiskStorageMedia      An indication of the type of media used in this long-\n        term storage device.
+%edes        hrDiskStorageRemoveble  Denotes whether or not the disk media may be removed\n        from the drive.
+%eunits      hrDiskStorageCapacity   KBytes
+%edes        hrDiskStorageCapacity   The total size for this long-term storage device. If\n        the media is removable and is currently removed, this\n        value should be zero.
+%edes        hrPartitionTable        The (conceptual) table of partitions for long-term\n        storage devices contained by the host.  In particular,\n        partitions accessed remotely over a network are not\n        included here.
+%edes        hrPartitionEntry        A (conceptual) entry for one partition.  The\n        hrDeviceIndex in the index represents the entry in the\n        hrDeviceTable that corresponds to the\n        hrPartitionEntry.\n\n        As an example of how objects in this table are named,\n        an instance of the hrPartitionSize object might be\n        named hrPartitionSize.3.1
+%edes        hrPartitionIndex        A unique value for each partition on this long-term\n        storage device.  The value for each long-term storage\n        device must remain constant at least from one re-\n        initialization of the agent to the next re-\n        initialization.
+%edes        hrPartitionLabel        A textual description of this partition.
+%edes        hrPartitionID           A descriptor which uniquely represents this partition\n        to the responsible operating system.  On some systems,\n        this might take on a binary representation.
+%eunits      hrPartitionSize         KBytes
+%edes        hrPartitionSize         The size of this partition.
+%edes        hrPartitionFSIndex      The index of the file system mounted on this\n        partition.  If no file system is mounted on this\n        partition, then this value shall be zero.  Note that\n        multiple partitions may point to one file system,\n        denoting that that file system resides on those\n        partitions.  Multiple file systems may not reside on\n        one partition.
+%edes        hrFSTable               The (conceptual) table of file systems local to this\n        host or remotely mounted from a file server.  File\n        systems that are in only one user's environment on a\n        multi-user system will not be included in this table.
+%edes        hrFSEntry               A (conceptual) entry for one file system local to\n        this host or remotely mounted from a file server.\n        File systems that are in only one user's environment\n        on a multi-user system will not be included in this\n        table.\n\n        As an example of how objects in this table are named,\n        an instance of the hrFSMountPoint object might be\n        named hrFSMountPoint.3
+%edes        hrFSIndex               A unique value for each file system local to this\n        host.  The value for each file system must remain\n        constant at least from one re-initialization of the\n        agent to the next re-initialization.
+%edes        hrFSMountPoint          The path name of the root of this file system.
+%edes        hrFSRemoteMountPoint    A description of the name and/or address of the\n        server that this file system is mounted from.  This\n        may also include parameters such as the mount point on\n        the remote file system.  If this is not a remote file\n        system, this string should have a length of zero.
+%edes        hrFSType                The value of this object identifies the type of this\n        file system.
+%edes        hrFSAccess              An indication if this file system is logically\n        configured by the operating system to be readable and\n        writable or only readable.  This does not represent\n        any local access-control policy, except one that is\n        applied to the file system as a whole.
+%edes        hrFSBootable            A flag indicating whether this file system is\n        bootable.
+%edes        hrFSStorageIndex        The index of the hrStorageEntry that represents\n        information about this file system.  If there is no\n        such information available, then this value shall be\n        zero.  The relevant storage entry will be useful in\n        tracking the percent usage of this file system and\n        diagnosing errors that may occur when it runs out of\n        space.
+%edes        hrFSLastFullBackupDate  The last date at which this complete file system was\n\n        copied to another storage device for backup.  This\n        information is useful for ensuring that backups are\n        being performed regularly.\n\n        If this information is not known, then this variable\n        shall have the value corresponding to January 1, year\n        0000, 00:00:00.0, which is encoded as\n        (hex)'00 00 01 01 00 00 00 00'.
+%edes        hrFSLastPartialBackupDate The last date at which a portion of this file system\n        was copied to another storage device for backup.  This\n        information is useful for ensuring that backups are\n        being performed regularly.\n\n        If this information is not known, then this variable\n        shall have the value corresponding to January 1, year\n        0000, 00:00:00.0, which is encoded as\n        (hex)'00 00 01 01 00 00 00 00'.
+%edes        hrSWOSIndex             The value of the hrSWRunIndex for the hrSWRunEntry\n        that represents the primary operating system running\n        on this host.  This object is useful for quickly and\n        uniquely identifying that primary operating system.
+%edes        hrSWRunTable            The (conceptual) table of software running on the\n        host.
+%edes        hrSWRunEntry            A (conceptual) entry for one piece of software\n        running on the host Note that because the installed\n        software table only contains information for software\n        stored locally on this host, not every piece of\n        running software will be found in the installed\n        software table.  This is true of software that was\n        loaded and run from a non-local source, such as a\n        network-mounted file system.\n\n        As an example of how objects in this table are named,\n        an instance of the hrSWRunName object might be named\n        hrSWRunName.1287
+%edes        hrSWRunIndex            A unique value for each piece of software running on\n        the host.  Wherever possible, this should be the\n        system's native, unique identification number.
+%edes        hrSWRunName             A textual description of this running piece of\n        software, including the manufacturer, revision,  and\n        the name by which it is commonly known.  If this\n        software was installed locally, this should be the\n        same string as used in the corresponding\n        hrSWInstalledName.
+%edes        hrSWRunID               The product ID of this running piece of software.
+%edes        hrSWRunPath             A description of the location on long-term storage\n        (e.g. a disk drive) from which this software was\n        loaded.
+%edes        hrSWRunParameters       A description of the parameters supplied to this\n        software when it was initially loaded.
+%edes        hrSWRunType             The type of this software.
+%edes        hrSWRunStatus           The status of this running piece of software.\n        Setting this value to invalid(4) shall cause this\n        software to stop running and to be unloaded. Sets to\n        other values are not valid.
+%edes        hrSWRunPerfTable        The (conceptual) table of running software\n        performance metrics.
+%edes        hrSWRunPerfEntry        A (conceptual) entry containing software performance\n        metrics.  As an example, an instance of the\n        hrSWRunPerfCPU object might be named\n        hrSWRunPerfCPU.1287
+%edes        hrSWRunPerfCPU          The number of centi-seconds of the total system's CPU\n        resources consumed by this process.  Note that on a\n        multi-processor system, this value may increment by\n        more than one centi-second in one centi-second of real\n        (wall clock) time.
+%eunits      hrSWRunPerfMem          KBytes
+%edes        hrSWRunPerfMem          The total amount of real system memory allocated to\n        this process.
+%edes        hrSWInstalledLastChange The value of sysUpTime when an entry in the\n        hrSWInstalledTable was last added, renamed, or\n        deleted.  Because this table is likely to contain many\n        entries, polling of this object allows a management\n        station to determine when re-downloading of the table\n        might be useful.
+%edes        hrSWInstalledLastUpdateTime The value of sysUpTime when the hrSWInstalledTable\n        was last completely updated.  Because caching of this\n        data will be a popular implementation strategy,\n        retrieval of this object allows a management station\n        to obtain a guarantee that no data in this table is\n        older than the indicated time.
+%edes        hrSWInstalledTable      The (conceptual) table of software installed on this\n        host.
+%edes        hrSWInstalledEntry      A (conceptual) entry for a piece of software\n        installed on this host.\n\n        As an example of how objects in this table are named,\n        an instance of the hrSWInstalledName object might be\n        named hrSWInstalledName.96
+%edes        hrSWInstalledIndex      A unique value for each piece of software installed\n        on the host.  This value shall be in the range from 1\n        to the number of pieces of software installed on the\n        host.
+%edes        hrSWInstalledName       A textual description of this installed piece of\n        software, including the manufacturer, revision, the\n        name by which it is commonly known, and optionally,\n        its serial number.
+%edes        hrSWInstalledID         The product ID of this installed piece of software.
+%edes        hrSWInstalledType       The type of this software.
+%edes        hrSWInstalledDate       The last-modification date of this application as it\n        would appear in a directory listing.\n\n        If this information is not known, then this variable\n        shall have the value corresponding to January 1, year\n        0000, 00:00:00.0, which is encoded as\n        (hex)'00 00 01 01 00 00 00 00'.
+%edes        hrSystemGroup           The Host Resources System Group.
+%edes        hrStorageGroup          The Host Resources Storage Group.
+%edes        hrDeviceGroup           The Host Resources Device Group.
+%edes        hrSWRunGroup            The Host Resources Running Software Group.
+%edes        hrSWRunPerfGroup        The Host Resources Running Software\n            Performance Group.
+%edes        hrSWInstalledGroup      The Host Resources Installed Software Group.
+%edes        ifXTable                A list of interface entries.  The number of entries is\n            given by the value of ifNumber.  This table contains\n            additional objects for the interface table.
+%edes        ifXEntry                An entry containing additional management information\n            applicable to a particular interface.
+%edes        ifName                  The textual name of the interface.  The value of this\n            object should be the name of the interface as assigned by\n            the local device and should be suitable for use in commands\n            entered at the device's `console'.  This might be a text\n            name, such as `le0' or a simple port number, such as `1',\n            depending on the interface naming syntax of the device.  If\n            several entries in the ifTable together represent a single\n            interface as named by the device, then each will have the\n            same value of ifName.  Note that for an agent which responds\n            to SNMP queries concerning an interface on some other\n            (proxied) device, then the value of ifName for such an\n            interface is the proxied device's local name for it.\n\n            If there is no local name, or this object is otherwise not\n            applicable, then this object contains a zero-length string.
+%edes        ifInMulticastPkts       The number of packets, delivered by this sub-layer to a\n            higher (sub-)layer, which were addressed to a multicast\n            address at this sub-layer.  For a MAC layer protocol, this\n            includes both Group and Functional addresses.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifInBroadcastPkts       The number of packets, delivered by this sub-layer to a\n            higher (sub-)layer, which were addressed to a broadcast\n            address at this sub-layer.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifOutMulticastPkts      The total number of packets that higher-level protocols\n            requested be transmitted, and which were addressed to a\n            multicast address at this sub-layer, including those that\n            were discarded or not sent.  For a MAC layer protocol, this\n            includes both Group and Functional addresses.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifOutBroadcastPkts      The total number of packets that higher-level protocols\n            requested be transmitted, and which were addressed to a\n            broadcast address at this sub-layer, including those that\n            were discarded or not sent.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifHCInOctets            The total number of octets received on the interface,\n            including framing characters.  This object is a 64-bit\n            version of ifInOctets.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifHCInUcastPkts         The number of packets, delivered by this sub-layer to a\n            higher (sub-)layer, which were not addressed to a multicast\n            or broadcast address at this sub-layer.  This object is a\n            64-bit version of ifInUcastPkts.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifHCInMulticastPkts     The number of packets, delivered by this sub-layer to a\n            higher (sub-)layer, which were addressed to a multicast\n            address at this sub-layer.  For a MAC layer protocol, this\n            includes both Group and Functional addresses.  This object\n            is a 64-bit version of ifInMulticastPkts.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifHCInBroadcastPkts     The number of packets, delivered by this sub-layer to a\n            higher (sub-)layer, which were addressed to a broadcast\n            address at this sub-layer.  This object is a 64-bit version\n            of ifInBroadcastPkts.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifHCOutOctets           The total number of octets transmitted out of the\n            interface, including framing characters.  This object is a\n            64-bit version of ifOutOctets.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifHCOutUcastPkts        The total number of packets that higher-level protocols\n            requested be transmitted, and which were not addressed to a\n            multicast or broadcast address at this sub-layer, including\n            those that were discarded or not sent.  This object is a\n            64-bit version of ifOutUcastPkts.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifHCOutMulticastPkts    The total number of packets that higher-level protocols\n            requested be transmitted, and which were addressed to a\n            multicast address at this sub-layer, including those that\n            were discarded or not sent.  For a MAC layer protocol, this\n            includes both Group and Functional addresses.  This object\n            is a 64-bit version of ifOutMulticastPkts.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifHCOutBroadcastPkts    The total number of packets that higher-level protocols\n            requested be transmitted, and which were addressed to a\n            broadcast address at this sub-layer, including those that\n            were discarded or not sent.  This object is a 64-bit version\n            of ifOutBroadcastPkts.\n\n            Discontinuities in the value of this counter can occur at\n            re-initialization of the management system, and at other\n            times as indicated by the value of\n            ifCounterDiscontinuityTime.
+%edes        ifLinkUpDownTrapEnable  Indicates whether linkUp/linkDown traps should be generated\n            for this interface.\n\n            By default, this object should have the value enabled(1) for\n            interfaces which do not operate on 'top' of any other\n            interface (as defined in the ifStackTable), and disabled(2)\n            otherwise.
+%edes        ifHighSpeed             An estimate of the interface's current bandwidth in units\n            of 1,000,000 bits per second.  If this object reports a\n            value of `n' then the speed of the interface is somewhere in\n            the range of `n-500,000' to `n+499,999'.  For interfaces\n            which do not vary in bandwidth or for those where no\n            accurate estimation can be made, this object should contain\n            the nominal bandwidth.  For a sub-layer which has no concept\n            of bandwidth, this object should be zero.
+%edes        ifPromiscuousMode       This object has a value of false(2) if this interface only\n            accepts packets/frames that are addressed to this station.\n            This object has a value of true(1) when the station accepts\n            all packets/frames transmitted on the media.  The value\n            true(1) is only legal on certain types of media.  If legal,\n            setting this object to a value of true(1) may require the\n            interface to be reset before becoming effective.\n\n            The value of ifPromiscuousMode does not affect the reception\n            of broadcast and multicast packets/frames by the interface.
+%edes        ifConnectorPresent      This object has the value 'true(1)' if the interface\n            sublayer has a physical connector and the value 'false(2)'\n            otherwise.
+%edes        ifAlias                 This object is an 'alias' name for the interface as\n            specified by a network manager, and provides a non-volatile\n            'handle' for the interface.\n\n            On the first instantiation of an interface, the value of\n            ifAlias associated with that interface is the zero-length\n            string.  As and when a value is written into an instance of\n            ifAlias through a network management set operation, then the\n            agent must retain the supplied value in the ifAlias instance\n            associated with the same interface for as long as that\n            interface remains instantiated, including across all re-\n            initializations/reboots of the network management system,\n            including those which result in a change of the interface's\n            ifIndex value.\n\n            An example of the value which a network manager might store\n            in this object for a WAN interface is the (Telco's) circuit\n            number/identifier of the interface.\n\n            Some agents may support write-access only for interfaces\n            having particular values of ifType.  An agent which supports\n            write access to this object is required to keep the value in\n            non-volatile storage, but it may limit the length of new\n            values depending on how much storage is already occupied by\n            the current values for other interfaces.
+%edes        ifCounterDiscontinuityTime The value of sysUpTime on the most recent occasion at which\n            any one or more of this interface's counters suffered a\n            discontinuity.  The relevant counters are the specific\n            instances associated with this interface of any Counter32 or\n            Counter64 object contained in the ifTable or ifXTable.  If\n            no such discontinuities have occurred since the last re-\n            initialization of the local management subsystem, then this\n            object contains a zero value.
+%edes        ifStackTable            The table containing information on the relationships\n            between the multiple sub-layers of network interfaces.  In\n            particular, it contains information on which sub-layers run\n            'on top of' which other sub-layers, where each sub-layer\n            corresponds to a conceptual row in the ifTable.  For\n            example, when the sub-layer with ifIndex value x runs over\n            the sub-layer with ifIndex value y, then this table\n            contains:\n\n              ifStackStatus.x.y=active\n\n            For each ifIndex value, I, which identifies an active\n            interface, there are always at least two instantiated rows\n            in this table associated with I.  For one of these rows, I\n            is the value of ifStackHigherLayer; for the other, I is the\n            value of ifStackLowerLayer.  (If I is not involved in\n            multiplexing, then these are the only two rows associated\n            with I.)\n\n            For example, two rows exist even for an interface which has\n            no others stacked on top or below it:\n\n              ifStackStatus.0.x=active\n              ifStackStatus.x.0=active 
+%edes        ifStackEntry            Information on a particular relationship between two sub-\n            layers, specifying that one sub-layer runs on 'top' of the\n            other sub-layer.  Each sub-layer corresponds to a conceptual\n            row in the ifTable.
+%edes        ifStackHigherLayer      The value of ifIndex corresponding to the higher sub-layer\n            of the relationship, i.e., the sub-layer which runs on 'top'\n            of the sub-layer identified by the corresponding instance of\n            ifStackLowerLayer.  If there is no higher sub-layer (below\n            the internetwork layer), then this object has the value 0.
+%edes        ifStackLowerLayer       The value of ifIndex corresponding to the lower sub-layer\n            of the relationship, i.e., the sub-layer which runs 'below'\n            the sub-layer identified by the corresponding instance of\n            ifStackHigherLayer.  If there is no lower sub-layer, then\n            this object has the value 0.
+%edes        ifStackStatus           The status of the relationship between two sub-layers.\n\n            Changing the value of this object from 'active' to\n            'notInService' or 'destroy' will likely have consequences up\n            and down the interface stack.  Thus, write access to this\n            object is likely to be inappropriate for some types of\n            interfaces, and many implementations will choose not to\n            support write-access for any type of interface.
+%edes        ifTestTable             This table contains one entry per interface.  It defines\n            objects which allow a network manager to instruct an agent\n            to test an interface for various faults.  Tests for an\n            interface are defined in the media-specific MIB for that\n            interface.  After invoking a test, the object ifTestResult\n            can be read to determine the outcome.  If an agent can not\n            perform the test, ifTestResult is set to so indicate.  The\n            object ifTestCode can be used to provide further test-\n            specific or interface-specific (or even enterprise-specific)\n            information concerning the outcome of the test.  Only one\n            test can be in progress on each interface at any one time.\n            If one test is in progress when another test is invoked, the\n            second test is rejected.  Some agents may reject a test when\n            a prior test is active on another interface.\n\n            Before starting a test, a manager-station must first obtain\n            'ownership' of the entry in the ifTestTable for the\n            interface to be tested.  This is accomplished with the\n            ifTestId and ifTestStatus objects as follows:\n\n          try_again:\n              get (ifTestId, ifTestStatus)\n              while (ifTestStatus != notInUse)\n                  /*\n                   * Loop while a test is running or some other\n                   * manager is configuring a test.\n                   */\n                  short delay\n                  get (ifTestId, ifTestStatus)\n              }\n\n              /*\n               * Is not being used right now -- let's compete\n               * to see who gets it.\n               */\n              lock_value = ifTestId\n\n              if ( set(ifTestId = lock_value, ifTestStatus = inUse,\n\n                       ifTestOwner = 'my-IP-address') == FAILURE)\n                  /*\n                   * Another manager got the ifTestEntry -- go\n                   * try again\n                   */\n                  goto try_again;\n\n              /*\n               * I have the lock\n               */\n              set up any test parameters.\n\n              /*\n               * This starts the test\n               */\n              set(ifTestType = test_to_run);\n\n              wait for test completion by polling ifTestResult\n\n              when test completes, agent sets ifTestResult\n                   agent also sets ifTestStatus = 'notInUse'\n\n              retrieve any additional test results, and ifTestId\n\n              if (ifTestId == lock_value+1) results are valid\n\n            A manager station first retrieves the value of the\n            appropriate ifTestId and ifTestStatus objects, periodically\n            repeating the retrieval if necessary, until the value of\n            ifTestStatus is 'notInUse'.  The manager station then tries\n            to set the same ifTestId object to the value it just\n            retrieved, the same ifTestStatus object to 'inUse', and the\n            corresponding ifTestOwner object to a value indicating\n            itself.  If the set operation succeeds then the manager has\n            obtained ownership of the ifTestEntry, and the value of the\n            ifTestId object is incremented by the agent (per the\n            semantics of TestAndIncr).  Failure of the set operation\n            indicates that some other manager has obtained ownership of\n            the ifTestEntry.\n\n            Once ownership is obtained, any test parameters can be\n            setup, and then the test is initiated by setting ifTestType.\n            On completion of the test, the agent sets ifTestStatus to\n            'notInUse'.  Once this occurs, the manager can retrieve the\n            results.  In the (rare) event that the invocation of tests\n            by two network managers were to overlap, then there would be\n            a possibility that the first test's results might be\n            overwritten by the second test's results prior to the first\n            results being read.  This unlikely circumstance can be\n            detected by a network manager retrieving ifTestId at the\n            same time as retrieving the test results, and ensuring that\n            the results are for the desired request.\n\n            If ifTestType is not set within an abnormally long period of\n            time after ownership is obtained, the agent should time-out\n            the manager, and reset the value of the ifTestStatus object\n            back to 'notInUse'.  It is suggested that this time-out\n            period be 5 minutes.\n\n            In general, a management station must not retransmit a\n            request to invoke a test for which it does not receive a\n            response; instead, it properly inspects an agent's MIB to\n            determine if the invocation was successful.  Only if the\n            invocation was unsuccessful, is the invocation request\n            retransmitted.\n\n            Some tests may require the interface to be taken off-line in\n            order to execute them, or may even require the agent to\n            reboot after completion of the test.  In these\n            circumstances, communication with the management station\n            invoking the test may be lost until after completion of the\n            test.  An agent is not required to support such tests.\n            However, if such tests are supported, then the agent should\n            make every effort to transmit a response to the request\n            which invoked the test prior to losing communication.  When\n            the agent is restored to normal service, the results of the\n            test are properly made available in the appropriate objects.\n            Note that this requires that the ifIndex value assigned to\n            an interface must be unchanged even if the test causes a\n            reboot.  An agent must reject any test for which it cannot,\n            perhaps due to resource constraints, make available at least\n            the minimum amount of information after that test\n            completes.
+%edes        ifTestEntry             An entry containing objects for invoking tests on an\n            interface.
+%edes        ifTestId                This object identifies the current invocation of the\n            interface's test.
+%edes        ifTestStatus            This object indicates whether or not some manager currently\n            has the necessary 'ownership' required to invoke a test on\n            this interface.  A write to this object is only successful\n            when it changes its value from 'notInUse(1)' to 'inUse(2)'.\n            After completion of a test, the agent resets the value back\n            to 'notInUse(1)'.
+%edes        ifTestType              A control variable used to start and stop operator-\n            initiated interface tests.  Most OBJECT IDENTIFIER values\n            assigned to tests are defined elsewhere, in association with\n            specific types of interface.  However, this document assigns\n            a value for a full-duplex loopback test, and defines the\n            special meanings of the subject identifier:\n\n                noTest  OBJECT IDENTIFIER ::= { 0 0 }\n\n            When the value noTest is written to this object, no action\n            is taken unless a test is in progress, in which case the\n            test is aborted.  Writing any other value to this object is\n            only valid when no test is currently in progress, in which\n            case the indicated test is initiated.\n\n            When read, this object always returns the most recent value\n            that ifTestType was set to.  If it has not been set since\n            the last initialization of the network management subsystem\n            on the agent, a value of noTest is returned.
+%edes        ifTestResult            This object contains the result of the most recently\n            requested test, or the value none(1) if no tests have been\n            requested since the last reset.  Note that this facility\n            provides no provision for saving the results of one test\n            when starting another, as could be required if used by\n            multiple managers concurrently.
+%edes        ifTestCode              This object contains a code which contains more specific\n            information on the test result, for example an error-code\n            after a failed test.  Error codes and other values this\n            object may take are specific to the type of interface and/or\n            test.  The value may have the semantics of either the\n            AutonomousType or InstancePointer textual conventions as\n            defined in RFC 2579.  The identifier:\n\n                testCodeUnknown  OBJECT IDENTIFIER ::= { 0 0 }\n\n            is defined for use if no additional result code is\n            available.
+%edes        ifTestOwner             The entity which currently has the 'ownership' required to\n            invoke a test on this interface.
+%edes        ifRcvAddressTable       This table contains an entry for each address (broadcast,\n            multicast, or uni-cast) for which the system will receive\n            packets/frames on a particular interface, except as follows:\n\n            - for an interface operating in promiscuous mode, entries\n            are only required for those addresses for which the system\n            would receive frames were it not operating in promiscuous\n            mode.\n\n            - for 802.5 functional addresses, only one entry is\n            required, for the address which has the functional address\n            bit ANDed with the bit mask of all functional addresses for\n            which the interface will accept frames.\n\n            A system is normally able to use any unicast address which\n            corresponds to an entry in this table as a source address.
+%edes        ifRcvAddressEntry       A list of objects identifying an address for which the\n            system will accept packets/frames on the particular\n            interface identified by the index value ifIndex.
+%edes        ifRcvAddressAddress     An address for which the system will accept packets/frames\n            on this entry's interface.
+%edes        ifRcvAddressStatus      This object is used to create and delete rows in the\n            ifRcvAddressTable.
+%edes        ifRcvAddressType        This object has the value nonVolatile(3) for those entries\n            in the table which are valid and will not be deleted by the\n            next restart of the managed system.  Entries having the\n            value volatile(2) are valid and exist, but have not been\n            saved, so that will not exist after the next restart of the\n            managed system.  Entries having the value other(1) are valid\n            and exist but are not classified as to whether they will\n            continue to exist after the next restart.
+%edes        ifTableLastChange       The value of sysUpTime at the time of the last creation or\n            deletion of an entry in the ifTable.  If the number of\n            entries has been unchanged since the last re-initialization\n            of the local network management subsystem, then this object\n            contains a zero value.
+%edes        ifStackLastChange       The value of sysUpTime at the time of the last change of\n            the (whole) interface stack.  A change of the interface\n            stack is defined to be any creation, deletion, or change in\n            value of any instance of ifStackStatus.  If the interface\n            stack has been unchanged since the last re-initialization of\n            the local network management subsystem, then this object\n            contains a zero value.
+%est                 ifGeneralGroup   deprecated
+%edes        ifGeneralGroup          A collection of objects deprecated in favour of\n            ifGeneralInformationGroup.
+%edes        ifFixedLengthGroup      A collection of objects providing information specific to\n            non-high speed (non-high speed interfaces transmit and\n            receive at speeds less than or equal to 20,000,000\n            bits/second) character-oriented or fixed-length-transmission\n            network interfaces.
+%edes        ifHCFixedLengthGroup    A collection of objects providing information specific to\n            high speed (greater than 20,000,000 bits/second) character-\n            oriented or fixed-length-transmission network interfaces.
+%edes        ifPacketGroup           A collection of objects providing information specific to\n            non-high speed (non-high speed interfaces transmit and\n            receive at speeds less than or equal to 20,000,000\n            bits/second) packet-oriented network interfaces.
+%edes        ifHCPacketGroup         A collection of objects providing information specific to\n            high speed (greater than 20,000,000 bits/second but less\n            than or equal to 650,000,000 bits/second) packet-oriented\n            network interfaces.
+%edes        ifVHCPacketGroup        A collection of objects providing information specific to\n            higher speed (greater than 650,000,000 bits/second) packet-\n            oriented network interfaces.
+%edes        ifRcvAddressGroup       A collection of objects providing information on the\n            multiple addresses which an interface receives.
+%est                 ifTestGroup      deprecated
+%edes        ifTestGroup             A collection of objects providing the ability to invoke\n            tests on an interface.
+%est                 ifStackGroup     deprecated
+%edes        ifStackGroup            The previous collection of objects providing information on\n            the layering of MIB-II interfaces.
+%edes        ifGeneralInformationGroup A collection of objects providing information applicable to\n            all network interfaces.
+%edes        ifStackGroup2           A collection of objects providing information on the\n            layering of MIB-II interfaces.
+%est                 ifOldObjectsGroup deprecated
+%edes        ifOldObjectsGroup       The collection of objects deprecated from the original MIB-\n            II interfaces group.
+%edes        ifCounterDiscontinuityGroup A collection of objects providing information specific to\n            interface counter discontinuities.
+%edes        linkUpDownNotificationsGroup The notifications which indicate specific changes in the\n            value of ifOperStatus.
+%edes        jnxProducts             The root of Juniper's Product OIDs.
+%edes        jnxServices             The root of Juniper's Services OIDs.
+%edes        jnxMibs                 The root of Juniper's MIB objects.
+%edes        jnxBoxClass             The class of the box, indicating which product line\n		the box is about, for example, 'Internet Router'.
+%edes        jnxBoxDescr             The name, model, or detailed description of the box,\n		indicating which product the box is about, for example\n		'M40'.
+%edes        jnxBoxSerialNo          The serial number of this subject, blank if unknown \n		or unavailable.
+%edes        jnxBoxRevision          The revision of this subject, blank if unknown or\n		unavailable.
+%edes        jnxBoxInstalled         The value of sysUpTime when the subject was last\n		installed, up-and-running.  Zero if unknown or \n		already up-and-running when the agent was up.
+%edes        jnxContainersTable      A list of containers entries.
+%edes        jnxContainersEntry      An entry of containers table.
+%edes        jnxContainersIndex      The index for this entry.
+%edes        jnxContainersView       The view(s) from which the specific container\n		appears.\n\n		This variable indicates that the specific container\n		is embedded and accessible from the corresponding\n		view(s).\n\n		The value is a bit map represented as a sum.\n		If multiple bits are set, the specified\n		container(s) are located and accessible from \n		that set of views.\n\n		The various values representing the bit positions\n		and its corresponding views are:\n		    1   front\n		    2   rear\n		    4   top\n		    8   bottom\n		   16   leftHandSide\n		   32   rightHandSide\n\n		Note 1: \n		LefHandSide and rightHandSide are referred\n		to based on the view from the front.\n\n		Note 2: \n		If the specified containers are scattered \n		around various views, the numbering is according\n		to the following sequence:\n		    front -> rear -> top -> bottom\n			  -> leftHandSide -> rightHandSide\n		For each view plane, the numbering sequence is\n		first from left to right, and then from up to down.\n\n		Note 3: \n		Even though the value in chassis hardware (e.g. \n		slot number) may be labelled from 0, 1, 2, and up,\n		all the indices in MIB start with 1 (not 0) \n		according to network management convention.
+%edes        jnxContainersLevel      The abstraction level of the box or chassis.\n		It is enumerated from the outside to the inside, \n		from the outer layer to the inner layer.\n		For example, top level (i.e. level 0) refers to \n		chassis frame, level 1 FPC slot within chassis \n		frame, level 2 PIC space within FPC slot.
+%edes        jnxContainersWithin     The index of its next higher level container \n		housing	this entry.  The associated \n		jnxContainersIndex in the jnxContainersTable \n		represents its next higher level container.
+%edes        jnxContainersType       The type of this container.
+%edes        jnxContainersDescr      The name or detailed description of this\n		subject.
+%edes        jnxContainersCount      The maximum number of containers of this level\n		per container of the next higher level.  \n		e.g. if there are six level 2 containers in \n		level 1 container, then jnxContainersCount for\n		level 2 is six.
+%edes        jnxContentsLastChange   The value of sysUpTime when the box contents \n		table last changed.  Zero if unknown or already \n		existing when the agent was up.
+%edes        jnxContentsTable        A list of contents entries.
+%edes        jnxContentsEntry        An entry of contents table.
+%edes        jnxContentsContainerIndex The associated jnxContainersIndex in the \n		jnxContainersTable.
+%edes        jnxContentsL1Index      The level one index of the container\n		housing this subject.  Zero if unavailable\n		or inapplicable.
+%edes        jnxContentsL2Index      The level two index of the container\n		housing this subject.  Zero if unavailable\n		or inapplicable.
+%edes        jnxContentsL3Index      The level three index of the container\n		housing this subject.  Zero if unavailable\n		or inapplicable.
+%edes        jnxContentsType         The type of this subject.  zeroDotZero\n		if unknown.
+%edes        jnxContentsDescr        The name or detailed description of this\n		subject.
+%edes        jnxContentsSerialNo     The serial number of this subject, blank if \n		unknown or unavailable.
+%edes        jnxContentsRevision     The revision of this subject, blank if unknown \n		or unavailable.
+%edes        jnxContentsInstalled    The value of sysUpTime when the subject was last \n		installed, up-and-running.  Zero if unknown\n		or already up-and-running when the agent was up.
+%edes        jnxContentsPartNo       The part number of this subject, blank if unknown \n		or unavailable.
+%edes        jnxContentsChassisId    Identifies the chassis on which the contents of this\n                row exists.
+%edes        jnxContentsChassisDescr A textual description of the chassis on which the\n                contents of this row exists.
+%edes        jnxContentsChassisCleiCode The clei code of this subject, blank if unknown\n                 or unavailable.\n\n                 A CLEI code is an intelligent code that consists of 10\n                 alphanumeric characters with 4 data elements.  The first data\n                 element is considered the basic code with the first 2 characters\n                 indicating the technology or equipment type, and the third and\n                 fourth characters denoting the functional sub-category.  The\n                 second data element represents the features, and its three\n                 characters denote functional capabilities or changes.  The third\n                 data element has one character and denotes a reference to a\n                 manufacturer, system ID, specification, or drawing.  The fourth\n                 data element consists of two characters and contains complementary\n                 data.  These two characters provide a means of differentiating or\n                 providing uniqueness between the eight character CLEI codes by\n                 identifying the manufacturing vintage of the product.  Names are\n                 assigned via procedures defined in [GR485].\n\n                 The assigned maintenance agent for the CLEI code, Telcordia\n                 Technologies, is responsible for assigning certain equipment and\n                 other identifiers (e.g., location, manufacturer/supplier) for the\n                 telecommunications industry.
+%edes        jnxLEDLastChange        The value of sysUpTime when the box LED table \n		last changed.  Zero if unknown or already at \n		that state when the agent was up.
+%edes        jnxLEDTable             A list of status entries.
+%edes        jnxLEDEntry             An entry of status table.
+%edes        jnxLEDAssociateTable    The associated table that this entry is \n		related.
+%edes        jnxLEDAssociateIndex    The index of the associated table that this\n		entry is related.
+%edes        jnxLEDL1Index           The level one index of the associated\n		table that this entry is related.  Zero \n		if unavailable or inapplicable.
+%edes        jnxLEDL2Index           The level two index of the associated\n		table that this entry is related.  Zero \n		if unavailable or inapplicable.
+%edes        jnxLEDL3Index           The level three index of the associated\n		table that this entry is related.  Zero\n		if unavailable or inapplicable.
+%edes        jnxLEDOriginator        The originator of the this entry.
+%edes        jnxLEDDescr             The name or detailed description of this subject.
+%edes        jnxLEDState             The state of the LED indicator.
+%edes        jnxLEDStateOrdered      The state of the LED indicator.  Identical to jnxLEDState, but\n                with enums ordered from 'most operational' to 'least\n                operational' states.
+%edes        jnxFilledLastChange     The value of sysUpTime when the box filled \n		status table last changed.  Zero if unknown or\n		already at that state when the agent was up.
+%edes        jnxFilledTable          A list of filled status entries.
+%edes        jnxFilledEntry          An entry of filled status table.
+%edes        jnxFilledContainerIndex The associated jnxContainersIndex in the \n		jnxContainersTable.
+%edes        jnxFilledL1Index        The level one index of the container\n		housing this subject.  Zero if unavailable\n		or inapplicable.
+%edes        jnxFilledL2Index        The level two index of the container\n		housing this subject.  Zero if unavailable\n		or inapplicable.
+%edes        jnxFilledL3Index        The level three index of the container\n		housing this subject.  Zero if unavailable\n		or inapplicable.
+%edes        jnxFilledDescr          The name or detailed description of this\n		subject.
+%edes        jnxFilledState          The filled state of this subject.
+%edes        jnxFilledChassisId      Identifies the chassis on which the contents of this\n                row exists.
+%edes        jnxFilledChassisDescr   A textual description of the chassis on which the\n                contents of this row exists.
+%edes        jnxOperatingTable       A list of operating status entries.
+%edes        jnxOperatingEntry       An entry of operating status table.
+%edes        jnxOperatingContentsIndex The associated jnxContentsContainerIndex in the \n		jnxContentsTable.
+%edes        jnxOperatingL1Index     The level one index associated with this\n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxOperatingL2Index     The level two index associated with this \n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxOperatingL3Index     The level three index associated with this\n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxOperatingDescr       The name or detailed description of this subject.
+%edes        jnxOperatingState       The operating state of this subject.
+%edes        jnxOperatingTemp        The temperature in Celsius (degrees C) of this \n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxOperatingCPU         The CPU utilization in percentage of this \n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxOperatingISR         The CPU utilization in percentage of this subject\n		spending in interrupt service routine (ISR).\n		Zero if unavailable or inapplicable.
+%edes        jnxOperatingDRAMSize    The DRAM size in bytes of this subject.\n		Zero if unavailable or inapplicable.
+%edes        jnxOperatingBuffer      The buffer pool utilization in percentage\n		of this subject.  Zero if unavailable or \n		inapplicable.
+%edes        jnxOperatingHeap        The heap utilization in percentage of \n		this subject.  Zero if unavailable or \n		inapplicable.
+%edes        jnxOperatingUpTime      The time interval in 10-millisecond period\n		that this subject has been up and running.  \n		Zero if unavailable or inapplicable.
+%edes        jnxOperatingLastRestart The value of sysUpTime when this subject \n		last restarted.  Zero if unavailable or \n		inapplicable.
+%edes        jnxOperatingMemory      The installed memory size in Megabytes \n		of this subject.  Zero if unavailable or\n		inapplicable.
+%edes        jnxOperatingStateOrdered The operating state of this subject.  Identical to\n                 jnxOperatingState, but with enums ordered from 'most\n                 operational' to 'least operational' states.
+%edes        jnxOperatingChassisId   Identifies the chassis on which the contents of this\n                row exists.
+%edes        jnxOperatingChassisDescr A textual description of the chassis on which the\n                contents of this row exists.
+%edes        jnxOperatingRestartTime The time at which this entity\n                last restarted.
+%edes        jnxOperating1MinLoadAvg The CPU Load Average over the last 1 minutes\n                     Here it will be shown as percentage value\n                     Zero if unavailable or inapplicable.
+%edes        jnxOperating5MinLoadAvg The CPU Load Average over the last 5 minutes\n                     Here it will be shown as percentage value\n                     Zero if unavailable or inapplicable.
+%edes        jnxOperating15MinLoadAvg The CPU Load Average over the last 15 minutes\n                     Here it will be shown as percentage value\n                     Zero if unavailable or inapplicable.
+%edes        jnxRedundancyTable      A list of redundancy information entries.
+%edes        jnxRedundancyEntry      An entry in the redundancy information table.
+%edes        jnxRedundancyContentsIndex The associated jnxContentsContainerIndex in the \n		jnxContentsTable.
+%edes        jnxRedundancyL1Index    The level one index associated with this\n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxRedundancyL2Index    The level two index associated with this \n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxRedundancyL3Index    The level three index associated with this\n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxRedundancyDescr      The name or detailed description of this subject.
+%edes        jnxRedundancyConfig     The election priority of redundancy configuration for\n		this subject.  The value 'notApplicable' means no\n		specific instance is configured to be master or\n		backup; whichever component boots up first becomes a\n		master.
+%edes        jnxRedundancyState      The current running state for this subject.
+%edes        jnxRedundancySwitchoverCount The total number of switchover as perceived by\n		this subject since routing engine is up and running.\n		The switchover is defined as a change in state of\n		jnxRedundancyState from master to backup or vice\n		versa.	Its value is reset when the routing engine\n		is reset or rebooted.
+%edes        jnxRedundancySwitchoverTime The value of sysUpTime when the jnxRedundancyState\n		of this subject was last switched over from master\n		to backup or vice versa.  Zero if unknown or never\n		switched over since the routing engine is up and\n		running.
+%edes        jnxRedundancySwitchoverReason The reason of the last switchover for this subject.
+%edes        jnxRedundancyKeepaliveHeartbeat The period of sending keepalive messages between\n		the master and backup subsystems.  It is a system-wide\n		preset value in seconds used by internal mastership\n		resolution.  Zero if unavailable or inapplicable.
+%edes        jnxRedundancyKeepaliveTimeout The timeout period in seconds, by the keepalive \n		watchdog timer, before initiating a switch over to \n		the backup subsystem.  Zero if unavailable or \n		inapplicable.
+%edes        jnxRedundancyKeepaliveElapsed The elapsed time in seconds by this subject since \n		receiving the last keepalive message from the other\n		subsystems.  Zero if unavailable or inapplicable.
+%edes        jnxRedundancyKeepaliveLoss The total number of losses on keepalive messages \n		between the master and backup subsystems as perceived\n		by this subject since the system is up and running.  \n		Zero if unavailable or inapplicable.
+%edes        jnxRedundancyChassisId  Identifies the chassis on which the contents of this\n                row exists.
+%edes        jnxRedundancyChassisDescr A textual description of the chassis on which the\n                contents of this row exists.
+%edes        jnxFruTable             A list of FRU status entries.
+%edes        jnxFruEntry             An entry in the FRU status table.
+%edes        jnxFruContentsIndex     The associated jnxContentsContainerIndex in the \n		jnxContentsTable.
+%edes        jnxFruL1Index           The level one index associated with this\n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxFruL2Index           The level two index associated with this \n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxFruL3Index           The level three index associated with this\n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxFruName              The name or detailed description of this subject.
+%edes        jnxFruType              The FRU type for this subject.
+%edes        jnxFruSlot              The slot number of this subject.  This is equivalent\n		to jnxFruL1Index in meaning.  Zero if unavailable or \n		inapplicable.
+%edes        jnxFruState             The current state for this subject.
+%edes        jnxFruTemp              The temperature in Celsius (degrees C) of this \n		subject.  Zero if unavailable or inapplicable.
+%edes        jnxFruOfflineReason     The offline reason of this subject.
+%edes        jnxFruLastPowerOff      The value of sysUpTime when this subject was last \n		powered off.  Zero if unavailable or inapplicable.
+%edes        jnxFruLastPowerOn       The value of sysUpTime when this subject was last \n		powered on.  Zero if unavailable or inapplicable.
+%edes        jnxFruPowerUpTime       The time interval in 10-millisecond period\n		that this subject has been up and running\n		since the last power on time.  Zero if \n		unavailable or inapplicable.
+%edes        jnxFruChassisId         Identifies the chassis on which the contents of this\n                row exists.
+%edes        jnxFruChassisDescr      A textual description of the chassis on which the\n                contents of this row exists.
+%edes        jnxFruPsdAssignment     The PSD assignment of this subject. Zero if unavailable or\n                not applicable.
+%edes        jnxBoxKernelMemoryUsedPercent The percentage of kernel memory used\n		of this subject.  0 if unavailable or\n		inapplicable.
+%edes        jnxBoxSystemDomainType  The system domain type of this subject, notApplicable will\n		be returned if this feature is not supported.
+%edes        jnxBoxPersonality       The personality of the box, indicating which product line it is currently acting as\n		 for example, 'MX40'.
+%edes        mplsLspInfoUp           An mplsLspInfoUp trap signifies that the \n		specified LSP is up. The current active\n                path for the LSP is mplsPathInfoName.
+%edes        mplsLspInfoDown         An mplsLspInfoDown trap signifies that the \n		specified LSP is down, because the current\n                active path mplsPathInfoName went down.
+%edes        mplsLspInfoChange       An mplsLspInfoChange trap signifies that the\n                the specified LSP has switched traffic to \n		the new active path 'toLspPath'. The LSP maintains\n		up state before and after the switch over
+%edes        mplsLspInfoPathDown     An mplsLspInfoPathDown trap signifies that the \n		specified path mplsPathName for the specified\n		LSP mplsLspInfoName went down
+%edes        mplsLspInfoPathUp       An mplsLspInfoPathUp trap signifies that the \n		specified path mplsPathName for the specified\n		LSP mplsLspInfoName came up
+%edes        mplsVersion             MPLS version number.
+%edes        mplsSignalingProto      MPLS signaling protocol.
+%edes        mplsConfiguredLsps      Number of configured LSPs.
+%edes        mplsActiveLsps          Number of active LSPs.
+%edes        mplsTEDistProtocol      IGP used to distribute Traffic Engineering\n         information and topology to each LSR for the\n         purpose of automatic path computation.
+%edes        mplsAdminGroupList      List of configured administrative groups.\n         Administrative groups are used to label links in\n         the Traffic Engineering topology in order to place\n         constraints (include and exclude) on LSP paths.
+%edes        mplsAdminGroup          A mapping between a configured group number and its\n         human-readable name.  The group number should be\n         between 0 and 31, inclusive.
+%edes        mplsAdminGroupNumber    Index of the administrative group.
+%edes        mplsAdminGroupName      Name of the administrative group.
+%edes        mplsLspList             ******* Deprecated Object ******\n        List of Configured Label Switched Paths. This object\n        has been deprecated and replaced by mplsLspInfoList
+%edes        mplsLspEntry            ******* Deprecated Object ******\n        Entry containing information about a particular\n        Label Switched Path. This object has been deprecated \n        and replaced by mplsLspInfoEntry
+%edes        mplsLspName             ******* Deprecated Object ******\n         Name of the Label Switched Path.\n         This object has been deprecated and replaced by \n         mplsLspInfoName
+%edes        mplsLspState            The operational state of the LSP.
+%edes        mplsLspOctets           The number of octets that have been forwarded\n         over current LSP active path. The number reported\n         is not realtime, may subject to several minutes\n         delay.  The delay is controllable by mpls statistics\n         gathering interval, which by default is once every\n         5 minutes.  If mpls statistics gathering is not\n         enabled, this number will not increment.
+%edes        mplsLspPackets          The number of packets that have been forwarded\n         over current LSP active path. The number reported\n         is not realtime, may subject to several minutes\n         delay.  The delay is controllable by mpls statistics\n         gathering interval, which by default is once every\n         5 minutes.  If mpls statistics gathering is not\n         enabled, this number will not increment.
+%edes        mplsLspAge              The age (i.e., time from creation till now) of\n         this LSP in 10-millisecond periods.
+%edes        mplsLspTimeUp           The total time in 10-millisecond units that this\n         LSP has been operational.  For example, the\n         percentage up time can be determined by computing\n         (mplsLspTimeUp/mplsLspAge * 100 %).
+%edes        mplsLspPrimaryTimeUp    The total time in 10-millisecond units that this\n         LSP's primary path has been operational.  For\n         example, the percentage contribution of the primary\n         path to the operational time is given by\n         (mplsLspPrimaryTimeUp/mplsLspTimeUp * 100) %.
+%edes        mplsLspTransitions      The number of state transitions (up -> down and\n         down -> up) this LSP has undergone.
+%edes        mplsLspLastTransition   The time in 10-millisecond units since the last\n         transition occurred on this LSP.
+%edes        mplsLspPathChanges      The number of path changes this LSP has had. For\n	every path change (path down, path up, path change),\n	a corresponding syslog/trap (if enabled) is generated \n	for it.
+%edes        mplsLspLastPathChange   The time in 10-millisecond units since the last\n         change occurred on this LSP.
+%edes        mplsLspConfiguredPaths  The number of paths configured for this LSP.
+%edes        mplsLspStandbyPaths     The number of standby paths configured for\n         this LSP.
+%edes        mplsLspOperationalPaths The number of operational paths for this LSP.\n         This includes the path currently active, as\n         well as operational standby paths.
+%edes        mplsLspFrom             Source IP address of this LSP.
+%edes        mplsLspTo               Destination IP address of this LSP.
+%edes        mplsPathName            The name of the active path for this LSP, if\n         any.  If there is none, the name should be\n         empty; in that case, the rest of the fields\n         in mplsLspEntry are meaningless.
+%edes        mplsPathType            The type of path that is active, i.e., a\n         primary path, a standby path, a generic\n         secondary path, or a bypass path.\n         The value other, primary, standby and\n         secondary apply to data LSPs, and are\n         meaningful only if mplsPathName is not\n         empty. The value bypass applies to\n         bypass tunnels. A bypass tunnel\n         may have an empty mplsPathName.
+%edes        mplsPathExplicitRoute   The explicit route used to set up this LSP.\n         This may either be the route configured by\n         the user, or a route automatically computed\n         to satisfy constraints set by the user. \n	 This field is a displayable string in the\n	 format of XXX.XXX.XXX.XXX <space> S/L <newline>\n	 repeated for each explicit address. The S/L character\n	 stands for Strict/Loose route.\n	 This field is meaningless unless mplsPathName \n	 is not empty
+%edes        mplsPathRecordRoute     The route actually used for this path, as\n         recorded by the signaling protocol. \n	 This field is a displayable string in the\n	 format of XXX.XXX.XXX.XXX <space> \n	 repeated for each address. \n	 This field is meaningless unless mplsPathName is \n	 not empty
+%edes        mplsPathBandwidth       The configured bandwidth for this LSP, in units\n         of thousands of bits per second (Kbps). This \n	 field is meaningless unless mplsPathName is not empty
+%edes        mplsPathCOS             The configured Class Of Service on this path.  If\n         the value is between 0 and 7 inclusive, this value\n         will be inserted in the 3 bit COS field in the\n         label.  If the value is 255, the value in the COS\n         field of the label will depend on other factors. \n	 This field is meaningless unless mplsPathName is not empty
+%edes        mplsPathInclude         This is a configured set of colors (administrative\n         groups) specified as a bit vector (i.e., bit n is 1\n         if color n is in the set, where n = 0 is the LSB).\n         For each link that this path goes through, the\n         link MUST have colors associated with it, and\n         the intersection of the link's colors and the\n         'include' set MUST be non-null. This field is meaningless\n	 unless mplsPathName is not empty
+%edes        mplsPathExclude         This is a configured set of colors (administrative\n         groups) specified as a bit vector (i.e., bit n is 1\n         if color n is in the set, where n = 0 is the LSB).\n         For each link that this path goes through, the\n         link MUST have colors associated with it, and\n         the intersection of the link's colors and the\n         'exclude' set MUST be null. This field is meaningless\n	 unless mplsPathName is not empty
+%edes        mplsPathSetupPriority   The setup priority configured for this path. This \n	field is meaningless unless mplsPathName is not empty
+%edes        mplsPathHoldPriority    The hold priority configured for this path. This \n	field is meaningless unless mplsPathName is not empty
+%edes        mplsPathProperties      The set of configured properties for this path,\n         expressed as a bit map.  For example, if the path\n         is an adaptive path, the bit corresponding to bit\n         value xxx is set. This field is meaningless\n	 unless mplsPathName is not empty
+%est                 mplsLspUp        deprecated
+%edes        mplsLspUp               An mplsLspUp trap signifies that the \n		specified LSP is up. The current active\n                path for the LSP is mplsPathName.
+%est                 mplsLspDown      deprecated
+%edes        mplsLspDown             An mplsLspDown trap signifies that the \n		specified LSP is down, because the current\n                active path mplsPathName went down.
+%est                 mplsLspChange    deprecated
+%edes        mplsLspChange           An mplsLspChange trap signifies that the\n                the specified LSP has switched traffic to \n		the new active path 'toLspPath'. The LSP maintains\n		up state before and after the switch over
+%est                 mplsLspPathDown  deprecated
+%edes        mplsLspPathDown         An mplsLspPathDown trap signifies that the \n		specified path mplsPathName for the specified\n		LSP mplsLspName went down
+%est                 mplsLspPathUp    deprecated
+%edes        mplsLspPathUp           An mplsLspPathUp trap signifies that the \n		specified path mplsPathName for the specified\n		LSP mplsLspName came up
+%edes        mplsLspInfoList         List of Configured Label Switched Paths.
+%edes        mplsLspInfoEntry        Entry containing information about a particular\n         Label Switched Path.
+%edes        mplsLspInfoName         Name of the Label Switched Path.
+%edes        mplsLspInfoState        The operational state of the LSP.
+%edes        mplsLspInfoOctets       The number of octets that have been forwarded\n         over current LSP active path. The number reported\n         is not realtime, may subject to several minutes\n         delay.  The delay is controllable by mpls statistics\n         gathering interval, which by default is once every\n         5 minutes.  If mpls statistics gathering is not\n         enabled, this number will not increment.
+%edes        mplsLspInfoPackets      The number of packets that have been forwarded\n         over current LSP active path. The number reported\n         is not realtime, may subject to several minutes\n         delay.  The delay is controllable by mpls statistics\n         gathering interval, which by default is once every\n         5 minutes.  If mpls statistics gathering is not\n         enabled, this number will not increment.
+%edes        mplsLspInfoAge          The age (i.e., time from creation till now) of\n         this LSP in 10-millisecond periods.
+%edes        mplsLspInfoTimeUp       The total time in 10-millisecond units that this\n         LSP has been operational.  For example, the\n         percentage up time can be determined by computing\n         (mplsLspInfoTimeUp/mplsLspInfoAge * 100 %).
+%edes        mplsLspInfoPrimaryTimeUp The total time in 10-millisecond units that this\n         LSP's primary path has been operational.  For\n         example, the percentage contribution of the primary\n         path to the operational time is given by\n         (mplsLspInfoPrimaryTimeUp/mplsLspInfoTimeUp * 100) %.
+%edes        mplsLspInfoTransitions  The number of state transitions (up -> down and\n         down -> up) this LSP has undergone.
+%edes        mplsLspInfoLastTransition The time in 10-millisecond units since the last\n         transition occurred on this LSP.
+%edes        mplsLspInfoPathChanges  The number of path changes this LSP has had. For\n	every path change (path down, path up, path change),\n	a corresponding syslog/trap (if enabled) is generated \n	for it.
+%edes        mplsLspInfoLastPathChange The time in 10-millisecond units since the last\n         change occurred on this LSP.
+%edes        mplsLspInfoConfiguredPaths The number of paths configured for this LSP.
+%edes        mplsLspInfoStandbyPaths The number of standby paths configured for\n         this LSP.
+%edes        mplsLspInfoOperationalPaths The number of operational paths for this LSP.\n         This includes the path currently active, as\n         well as operational standby paths.
+%edes        mplsLspInfoFrom         Source IP address of this LSP.
+%edes        mplsLspInfoTo           Destination IP address of this LSP.
+%edes        mplsPathInfoName        The name of the active path for this LSP, if\n         any.  If there is none, the name should be\n         empty; in that case, the rest of the fields\n         in mplsLspInfoEntry are meaningless.
+%edes        mplsPathInfoType        The type of path that is active, i.e., a\n         primary path, a standby path, a generic\n         secondary path, or a bypass path.\n         The value other, primary, standby and\n         secondary apply to data LSPs, and are\n         meaningful only if mplsPathInfoName is not\n         empty. The value bypass applies to\n         bypass tunnels. A bypass tunnel\n         may have an empty mplsPathInfoName.
+%edes        mplsPathInfoExplicitRoute The explicit route used to set up this LSP.\n         This may either be the route configured by\n         the user, or a route automatically computed\n         to satisfy constraints set by the user. \n	 This field is a displayable string in the\n	 format of XXX.XXX.XXX.XXX <space> S/L <newline>\n	 repeated for each explicit address. The S/L character\n	 stands for Strict/Loose route.\n	 This field is meaningless unless mplsPathInfoName \n	 is not empty
+%edes        mplsPathInfoRecordRoute The route actually used for this path, as\n         recorded by the signaling protocol. \n	 This field is a displayable string in the\n	 format of XXX.XXX.XXX.XXX <space> \n	 repeated for each address. \n	 This field is meaningless unless mplsPathInfoName is \n	 not empty
+%edes        mplsPathInfoBandwidth   The configured bandwidth for this LSP, in units\n         of thousands of bits per second (Kbps). This \n	 field is meaningless unless mplsPathInfoName is not empty
+%edes        mplsPathInfoCOS         The configured Class Of Service on this path.  If\n         the value is between 0 and 7 inclusive, this value\n         will be inserted in the 3 bit COS field in the\n         label.  If the value is 255, the value in the COS\n         field of the label will depend on other factors. \n	 This field is meaningless unless mplsPathInfoName is not empty
+%edes        mplsPathInfoInclude     This is a configured set of colors (administrative\n         groups) specified as a bit vector (i.e., bit n is 1\n         if color n is in the set, where n = 0 is the LSB).\n         For each link that this path goes through, the\n         link MUST have colors associated with it, and\n         the intersection of the link's colors and the\n         'include' set MUST be non-null. This field is meaningless\n	 unless mplsPathInfoName is not empty
+%edes        mplsPathInfoExclude     This is a configured set of colors (administrative\n         groups) specified as a bit vector (i.e., bit n is 1\n         if color n is in the set, where n = 0 is the LSB).\n         For each link that this path goes through, the\n         link MUST have colors associated with it, and\n         the intersection of the link's colors and the\n         'exclude' set MUST be null. This field is meaningless\n	 unless mplsPathInfoName is not empty
+%edes        mplsPathInfoSetupPriority The setup priority configured for this path. This \n	field is meaningless unless mplsPathInfoName is not empty
+%edes        mplsPathInfoHoldPriority The hold priority configured for this path. This \n	field is meaningless unless mplsPathInfoName is not empty
+%edes        mplsPathInfoProperties  The set of configured properties for this path,\n         expressed as a bit map.  For example, if the path\n         is an adaptive path, the bit corresponding to bit\n         value xxx is set. This field is meaningless\n	 unless mplsPathInfoName is not empty
+%edes        mplsLspInfoAggrOctets   The number of octets that have beeen forwarded over\n         current LSP. This is an aggregate count of octets\n         forwarded over all LSP instances from the time\n         LSP was up. The number reported is not realtime, may\n         be subject to several minutes delay.  The delay is\n         controllable by mpls statistics gathering interval,\n         which by default is once every 5 minutes.  If mpls\n         statistics gathering is not enabled, this number will\n         not increment.
+%edes        mplsLspInfoAggrPackets  The number of packets that have been forwarded over\n         current LSP. This is an aggregate count of packets\n         forwarded over all LSP instances from the time\n         LSP was up. The number reported is not realtime, may\n         be subject to several minutes delay. The delay is\n         controllable by mpls statistics gathering interval,\n         which by default is once every 5 minutes. If mpls\n         statistics gathering is not enabled, this number will\n         not increment.
+%edes        mplsPathInfoRecordRouteWithLabels The route actually used for this path, as\n         recorded by the signaling protocol.\n         This field is a displayable string in the\n         format of XXX.XXX.XXX.XXX <flag/label> <space>\n         repeated for each address.\n         This field is meaningless unless mplsPathInfoName is\n         not empty
+%edes        ifJnxTable              A list of Juniper's extension to the interface entries.\n		The number of entries is given by the value of ifNumber.\n		This table contains additional objects for the interface\n		table.
+%edes        ifJnxEntry              An entry containing additional management information\n		applicable to a particular interface.
+%edes        ifIn1SecRate            The number of bits per second (bps), delivered by \n		this (sub-)layer to its next higher (sub-)layer.
+%edes        ifIn1SecOctets          The number of octets per second (Bps, Bytes per \n		second), delivered by this (sub-)layer to its next\n		higher (sub-)layer.
+%edes        ifIn1SecPkts            The number of packets per second (pps), delivered\n		by this (sub-)layer to its next higher (sub-)layer.
+%edes        ifOut1SecRate           The number of bits per second (bps), delivered by\n		this (sub-)layer to its next lower (sub-)layer.
+%edes        ifOut1SecOctets         The number of octets per second (Bps, Bytes per\n		second), delivered by this (sub-)layer to its next\n		lower (sub-)layer.
+%edes        ifOut1SecPkts           The number of packets per second (pps), delivered\n		by this (sub-)layer to its next lower (sub-)layer.
+%edes        ifHCIn1SecRate          The number of bits per second (bps), delivered by \n		this (sub-)layer to its next higher (sub-)layer.\n		This object is a 64 bit version of ifIn1SecRate.
+%edes        ifHCOut1SecRate         The number of bits per second (bps), delivered by\n		this (sub-)layer to its next lower (sub-)layer.\n		This object is a 64 bit version of ifOut1SecRate.
+%edes        ifJnxInErrors           Errors: The sum of the incoming frame aborts and FCS errors.
+%edes        ifJnxInFrameErrors      Framing Errors: The number of input packets which were \n                misaligned.
+%edes        ifJnxInQDrops           Drops: The number of packets dropped by the input queue of \n                the I/O Manager ASIC.
+%edes        ifJnxInRunts            Runts: Frames received that are smaller than the runt \n                threshold.
+%edes        ifJnxInGiants           Giants: Frames received that are larger than the giant \n                threshold.
+%edes        ifJnxInDiscards         Policed Discards: Frames that the incoming packet match code \n                discarded because they were not recognized or of interest.
+%edes        ifJnxInHslCrcErrors     HS Link CRC Errors: The number of CRC errors on the \n                high-speed links between the ASICs responsible for handling \n                the router interfaces while receiving packets.
+%edes        ifJnxInHslFifoOverFlows HS link FIFO overflows: The number of FIFO overflows on the\n                high-speed links between the ASICs responsible for handling\n                the router interfaces.
+%edes        ifJnxInL3Incompletes    L3 incompletes: The number of incoming packets that fail\n                Layer 3 sanity checks of the header.
+%edes        ifJnxInL2ChanErrors     L2 channel errors: the number of incoming packets for which \n                the sofware could not find a valid logical interface.
+%edes        ifJnxInL2MismatchTimeouts L2 mismatch timeouts: The count of malformed or short packets\n                that cause the incoming packet handler to discard the frame\n                as unreadable.
+%edes        ifJnxInInvalidVCs       Invalid VCs: Number of cells that arrived for a nonexistent\n                virtual circuit.
+%edes        ifJnxInFifoErrors       FIFO errors: The number of FIFO errors in the receive\n                direction as reported by the ASIC on the PIC.
+%edes        ifJnxBucketDrops        Bucket drops: Drops due to traffic load exceeding the\n                interface transmit/receive leaky bucket configuration.
+%edes        ifJnxSramErrors         SRAM errors: This counter increments when a hardware error\n                has occurred in the SRAM on the PIC.
+%edes        ifJnxOutErrors          Errors: The sum of the outgoing frame aborts and FCS errors.
+%edes        ifJnxCollisions         Collisions: The number of output collisions detected on this\n                interface.
+%edes        ifJnxCarrierTrans       Carrier transitions: The number of times the interface saw\n                the carrier signal transition.
+%edes        ifJnxOutQDrops          Drops: The number of packets dropped by the output queue of\n                the I/O Manager ASIC.
+%edes        ifJnxOutAgedErrors      Aged packets: The number of packets that remained in shared\n                packet SDRAM for so long that the system automatically purged\n                them.
+%edes        ifJnxOutFifoErrors      FIFO errors: The number of FIFO errors in the transmit\n                direction as reported by the ASIC on the PIC.
+%edes        ifJnxOutHslFifoUnderFlows HS link FIFO underflows: The number of FIFO underflows on the\n                high-speed links between the ASICs responsible for handling\n                the router interfaces.
+%edes        ifJnxOutHslCrcErrors    HS Link CRC Errors: The number of CRC errors on the \n                high-speed links between the ASICs responsible for handling \n                the router interfaces while transmitting packets.
+%edes        ifJnxCrcErrors          CRC Errors: The number of CRC errors
+%edes        ifJnxFcsErrors          FCS Errors: The number of FCS errors
+%edes        ifHCIn1SecOctets        The number of bytes per second (Bps), delivered by \n		this (sub-)layer to its next higher (sub-)layer.\n		This object is a 64 bit version of ifIn1SecOctets.
+%edes        ifHCOut1SecOctets       The number of bytes per second (Bps), delivered by\n		this (sub-)layer to its next lower (sub-)layer.\n		This object is a 64 bit version of ifOut1SecOctets.
+%edes        ifChassisTable          A list of Juniper's extension to the interface entries.\n		The number of entries is given by the value of ifNumber.\n		This table contains additional objects for the interface\n		table to facilitate the identification of interfaces and\n		its mapping into the Chassis MIB tables.
+%edes        ifChassisEntry          An entry containing additional management information\n		applicable to a particular interface.
+%edes        ifChassisFpc            The number of the FPC card on which the interface\n		is located in the chassis.  It is the chassis slot \n		in which the FPC card is installed for the specified \n		interface.  \n\n		Although the number is labeled from 0 and up in the \n		chassis, the return value for this object always starts\n		from 1 according to Network Management convention.\n		Therefore, a value of zero means there is no real or\n		physical FPC associated with the specified interface.
+%edes        ifChassisPic            The number of the PIC card on which the interface\n		is located in the chassis.  It is the PIC location \n		on the FPC card for the specified interface.\n\n		Although the number is labeled from 0 and up in the \n		chassis, the return value for this object always starts\n		from 1 according to Network Management convention.\n		Therefore, a value of zero means there is no real or\n		physical PIC associated with the specified interface.
+%edes        ifChassisPort           The number of the port on the PIC card on which the \n		interface is located in the chassis.  It is the port \n		number on the PIC card for the specified interface.\n\n		Although the number is labeled from 0 and up in the \n		chassis, the return value for this object always starts\n		from 1 according to Network Management convention.\n		Therefore, a value of zero means there is no real or\n		physical port associated with the specified interface.
+%edes        ifChassisChannel        The channel identifier for the specified interface\n		if and only if it is part of a channelized interface.\n		\n		Although the channel is numbered from 0 and up in the \n		interface naming, the return value for this object \n		always starts from 1 according to Network Management \n		convention.  For the interface which could not be \n		channelized, this object returns zero.
+%edes        ifChassisLogicalUnit    The logical unit number of the specified interface.\n		It is the logical part of the interface that is \n		configured on the physical or channel part if any.\n\n		Although the logical unit number is numbered from 0 and\n		up in the interface naming, the return value for this \n		object always starts from 1 according to Network \n		Management convention.  For the interface which is \n		really a physical device, this value returns zero.
+%edes        ifChassisPicIndex       The index or indices for the Chassis MIB tables.\n		This is the instance index which keys into the \n		jnxContentsTable in Chassis MIB.\n\n		For example, it could return an octet string of\n		'8.1.2.0' - meaning a PIC ('8', first digit) \n		at FPC slot 0 ('1-1', second digit minus one if nonzero)\n		PIC number 1 ('2-1', third digit minus one if nonzero)\n		port number whatever (fourth digit currently unused)\n		- which in turn could be plugged in by NMS directly\n		after any MIB objects in the jnxContentsTable, say\n		'jnxContentsDescr.8.1.2.0', so NMS could get that\n		PIC object for the specified interface.\n\n		This object is valid only for those interfaces having \n		real and physical PIC cards.  Otherwise, it returns \n		an octet string	of four zeros '0.0.0.0.'
+%edes        ifJnxErrors             A ifJnxErrors notification is sent when the value\n         of ifJnxCrcErrors or ifJnxFcsErrors increases.
+%edes        ifJnxPolTable           A list of Juniper's extension to the interface entries.\n                The number of entries is given by the value of ifNumber.\n                This table contains additional objects for the interface\n                table.
+%edes        ifJnxPolEntry           An entry containing additional management information\n                applicable to a particular interface.
+%edes        ifJnxInPolLowOctets     Logical Interface Policer Input Low Bytes
+%edes        ifJnxInPolLowPkts       Logical Interface Policer Input Low Pkts
+%edes        ifJnxInPolLow1SecRate   Logical Interface Policer Input Low 1 Sec Rate
+%edes        ifJnxInPolMLowOctets    Logical Interface Policer Input Medium Low Bytes
+%edes        ifJnxInPolMLowPkts      Logical Interface Policer Input Medium Low Pkts
+%edes        ifJnxInPolMLow1SecRate  Logical Interface Policer Input Medium Low 1 Sec Rate
+%edes        ifJnxInPolMHighOctets   Logical Interface Policer Input Medium High Bytes
+%edes        ifJnxInPolMHighPkts     Logical Interface Policer Input Medium High Pkts
+%edes        ifJnxInPolMHigh1SecRate Logical Interface Policer Input Medium High 1 Sec Rate
+%edes        ifJnxInPolHighOctets    Logical Interface Policer Input High Bytes
+%edes        ifJnxInPolHighPkts      Logical Interface Policer Input High Pkts
+%edes        ifJnxInPolHigh1SecRate  Logical Interface Policer Input High 1 Sec Rate
+%edes        ifJnxInPolDropOctets    Logical Interface Policer Input Drop Bytes
+%edes        ifJnxInPolDropPkts      Logical Interface Policer Input Drop Pkts
+%edes        ifJnxInPolDrop1SecRate  Logical Interface Policer Input Drop 1 Sec Rate
+%edes        ifJnxOutPolLowOctets    Logical Interface Policer Output Low Bytes
+%edes        ifJnxOutPolLowPkts      Logical Interface Policer Output Low Pkts
+%edes        ifJnxOutPolLow1SecRate  Logical Interface Policer Output Low 1 Sec Rate
+%edes        ifJnxOutPolMLowOctets   Logical Interface Policer Output Medium Low Bytes
+%edes        ifJnxOutPolMLowPkts     Logical Interface Policer Input Medium Low Pkts
+%edes        ifJnxOutPolMLow1SecRate Logical Interface Policer Output Medium Low 1 Sec Rate
+%edes        ifJnxOutPolMHighOctets  Logical Interface Policer Output Medium High Bytes
+%edes        ifJnxOutPolMHighPkts    Logical Interface Policer Output Medium High Pkts
+%edes        ifJnxOutPolMHigh1SecRate Logical Interface Policer Output Medium High 1 Sec Rate
+%edes        ifJnxOutPolHighOctets   Logical Interface Policer Output High Bytes
+%edes        ifJnxOutPolHighPkts     Logical Interface Policer Output High Pkts
+%edes        ifJnxOutPolHigh1SecRate Logical Interface Policer Output High 1 Sec Rate
+%edes        ifJnxOutPolDropOctets   Logical Interface Policer Output Drop Bytes
+%edes        ifJnxOutPolDropPkts     Logical Interface Policer Output Drop Pkts
+%edes        ifJnxOutPolDrop1SecRate Logical Interface Policer Output Drop 1 Sec Rate
+%edes        jnxHrStorageTable       Augments the hrStorageTable with additional data.
+%edes        jnxHrStorageEntry       Each entry provides additional file system data beyond that\n            available in the hrStorageTable.
+%edes        jnxHrStoragePercentUsed The amount of the storage represented by this entry\n            that is allocated, as a percentage of the total amount\n            available.
+%edes        jnxHrSystemOpenFiles    The Number of open files in the system.
+%edes        jnxOpticsConfigTable    Information about the optics config Table. 
+%edes        jnxOpticsConfigEntry    A conceptual row that contains information about the optics\n             config Table.
+%edes        jnxOpticsConfigContainerIndex The associated jnxContentsContainerIndex  - eg shelf..
+%edes        jnxOpticsConfigL1Index  The level one index associated with this subject ... eg fpc\n             slot.
+%edes        jnxOpticsConfigL2Index  The level two index associated with this subject .. eg pic\n             slot.
+%edes        jnxOpticsConfigL3Index  The level three index associated with this subject.. eg port.
+%edes        jnxOpticsType            0 - none \n              1 - SFP\n              2 - XFP\n              3 - SFP+\n              4 - XFP+\n              5 - CFP\n              6 - CFP+  \n              7 - Non pluggable 
+%edes        jnxLaserEnable           0 - laser off\n              1 - laser on 
+%eunits      jnxWavelength           0.01 nm
+%edes        jnxWavelength           The transmit wavelength of the laser.
+%edes        jnxSpacing              A minimum nominal difference in frequency (GHz) between two\n             adjacent channels.
+%edes        jnxModulation           Modulation \n             Unknown - (1),\n             NonPSK  - (2),\n             ODB     - (3),\n             DPSK    - (4),\n             QPSK    - (5),\n             DQPSK   - (6),\n             DPQPSK  - (7),\n             16QAM   - (8),\n             64QAM  -  (9),\n             256QAM -  (10)\n            
+%eunits      jnxTxOpticalPower       0.01 dbm
+%edes        jnxTxOpticalPower       Transmit optical power.
+%eunits      jnxRxOpticalPower       0.01 dbm
+%edes        jnxRxOpticalPower       Receive optical power.
+%eunits      jnxModuleTempHighThresh Celsius (0.01 degrees C)
+%edes        jnxModuleTempHighThresh High module temerature in degree fahrenheit for a 15 minute period \n             above which a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnxModuleTempLowThresh  Celsius (0.01 degrees C)
+%edes        jnxModuleTempLowThresh  Low module temerature in degree fahrenheit for a 15 minute period\n             above which a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnxTxPowerHighThresh    0.01 dbm
+%edes        jnxTxPowerHighThresh    Tx power for a 15 minute period above which \n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnxTxPowerLowThresh     0.01 dbm
+%edes        jnxTxPowerLowThresh     Tx Power for a 15 minute period below which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnxRxPowerHighThresh    0.01 dbm
+%edes        jnxRxPowerHighThresh    Rx power for a 15 minute period above which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnxRxPowerLowThresh     0.01 dbm
+%edes        jnxRxPowerLowThresh     Rx Power for a 15 minute period below which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnx24HourModuleTempHighThresh Celsius (0.01 degrees C)
+%edes        jnx24HourModuleTempHighThresh High module temerature in degree fahrenheit for a 24 hour period\n             above which a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnx24HourModuleTempLowThresh Celsius (0.01 degrees C)
+%edes        jnx24HourModuleTempLowThresh Low module temerature in degree fahrenheit for a 24 hour period\n             above which a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnx24HourTxPowerHighThresh 0.01 dbm
+%edes        jnx24HourTxPowerHighThresh Tx power for a 24 hour period above which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnx24HourTxPowerLowThresh 0.01 dbm
+%edes        jnx24HourTxPowerLowThresh Tx for a 24 hour period Power below which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnx24HourRxPowerHighThresh 0.01 dbm
+%edes        jnx24HourRxPowerHighThresh Rx power for a 24 hour period above which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnx24HourRxPowerLowThresh 0.01 dbm
+%edes        jnx24HourRxPowerLowThresh Rx Power for a 24 hour period below which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnxRxLosPowerWarningThresh 0.01 dbm
+%edes        jnxRxLosPowerWarningThresh Rx Power warning threshold for seeting the optical LOS \n             warning. 
+%eunits      jnxRxLosPowerAlarmThresh 0.01 dbm
+%edes        jnxRxLosPowerAlarmThresh Rx Power alarm threshold for seeting the optical LOS \n             warning. 
+%edes        jnxOpticsCurrentStatus   
+%edes        jnxTxPowerHighEnableTCA  Enable/Disable for the Tx Power High TCA.
+%edes        jnxTxPowerLowEnableTCA   Enable/Disable for the Tx Power Low TCA.
+%edes        jnxRxPowerHighEnableTCA  Enable/Disable for the Rx Power High TCA.
+%edes        jnxRxPowerLowEnableTCA   Enable/Disable for the Rx Power Low TCA.
+%edes        jnxModuleTempHighEnableTCA  Enable/Disable for the Module Temp High TCA.
+%edes        jnxModuleTempLowEnableTCA  Enable/Disable for the Module Temp Low TCA.
+%edes        jnxCarFreqOffsetHighEnableTCA  Enable/Disable for the Carrier Frequency Offset High TCA.
+%edes        jnxCarFreqOffsetLowEnableTCA  Enable/Disable for the CarrierFreqOffetLow TCA's.
+%eunits      jnxCarFreqOffsetHighThresh MHz
+%edes        jnxCarFreqOffsetHighThresh Carrier frequency offset for a 15 minute period above which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnx24HourCarFreqOffsetHighThresh MHz
+%edes        jnx24HourCarFreqOffsetHighThresh Carrier frequency offset for a 24 Hour period above which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnxCarFreqOffsetLowThresh MHz
+%edes        jnxCarFreqOffsetLowThresh Carrier frequency offset for a 15 minute period Low which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%eunits      jnx24HourCarFreqOffsetLowThresh MHz
+%edes        jnx24HourCarFreqOffsetLowThresh Carrier frequency offset for a 24 Hour period Low which\n             a Threshold Crossing Alert (TCA) should be sent.\n             Only one TCA will be sent per period .
+%edes        jnxOpticsTraceToneCfgTable Information about the optics tests.
+%edes        jnxOpticsTraceToneCfgEntry Information about the optics FRU's.
+%edes        jnxOpticsTraceToneCfgContainerIndex The associated jnxContentsContainerIndex  - eg shelf..
+%edes        jnxOpticsTraceToneCfgL1Index The level one index associated with this subject ... eg fpc\n             slot.
+%edes        jnxOpticsTraceToneCfgL2Index The level two index associated with this subject .. eg pic\n             slot.
+%edes        jnxOpticsTraceToneCfgL3Index The level three index associated with this subject..\n             eg port.
+%edes        jnxOpticsTraceToneCfgTxEnable This will enable/disable the transmit Trace tone feature.
+%edes        jnxOpticsTraceToneCfgRxEnable This will enable/disable the receive Trace tone feature.
+%edes        jnxOpticsTraceToneCfgDestId This is the destination Id of the link\n             ID/ the chassis and the blade.\n             The transmit messages will also have the src id\n             which is this chassis id and this port info.
+%edes        jnxOpticsTraceToneCfgTxMsg This will be the transmit data in the tracetone message.
+%edes        jnxOpticsTraceToneCfgRxMsg This will be the receive data in the trace tone message.
+%edes        jnxOpticsNotificationTrigDefaultHoldtimeUp \n                   This object will indicate the time (ms) for the defect to\n                   persist before it is declared an alarm.\n                
+%edes        jnxOpticsNotificationTrigDefaultHoldtimeDown \n                   This object will indicate the time (ms) for the defect to\n                   absent before the alarm is cleared.\n                
+%edes        jnxOpticsNotificationTrigTable Information about the otn Alarm/Alart/Info trigger table. 
+%edes        jnxOpticsNotificationTrigEntry A conceptual row that contains information about the Otn\n                  Alarm Trigger Table.\n                 
+%edes        jnxOpticsNotificationTrigContainerIndex The associated jnxContentsContainerIndex  - eg shelf.
+%edes        jnxOpticsNotificationTrigL1Index The level one index associated with this subject ... eg fpc\n                 slot.
+%edes        jnxOpticsNotificationTrigL2Index The level two index associated with this subject .. eg pic\n                 slot.
+%edes        jnxOpticsNotificationTrigL3Index The level three index associated with this subject..\n                 eg port.\n                
+%edes        jnxOpticsNotificationTrigAlmId \n                 This will be the type of Alarm as defined by \n                 JnxOpticsNotificationId\n                
+%edes        jnxOpticsNotificationTrigSeverity \n                 This will be the Severity of the Notification.\n                
+%edes        jnxOpticsNotificationTrigIgnore \n                   This object will ignore the alarm when set.\n                
+%edes        jnxOpticsNotificationTrigHoldtimeUp \n                   This object will indicate the time (ms) for the defect to\n                   persist before it is declared an alarm.\n                
+%edes        jnxOpticsNotificationTrigHoldtimeDown \n                   This object will indicate the time (ms) the defect is\n                   absent before the alarm is cleared.\n                
+%edes        jnxOpticsTrigServiceStateAction \n                   This will indicate whether this alarm is service affecting\n                   or not .\n                
+%edes        jnxOpticsClearAllPMs     To clear all optics Performance monitoring counters on all\n                  interfaces. 
+%edes        jnxOpticsClearIfPMsTable  To clear optics Performance monitoring counters on this\n                  interfaces 
+%edes        jnxOpticsClearIfPMsEntry A conceptual row that s used to clear the Optics PM Table.
+%edes        jnxOpticsClearCurrent    1- to clear all the Current Optics PM's for this interface\n               
+%edes        jnxOpticsClearInterfaceInterval  1- to clear all the Optics PM's intervals(1-96) for this\n                 interface\n               
+%edes        jnxOpticsClearInterfaceDay  1 - to clear all the Current Day and Previous Day Optics PM's\n                     for this interface\n               
+%edes        jnxOpticsClearInterfaceAll  1 - to clear all the  Optics PM's for this interface\n               
+%edes        jnxOpticsPMCurrentTable A table of current PM entries.
+%edes        jnxOpticsPMCurrentEntry A conceptual row that contains information about the PM Current\n          Table.
+%eunits      jnxPMCurChromaticDispersion ps/nm
+%edes        jnxPMCurChromaticDispersion Residual Chromatic Dispersion measured at Rx Transceiver\n              port
+%eunits      jnxPMCurDiffGroupDelay  ps
+%edes        jnxPMCurDiffGroupDelay  Differential group delay 
+%eunits      jnxPMCurPolarizationState rad/s
+%edes        jnxPMCurPolarizationState  Polarization state 
+%eunits      jnxPMCurPolarDepLoss    0.1 dB
+%edes        jnxPMCurPolarDepLoss    The polarisation dependent loss (PDL) is the difference (in dB)\n             between the maximum and minimum values of the channel insertion\n             loss (or gain) of the black-link from point SS to RS due to a\n             variation of the state of polarization (SOP) over all SOPs
+%eunits      jnxPMCurQ               0.1 dB
+%edes        jnxPMCurQ               'Q' factor estimated at Rx Transceiver port 
+%eunits      jnxPMCurSNR             0.1 dB
+%edes        jnxPMCurSNR             SNR - signal to noise ratio
+%eunits      jnxPMCurTxOutputPower   0.01 dbm
+%edes        jnxPMCurTxOutputPower   TxOutputPower  - transmit output power 
+%eunits      jnxPMCurRxInputPower    0.01 dbm
+%edes        jnxPMCurRxInputPower    RxInputPower   - receive output power
+%eunits      jnxPMCurMinChromaticDispersion ps/nm
+%edes        jnxPMCurMinChromaticDispersion Min Residual Chromatic Dispersion measured at Rx Transceiver\n              port
+%eunits      jnxPMCurMaxChromaticDispersion ps/nm
+%edes        jnxPMCurMaxChromaticDispersion Max Residual Chromatic Dispersion measured at Rx Transceiver\n              port
+%eunits      jnxPMCurAvgChromaticDispersion ps/nm
+%edes        jnxPMCurAvgChromaticDispersion Average Residual Chromatic Dispersion measured at Rx Transceiver\n              port
+%eunits      jnxPMCurMinDiffGroupDelay ps
+%edes        jnxPMCurMinDiffGroupDelay Min Differential group delay 
+%eunits      jnxPMCurMaxDiffGroupDelay ps
+%edes        jnxPMCurMaxDiffGroupDelay Max Differential group delay 
+%eunits      jnxPMCurAvgDiffGroupDelay ps
+%edes        jnxPMCurAvgDiffGroupDelay Average Differential group delay 
+%eunits      jnxPMCurMinPolarState   rad/s
+%edes        jnxPMCurMinPolarState   Min Polarization state 
+%eunits      jnxPMCurMaxPolarState   rad/s
+%edes        jnxPMCurMaxPolarState   Max Polarization state 
+%eunits      jnxPMCurAvgPolarState   rad/s
+%edes        jnxPMCurAvgPolarState   Avg Polarization state 
+%eunits      jnxPMCurMinPolarDepLoss 0.1 dB
+%edes        jnxPMCurMinPolarDepLoss Min - The polarisation dependent loss (PDL)
+%eunits      jnxPMCurMaxPolarDepLoss 0.1 dB
+%edes        jnxPMCurMaxPolarDepLoss Max - The polarisation dependent loss (PDL)
+%eunits      jnxPMCurAvgPolarDepLoss 0.1 dB
+%edes        jnxPMCurAvgPolarDepLoss Avg - The polarisation dependent loss (PDL)
+%eunits      jnxPMCurMinQ            0.1 dB
+%edes        jnxPMCurMinQ            Min 'Q' factor estimated at Rx Transceiver port 
+%eunits      jnxPMCurMaxQ            0.1 dB
+%edes        jnxPMCurMaxQ            Max 'Q' factor estimated at Rx Transceiver port 
+%eunits      jnxPMCurAvgQ            0.1 dB
+%edes        jnxPMCurAvgQ            Avg 'Q' factor estimated at Rx Transceiver port 
+%eunits      jnxPMCurMinSNR          0.1 dB
+%edes        jnxPMCurMinSNR          Min SNR - signal to noise ratio
+%eunits      jnxPMCurMaxSNR          0.1 dB
+%edes        jnxPMCurMaxSNR          Max SNR - signal to noise ratio
+%eunits      jnxPMCurAvgSNR          0.1 dB
+%edes        jnxPMCurAvgSNR          Avg SNR - signal to noise ratio
+%eunits      jnxPMCurMinTxOutputPower 0.01 dbm
+%edes        jnxPMCurMinTxOutputPower Min TxOutputPower  - transmit output power 
+%eunits      jnxPMCurMaxTxOutputPower 0.01 dbm
+%edes        jnxPMCurMaxTxOutputPower Max TxOutputPower  - transmit output power 
+%eunits      jnxPMCurAvgTxOutputPower 0.01 dbm
+%edes        jnxPMCurAvgTxOutputPower Avg TxOutputPower  - transmit output power 
+%eunits      jnxPMCurMinRxInputPower 0.01 dbm
+%edes        jnxPMCurMinRxInputPower Min RxInputPower   - receive output power
+%eunits      jnxPMCurMaxRxInputPower 0.01 dbm
+%edes        jnxPMCurMaxRxInputPower Max RxInputPower   - receive output power
+%eunits      jnxPMCurAvgRxInputPower 0.01 dbm
+%edes        jnxPMCurAvgRxInputPower Avg RxInputPower   - receive output power
+%edes        jnxPMCurSuspectedFlag   If true, the data in this entry may be unreliable.
+%edes        jnxPMCurSuspectReason   If SuspectedFlag is true, the reson for the PM data being suspect.\n              0 - not applicable\n              1 - unknown\n              2 - new object\n              3 - interface disabled\n              4 - clock shift detected\n              5 - cleared by user\n              6 - interval too short secs < 890\n              7 - interval too long secs > 910\n              8 - near end unavailable\n              9 - far end unavailable\n             10 - partial data\n             11 - missing intervals due to restarts\n            
+%eunits      jnxPMCurTxLaserBiasCurrent .1 mA
+%edes        jnxPMCurTxLaserBiasCurrent Trasmit LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMCurMinTxLaserBiasCurrent .1 mA
+%edes        jnxPMCurMinTxLaserBiasCurrent Minimum trasmit LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMCurMaxTxLaserBiasCurrent .1 mA
+%edes        jnxPMCurMaxTxLaserBiasCurrent Maximum trasmit LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMCurAvgTxLaserBiasCurrent .1 mA
+%edes        jnxPMCurAvgTxLaserBiasCurrent Average LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMCurTemperature     .1 Celcius
+%edes        jnxPMCurTemperature     Temperature  measured at  Transceiver port
+%eunits      jnxPMCurMinTemperature  .1 Celcius
+%edes        jnxPMCurMinTemperature  Minimum   Temperature  measured at  Transceiver port
+%eunits      jnxPMCurMaxTemperature  .1 Celcius
+%edes        jnxPMCurMaxTemperature  Maximum Temperature measure  at  Transceiver port
+%eunits      jnxPMCurAvgTemperature  .1 Celcius
+%edes        jnxPMCurAvgTemperature  Average Temperature measure  at  Transceiver port
+%eunits      jnxPMCurCarFreqOffset   MHz
+%edes        jnxPMCurCarFreqOffset   Carrier frequency offset measured at  Transceiver port
+%eunits      jnxPMCurMinCarFreqOffset MHz
+%edes        jnxPMCurMinCarFreqOffset Minimum Carrier frequency offset measured at  Transceiver port
+%eunits      jnxPMCurMaxCarFreqOffset MHz
+%edes        jnxPMCurMaxCarFreqOffset Maximum Carrier frequency offset measured at  Transceiver port
+%eunits      jnxPMCurAvgCarFreqOffset MHz
+%edes        jnxPMCurAvgCarFreqOffset Average Carrier frequency offset measured at Transceiver port
+%eunits      jnxPMCurRxLaserBiasCurrent .1 mA
+%edes        jnxPMCurRxLaserBiasCurrent Received LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMCurMinRxLaserBiasCurrent .1 mA
+%edes        jnxPMCurMinRxLaserBiasCurrent Received Minimum LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMCurMaxRxLaserBiasCurrent .1 mA
+%edes        jnxPMCurMaxRxLaserBiasCurrent Received Maximum LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMCurAvgRxLaserBiasCurrent .1 mA
+%edes        jnxPMCurAvgRxLaserBiasCurrent Received Average LaserBiasCurrent measured at  Transceiver port
+%edes        jnxOpticsPMIntervalTable A table of current PM  entries.
+%edes        jnxOpticsPMIntervalEntry A conceptual row that contains information about the PM Interval\n          Table.
+%edes        jnxOpticsPMIntervalNumber This is the 15 mintute interavl number.
+%eunits      jnxPMIntMinChromaticDispersion ps/nm
+%edes        jnxPMIntMinChromaticDispersion Residual Chromatic Dispersion measured at Rx Transceiver\n             port - min in the 15 minute interval
+%eunits      jnxPMIntMaxChromaticDispersion ps/nm
+%edes        jnxPMIntMaxChromaticDispersion Residual Chromatic Dispersion measured at Rx Transceiver\n             port - max in the 15 minute interval
+%eunits      jnxPMIntAvgChromaticDispersion ps/nm
+%edes        jnxPMIntAvgChromaticDispersion Residual Chromatic Dispersion measured at Rx Transceiver\n             port - average in the 15 minute interval
+%eunits      jnxPMIntMinDiffGroupDelay ps
+%edes        jnxPMIntMinDiffGroupDelay Differential group delay measured at Rx Transceiver\n             port -- min in the 15 minute interval
+%eunits      jnxPMIntMaxDiffGroupDelay ps
+%edes        jnxPMIntMaxDiffGroupDelay Differential group delay measured at Rx Transceiver\n             port -- max in the 15 minute interval
+%eunits      jnxPMIntAvgDiffGroupDelay ps
+%edes        jnxPMIntAvgDiffGroupDelay Differential group delay measured at Rx Transceiver\n             port -- average in the 15 minute interval
+%eunits      jnxPMIntMinPolarState   rad/s
+%edes        jnxPMIntMinPolarState   Polarization state -- min in the 15 minute interval
+%eunits      jnxPMIntMaxPolarState   rad/s
+%edes        jnxPMIntMaxPolarState   Polarization state -- max in the 15 minute interval
+%eunits      jnxPMIntAvgPolarState   rad/s
+%edes        jnxPMIntAvgPolarState   Polarization state -- average in the 15 minute interval
+%eunits      jnxPMIntMinPolarDependentLoss 0.1 dB
+%edes        jnxPMIntMinPolarDependentLoss Polarization Dependent Loss -- min in the 15 minute interval
+%eunits      jnxPMIntMaxPolarDependentLoss 0.1 dB
+%edes        jnxPMIntMaxPolarDependentLoss Polarization Dependent Loss -- max in the 15 minute interval
+%eunits      jnxPMIntAvgPolarDependentLoss 0.1 dB
+%edes        jnxPMIntAvgPolarDependentLoss Polarization Dependent Loss  -- average in the 15 minute\n              interval
+%eunits      jnxPMIntMinQ            0.1 dB
+%edes        jnxPMIntMinQ            Q -- min in the 15 minute interval
+%eunits      jnxPMIntMaxQ            0.1 dB
+%edes        jnxPMIntMaxQ            Q -- max in the 15 minute interval
+%eunits      jnxPMIntAvgQ            0.1 dB
+%edes        jnxPMIntAvgQ            Q -- Avg in the 15 minute interval
+%eunits      jnxPMIntMinSNR          0.1 dB
+%edes        jnxPMIntMinSNR          SNR -- min in the 15 minute interval
+%eunits      jnxPMIntMaxSNR          0.1 dB
+%edes        jnxPMIntMaxSNR          SNR -- max in the 15 minute interval
+%eunits      jnxPMIntAvgSNR          0.1 dB
+%edes        jnxPMIntAvgSNR          SNR -- avg in the 15 minute interval
+%eunits      jnxPMIntMinTxOutputPower 0.01 dbm
+%edes        jnxPMIntMinTxOutputPower TxOutputPower -- min in the 15 minute interval
+%eunits      jnxPMIntMaxTxOutputPower 0.01 dbm
+%edes        jnxPMIntMaxTxOutputPower TxOutputPower  -- max in the 15 minute interval
+%eunits      jnxPMIntAvgTxOutputPower 0.01 dbm
+%edes        jnxPMIntAvgTxOutputPower TxOutputPower  -- average in the 15 minute interval
+%eunits      jnxPMIntMinRxInputPower 0.01 dbm
+%edes        jnxPMIntMinRxInputPower RxInputPower -- min in the 15 minute interval
+%eunits      jnxPMIntMaxRxInputPower 0.01 dbm
+%edes        jnxPMIntMaxRxInputPower RxInputPower  -- max in the 15 minute interval
+%eunits      jnxPMIntAvgRxInputPower 0.01 dbm
+%edes        jnxPMIntAvgRxInputPower RxInputPower  -- average in the 15 minute interval
+%edes        jnxPMIntTimeStamp       Time stamp PM interval
+%edes        jnxPMIntSuspectedFlag   If true, the data in this entry may be unreliable.
+%edes        jnxPMIntSuspectReason   If SuspectedFlag is true, the reson for the PM data being suspect.\n              0 - not applicable\n              1 - unknown\n              2 - new object\n              3 - interface disabled\n              4 - clock shift detected\n              5 - cleared by user\n              6 - interval too short secs < 890\n              7 - interval too long secs > 910\n              8 - near end unavailable\n              9 - far end unavailable\n             10 - partial data\n             11 - missing intervals due to restarts\n            
+%eunits      jnxPMIntMinTxLaserBiasCurrent .1 mA
+%edes        jnxPMIntMinTxLaserBiasCurrent Transmit Minimum LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMIntMaxTxLaserBiasCurrent .1 mA
+%edes        jnxPMIntMaxTxLaserBiasCurrent Transmit Maximum LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMIntAvgTxLaserBiasCurrent .1 mA
+%edes        jnxPMIntAvgTxLaserBiasCurrent Transmit Average LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMIntMinTemperature  .1 Celcius
+%edes        jnxPMIntMinTemperature  Minimum   Temperature  measured at  Transceiver port
+%eunits      jnxPMIntMaxTemperature  .1 Celcius
+%edes        jnxPMIntMaxTemperature  Maximum Temperature measure  at  Transceiver port
+%eunits      jnxPMIntAvgTemperature  .1 Celcius
+%edes        jnxPMIntAvgTemperature  Average Temperature measure  at  Transceiver port
+%eunits      jnxPMIntMinCarFreqOffset Mhz
+%edes        jnxPMIntMinCarFreqOffset Minimum Carrier frequency offset measured at  Transceiver port
+%eunits      jnxPMIntMaxCarFreqOffset MHz
+%edes        jnxPMIntMaxCarFreqOffset Maximum Carrier frequency offset measured at  Transceiver port
+%eunits      jnxPMIntAvgCarFreqOffset MHz
+%edes        jnxPMIntAvgCarFreqOffset Average Carrier frequency offset measured at  Transceiver port
+%eunits      jnxPMIntMinRxLaserBiasCurrent .1 mA
+%edes        jnxPMIntMinRxLaserBiasCurrent Receive Minimum LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMIntMaxRxLaserBiasCurrent .1 mA
+%edes        jnxPMIntMaxRxLaserBiasCurrent Receive Maximum LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMIntAvgRxLaserBiasCurrent .1 mA
+%edes        jnxPMIntAvgRxLaserBiasCurrent Receive Average LaserBiasCurrent measured at  Transceiver port
+%edes        jnxOpticsPMDayTable     A table of current PM Day entries.
+%edes        jnxOpticsPMDayEntry     A conceptual row that contains information about the PM Day\n          Table
+%edes        jnxOpticsPMDayIndex     This is 1 - cur day/ 2 - prev day 
+%eunits      jnxPMDayMinChromaticDispersion ps/nm
+%edes        jnxPMDayMinChromaticDispersion Residual Chromatic Dispersion measured at Rx Transceiver\n             port - min in the day
+%eunits      jnxPMDayMaxChromaticDispersion ps/nm
+%edes        jnxPMDayMaxChromaticDispersion Residual Chromatic Dispersion measured at Rx Transceiver\n             port - max in the day
+%eunits      jnxPMDayAvgChromaticDispersion ps/nm
+%edes        jnxPMDayAvgChromaticDispersion Residual Chromatic Dispersion measured at Rx Transceiver\n             port - average in the day
+%eunits      jnxPMDayMinDiffGroupDelay ps
+%edes        jnxPMDayMinDiffGroupDelay Differential Group Delay measured at Rx Transceiver\n             port -- min in the day
+%eunits      jnxPMDayMaxDiffGroupDelay ps
+%edes        jnxPMDayMaxDiffGroupDelay Differential Group Delay measured at Rx Transceiver\n             port -- max in the day
+%eunits      jnxPMDayAvgDiffGroupDelay ps
+%edes        jnxPMDayAvgDiffGroupDelay Differential Group Delay measured at Rx Transceiver\n             port -- average in the day
+%eunits      jnxPMDayMinPolarState   rad/s
+%edes        jnxPMDayMinPolarState   Polarization state -- min in the day
+%eunits      jnxPMDayMaxPolarState   rad/s
+%edes        jnxPMDayMaxPolarState   Polarization state -- max in the day
+%eunits      jnxPMDayAvgPolarState   rad/s
+%edes        jnxPMDayAvgPolarState   Polarization state -- average in the day
+%eunits      jnxPMDayMinPolarDependentLoss 0.1 dB
+%edes        jnxPMDayMinPolarDependentLoss Polarization Dependent Loss -- min in the day
+%eunits      jnxPMDayMaxPolarDependentLoss 0.1 dB
+%edes        jnxPMDayMaxPolarDependentLoss Polarization Dependent Loss -- max in the day
+%eunits      jnxPMDayAvgPolarDependentLoss 0.1 dB
+%edes        jnxPMDayAvgPolarDependentLoss Polarization Dependent Loss  -- average in the day\n             interval
+%eunits      jnxPMDayMinQ            0.1 dB
+%edes        jnxPMDayMinQ            Q -- min in the day
+%eunits      jnxPMDayMaxQ            0.1 dB
+%edes        jnxPMDayMaxQ            Q -- max in the day
+%eunits      jnxPMDayAvgQ            0.1 dB
+%edes        jnxPMDayAvgQ            Q -- Avg in the day
+%eunits      jnxPMDayMinSNR          0.1 dB
+%edes        jnxPMDayMinSNR          SNR -- min in the day
+%eunits      jnxPMDayMaxSNR          0.1 dB
+%edes        jnxPMDayMaxSNR          SNR -- max in the day
+%eunits      jnxPMDayAvgSNR          0.1 dB
+%edes        jnxPMDayAvgSNR          SNR -- avg in the day
+%eunits      jnxPMDayMinTxOutputPower 0.01 dbm
+%edes        jnxPMDayMinTxOutputPower TxOutputPower -- min in the day
+%eunits      jnxPMDayMaxTxOutputPower 0.01 dbm
+%edes        jnxPMDayMaxTxOutputPower TxOutputPower  -- max in the day.
+%eunits      jnxPMDayAvgTxOutputPower 0.01 dbm
+%edes        jnxPMDayAvgTxOutputPower TxOutputPower  -- average in the day.
+%eunits      jnxPMDayMinRxInputPower 0.01 dbm
+%edes        jnxPMDayMinRxInputPower RxInputPower -- min in the day.
+%eunits      jnxPMDayMaxRxInputPower 0.01 dbm
+%edes        jnxPMDayMaxRxInputPower RxInputPower  -- max in the day.
+%eunits      jnxPMDayAvgRxInputPower 0.01 dbm
+%edes        jnxPMDayAvgRxInputPower RxInputPower  -- average in the day.
+%edes        jnxPMDayTimeStamp       Time for the Day.
+%edes        jnxPMDaySuspectedFlag   If true, the data in this entry may be unreliable.
+%edes        jnxPMDaySuspectReason   If SuspectedFlag is true, the reson for the PM data being suspect.\n              0 - not applicable\n              1 - unknown\n              2 - new object\n              3 - interface disabled\n              4 - clock shift detected\n              5 - cleared by user\n              6 - partial data\n              7 - one or more intervals are invaild\n            
+%eunits      jnxPMDayMinTxLaserBiasCurrent .1 mA
+%edes        jnxPMDayMinTxLaserBiasCurrent Transmit LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMDayMaxTxLaserBiasCurrent .1 mA
+%edes        jnxPMDayMaxTxLaserBiasCurrent Transmit Minimum LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMDayAvgTxLaserBiasCurrent .1 mA
+%edes        jnxPMDayAvgTxLaserBiasCurrent Transmit Maximum LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMDayMinTemperature  .1 Celcius
+%edes        jnxPMDayMinTemperature  Minimum   Temperature  measured at  Transceiver port
+%eunits      jnxPMDayMaxTemperature  .1 Celcius
+%edes        jnxPMDayMaxTemperature  Maximum Temperature measure  at  Transceiver port
+%eunits      jnxPMDayAvgTemperature  .1 Celcius
+%edes        jnxPMDayAvgTemperature  Average Temperature measure  at  Transceiver port
+%eunits      jnxPMDayMinCarFreqOffset Mhz
+%edes        jnxPMDayMinCarFreqOffset Minimum Carrier frequency offset measured at  Transceiver port
+%eunits      jnxPMDayMaxCarFreqOffset MHz
+%edes        jnxPMDayMaxCarFreqOffset Maximum Carrier frequency offset measured at  Transceiver port
+%eunits      jnxPMDayAvgCarFreqOffset MHz
+%edes        jnxPMDayAvgCarFreqOffset Average Carrier frequency offset measured at  Transceiver port
+%eunits      jnxPMDayMinRxLaserBiasCurrent .1 mA
+%edes        jnxPMDayMinRxLaserBiasCurrent Receive LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMDayMaxRxLaserBiasCurrent .1 mA
+%edes        jnxPMDayMaxRxLaserBiasCurrent Receive Minimum LaserBiasCurrent measured at  Transceiver port
+%eunits      jnxPMDayAvgRxLaserBiasCurrent .1 mA
+%edes        jnxPMDayAvgRxLaserBiasCurrent Receive Maximum LaserBiasCurrent measured at  Transceiver port
+%edes        jnxOpticsNotificationTable A table of Notification entries.
+%edes        jnxOpticsNotificationEntry A conceptual entry in the Notification table.
+%edes        jnxOpticsNotificationLocation The object identifies indicates if this entry was for\n             Near end/Far end.
+%edes        jnxOpticsNotificationDirection The object identifies indicates if this entry was for\n             for the Tx/Rx or both.
+%edes        jnxOpticsLastNotificationId The object identifies the OTN alarm that most recently\n             was set or cleared.
+%edes        jnxOpticsNotificationSeverity The object identifies the severity of the last  alarm/alert\n             that most recently was set or cleared.
+%edes        jnxOpticsNotificationDate This specifies the date and time when this alarm occurred.
+%edes        jnxTraps                The root of Juniper's Trap OIDs.
+%edes        jnxPowerSupplyFailure   A jnxPowerSupplyFailure trap signifies that\n		the SNMP entity, acting in an agent role, has\n		detected that the specified power supply in the\n		chassis has been in the failure (bad DC output) \n		condition.
+%edes        jnxFanFailure           A jnxFanFailure trap signifies that the SNMP\n		entity, acting in an agent role, has detected\n		that the specified cooling fan or impeller in \n		the chassis has been in the failure (not spinning) \n		condition.
+%edes        jnxOverTemperature      A jnxOverTemperature trap signifies that the \n		SNMP entity, acting in an agent role, has \n		detected that the specified hardware component\n		in the chassis has experienced over temperature\n		condition.
+%edes        jnxRedundancySwitchover A jnxRedundancySwitchover trap signifies that \n		the SNMP entity, acting in an agent role, has \n		detected that the specified hardware component\n		in the chassis has experienced a redundancy \n		switchover event defined as a change in state\n		of jnxRedundancyState from master to backup or\n		vice versa.
+%edes        jnxFruRemoval           A jnxFruRemoval trap signifies that the SNMP \n		entity, acting in an agent role, has detected \n		that the specified FRU (Field Replaceable Unit)\n		has been removed from the chassis.
+%edes        jnxFruInsertion         A jnxFruInsertion trap signifies that the SNMP \n		entity,	acting in an agent role, has detected that\n		the specified FRU (Field Replaceable Unit) has been \n		inserted into the chassis.
+%edes        jnxFruPowerOff          A jnxFruPowerOff trap signifies that the SNMP \n		entity, acting in an agent role, has detected \n		that the specified FRU (Field Replaceable Unit)\n		has been powered off in the chassis.
+%edes        jnxFruPowerOn           A jnxFruPowerOn trap signifies that the SNMP \n		entity,	acting in an agent role, has detected that\n		the specified FRU (Field Replaceable Unit) has been \n		powered on in the chassis.
+%edes        jnxFruFailed            This indicates the specified FRU (Field Replaceable Unit)\n                 has failed in the chassis. Most probably this is due toi\n                 some hard error such as fru is not powering up or not\n                 able to load ukernel. In these cases, fru is replaced.
+%edes        jnxFruOffline           A jnxFruOffline trap signifies that the SNMP\n                entity, acting in an agent role, has detected\n                that the specified FRU (Field Replaceable Unit)\n                has gone offline in the chassis.
+%edes        jnxFruOnline            A jnxFruOnline trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                the specified FRU (Field Replaceable Unit) has\n                gone online in the chassis.
+%edes        jnxFruCheck             A jnxFruCheck trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                the specified FRU (Field Replaceable Unit) has\n                encountered some operational errors and gone into\n                check state in the chassis.
+%edes        jnxFEBSwitchover        A jnxFEBSwitchover trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                the specified FEB (Forwarding Engine Board) has\n                switched over.
+%edes        jnxHardDiskFailed       A jnxHardDiskFailed trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                the Disk in the specified Routing Engine has\n                encountered some operational errors and gone into\n                failed state in the chassis.
+%edes        jnxHardDiskMissing      A DiskMissing trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                hard disk in the specified outing Engine is missing\n                from boot device list.
+%edes        jnxBootFromBackup       A jnxBootFromBackup trap signifies that the SNMP\n                 entity, acting in an agent role, has detected that\n                 the specified  routing-engine/member has booted from\n                 the back up root partition
+%edes        jnxFmLinkErr            A LinkErr trap signifies that the SNMP\n                entity, acting in an agent role, has detected\n                link errors.
+%edes        jnxFmCellDropErr        A CellDropErr trap signifies that the SNMP\n                entity, acting in an agent role, has detected \n                cell drop errors.
+%edes        jnxExtSrcLockLost       A ExtSrcLockLost trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                a lock for an external clock source has been lost.
+%edes        jnxPlaneOffline         A jnxPlaneOffline trap signifies that the SNMP\n                entity, acting in an agent role, has detected\n                that the specified Fabric plane\n                has gone offline in the chassis.
+%edes        jnxPlaneOnline          A jnxPlaneOnline trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                the specified Fabric Plane has\n                gone online in the chassis.
+%edes        jnxPlaneCheck           A jnxPlaneCheck trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                the specified Fabric plane has\n                encountered some operational errors and gone into\n                check state in the chassis.
+%edes        jnxPlaneFault           A jnxPlaneCheck trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                the specified Fabric plane has\n                encountered some operational errors and gone into\n                fault state in the chassis.
+%edes        jnxPowerSupplyInputFailure A jnxPowerSupplyInputFailure trap signifies that\n            the SNMP entity, acting in an agent role, has\n            detected that the specified power supply's input feed \n            in the chassis has been in the failure condition.
+%edes        jnxPowerSupplyOK        A jnxPowerSupplyOK trap signifies that the \n		SNMP entity, acting in an agent role, has\n		detected that the specified power supply in the\n		chassis has recovered from the failure (bad DC output) \n		condition.
+%edes        jnxFanOK                A jnxFanOK trap signifies that the SNMP\n		entity, acting in an agent role, has detected that\n		the specified cooling fan or impeller in the chassis\n		has recovered from the failure (not spinning) condition.
+%edes        jnxTemperatureOK        A jnxTemperatureOK trap signifies that the \n		SNMP entity, acting in an agent role, has \n		detected that the specified hardware component\n		in the chassis has recovered from over temperature\n		condition.
+%edes        jnxFruOK                A jnxFruOK trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                the specified FRU (Field Replaceable Unit) has\n                recovered from previous operational errors and it\n                is in ok state in the chassis.
+%edes        jnxExtSrcLockAcquired   A ExtSrcLockAcquired trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                a lock for an external clock source has been acquired.
+%edes        jnxHardDiskOK           A jnxHardDiskOK trap signifies that the SNMP\n                entity, acting in an agent role, has detected that\n                the Disk in the specified Routing Engine has\n                recovered from the failure condition.
+%edes        jnxPowerSupplyInputOK   A jnxPowerSupplyInputOK trap signifies that the \n            SNMP entity, acting in an agent role, has detected \n            that the specified power supply's input feed in the\n            chassis has recovered from the failure condition.
+%edes        jnxOpticsNotificationSet Notification of a recently set optics alarm.
+%edes        jnxOpticsNotificationCleared Notification of a recently cleared optics alarm.
+%edes        snmpTrapOID             The authoritative identification of the notification\n               currently being sent.  This variable occurs as\n               the second varbind in every SNMPv2-Trap-PDU and\n               InformRequest-PDU.
+%edes        snmpTrapEnterprise      The authoritative identification of the enterprise\n               associated with the trap currently being sent.  When an\n               SNMP proxy agent is mapping an RFC1157 Trap-PDU\n               into a SNMPv2-Trap-PDU, this variable occurs as the\n               last varbind.
+%edes        coldStart               A coldStart trap signifies that the SNMP entity,\n               supporting a notification originator application, is\n               reinitializing itself and that its configuration may\n               have been altered.
+%edes        warmStart               A warmStart trap signifies that the SNMP entity,\n               supporting a notification originator application,\n               is reinitializing itself such that its configuration\n               is unaltered.
+%edes        linkDown                A linkDown trap signifies that the SNMP entity, acting in\n            an agent role, has detected that the ifOperStatus object for\n            one of its communication links is about to enter the down\n            state from some other state (but not from the notPresent\n            state).  This other state is indicated by the included value\n            of ifOperStatus.
+%edes        linkUp                  A linkUp trap signifies that the SNMP entity, acting in an\n            agent role, has detected that the ifOperStatus object for\n            one of its communication links left the down state and\n            transitioned into some other state (but not into the\n            notPresent state).  This other state is indicated by the\n            included value of ifOperStatus.
+%edes        authenticationFailure   An authenticationFailure trap signifies that the SNMP\n                entity has received a protocol message that is not\n                properly authenticated.  While all implementations\n                of SNMP entities MAY be capable of generating this\n                trap, the snmpEnableAuthenTraps object indicates\n                whether this trap will be generated.
+%edes        snmpSetSerialNo         An advisory lock used to allow several cooperating\n               command generator applications to coordinate their\n               use of the SNMP set operation.\n\n               This object is used for coarse-grain coordination.\n               To achieve fine-grain coordination, one or more similar\n               objects might be defined within each MIB group, as\n               appropriate.
+%edes        snmpSetGroup            A collection of objects which allow several cooperating\n               command generator applications to coordinate their\n               use of the set operation.
+%edes        systemGroup             The system group defines objects which are common to all\n               managed systems.
+%edes        snmpBasicNotificationsGroup The basic notifications implemented by an SNMP entity\n           supporting command responder applications.
+%edes        snmpGroup               A collection of objects providing basic instrumentation\n               and control of an SNMP entity.
+%edes        snmpCommunityGroup1     A collection of objects providing basic instrumentation\n               of a SNMP entity which supports community-based\n               authentication.
+%est                 snmpObsoleteGroup obsolete
+%edes        snmpObsoleteGroup       A collection of objects from RFC 1213 made obsolete\n               by this MIB module.
+%edes        snmpWarmStartNotificationGroup An additional notification for an SNMP entity supporting\n        command responder applications, if it is able to reinitialize\n        itself such that its configuration is unaltered.
+%edes        snmpNotificationGroup   These objects are required for entities\n               which support notification originator applications.
+sysDescr                25
+sysObjectID             300
+sysUpTime               904
+sysContact              1088
+sysName                 1378
+sysLocation             1648
+sysServices             1859
+sysORLastChange         3133
+sysORTable              3295
+sysOREntry              3687
+sysORIndex              3771
+sysORID                 3923
+sysORDescr              4177
+sysORUpTime             4327
+ifNumber                4460
+ifTable                 4605
+ifEntry                 4744
+ifIndex                 4877
+ifDescr                 5281
+ifType                  5547
+ifMtu                   5808
+ifSpeed                 6146
+ifPhysAddress           6811
+ifAdminStatus           7312
+ifOperStatus            7872
+ifLastChange            8767
+ifInOctets              9099
+ifInUcastPkts           9467
+ifInNUcastPkts          9920
+ifInDiscards            10477
+ifInErrors              11051
+ifInUnknownProtos       11721
+ifOutOctets             12554
+ifOutUcastPkts          12929
+ifOutNUcastPkts         13454
+ifOutDiscards           14085
+ifOutErrors             14620
+ifOutQLen               15197
+ifSpecific              15288
+snmpInPkts              16015
+snmpOutPkts             16156
+snmpInBadVersions       16335
+snmpInBadCommunityNames 16522
+snmpInBadCommunityUses  17445
+snmpInASNParseErrs      18287
+snmpInTooBigs           18451
+snmpInNoSuchNames       18681
+snmpInBadValues         18915
+snmpInReadOnlys         19147
+snmpInGenErrs           19676
+snmpInTotalReqVars      19890
+snmpInTotalSetVars      20145
+snmpInGetRequests       20369
+snmpInGetNexts          20550
+snmpInSetRequests       20712
+snmpInGetResponses      20893
+snmpInTraps             21075
+snmpOutTooBigs          21233
+snmpOutNoSuchNames      21447
+snmpOutBadValues        21659
+snmpOutGenErrs          21875
+snmpOutGetRequests      22089
+snmpOutGetNexts         22241
+snmpOutSetRequests      22390
+snmpOutGetResponses     22542
+snmpOutTraps            22695
+snmpEnableAuthenTraps   22840
+snmpSilentDrops         23425
+snmpProxyDrops          24058
+hrSystemUptime          24631
+hrSystemDate            24916
+hrSystemInitialLoadDevice 25008
+hrSystemInitialLoadParameters 25482
+hrSystemNumUsers        25929
+hrSystemProcesses       26216
+hrSystemMaxProcesses    26339
+hrMemorySize            26654
+hrStorageTable          26833
+hrStorageEntry          28290
+hrStorageIndex          28497
+hrStorageType           28613
+hrStorageDescr          28699
+hrStorageAllocationUnits 28826
+hrStorageSize           29187
+hrStorageUsed           29725
+hrStorageAllocationFailures 29891
+hrDeviceTable           30360
+hrDeviceEntry           30465
+hrDeviceIndex           30666
+hrDeviceType            30913
+hrDeviceDescr           31684
+hrDeviceID              31864
+hrDeviceStatus          31935
+hrDeviceErrors          32840
+hrProcessorTable        33228
+hrProcessorEntry        33529
+hrProcessorFrwID        33933
+hrProcessorLoad         34043
+hrNetworkTable          34283
+hrNetworkEntry          34587
+hrNetworkIfIndex        34994
+hrPrinterTable          35195
+hrPrinterEntry          35479
+hrPrinterStatus         35873
+hrPrinterDetectedErrorState 35955
+hrDiskStorageTable      37373
+hrDiskStorageEntry      37794
+hrDiskStorageAccess     38175
+hrDiskStorageMedia      38467
+hrDiskStorageRemoveble  38590
+hrDiskStorageCapacity   38707
+hrPartitionTable        38939
+hrPartitionEntry        39178
+hrPartitionIndex        39560
+hrPartitionLabel        39851
+hrPartitionID           39931
+hrPartitionSize         40141
+hrPartitionFSIndex      40254
+hrFSTable               40660
+hrFSEntry               40937
+hrFSIndex               41380
+hrFSMountPoint          41635
+hrFSRemoteMountPoint    41721
+hrFSType                42055
+hrFSAccess              42169
+hrFSBootable            42488
+hrFSStorageIndex        42592
+hrFSLastFullBackupDate  43001
+hrFSLastPartialBackupDate 43467
+hrSWOSIndex             43937
+hrSWRunTable            44212
+hrSWRunEntry            44316
+hrSWRunIndex            44950
+hrSWRunName             45156
+hrSWRunID               45500
+hrSWRunPath             45589
+hrSWRunParameters       45754
+hrSWRunType             45890
+hrSWRunStatus           45956
+hrSWRunPerfTable        46199
+hrSWRunPerfEntry        46311
+hrSWRunPerfCPU          46531
+hrSWRunPerfMem          46838
+hrSWInstalledLastChange 46998
+hrSWInstalledLastUpdateTime 47351
+hrSWInstalledTable      47728
+hrSWInstalledEntry      47835
+hrSWInstalledIndex      48115
+hrSWInstalledName       48346
+hrSWInstalledID         48584
+hrSWInstalledType       48675
+hrSWInstalledDate       48741
+hrSystemGroup           49094
+hrStorageGroup          49166
+hrDeviceGroup           49239
+hrSWRunGroup            49311
+hrSWRunPerfGroup        49393
+hrSWInstalledGroup      49500
+ifXTable                49584
+ifXEntry                49801
+ifName                  49945
+ifInMulticastPkts       50961
+ifInBroadcastPkts       51488
+ifOutMulticastPkts      51924
+ifOutBroadcastPkts      52523
+ifHCInOctets            53031
+ifHCInUcastPkts         53460
+ifHCInMulticastPkts     53977
+ifHCInBroadcastPkts     54572
+ifHCOutOctets           55076
+ifHCOutUcastPkts        55513
+ifHCOutMulticastPkts    56103
+ifHCOutBroadcastPkts    56771
+ifLinkUpDownTrapEnable  57348
+ifHighSpeed             57720
+ifPromiscuousMode       58298
+ifConnectorPresent      58965
+ifAlias                 59153
+ifCounterDiscontinuityTime 60646
+ifStackTable            61217
+ifStackEntry            62448
+ifStackHigherLayer      62724
+ifStackLowerLayer       63114
+ifStackStatus           63468
+ifTestTable             63971
+ifTestEntry             70250
+ifTestId                70366
+ifTestStatus            70489
+ifTestType              70909
+ifTestResult            72020
+ifTestCode              72437
+ifTestOwner             73091
+ifRcvAddressTable       73235
+ifRcvAddressEntry       74123
+ifRcvAddressAddress     74344
+ifRcvAddressStatus      74482
+ifRcvAddressType        74606
+ifTableLastChange       75188
+ifStackLastChange       75536
+ifGeneralGroup          76025
+ifFixedLengthGroup      76203
+ifHCFixedLengthGroup    76539
+ifPacketGroup           76780
+ifHCPacketGroup         77071
+ifVHCPacketGroup        77342
+ifRcvAddressGroup       77554
+ifTestGroup             77707
+ifStackGroup            77889
+ifGeneralInformationGroup 78087
+ifStackGroup2           78225
+ifOldObjectsGroup       78361
+ifCounterDiscontinuityGroup 78546
+linkUpDownNotificationsGroup 78695
+jnxProducts             78832
+jnxServices             78907
+jnxMibs                 78983
+jnxBoxClass             79057
+jnxBoxDescr             79201
+jnxBoxSerialNo          79361
+jnxBoxRevision          79472
+jnxBoxInstalled         79577
+jnxContainersTable      79765
+jnxContainersEntry      79834
+jnxContainersIndex      79903
+jnxContainersView       79968
+jnxContainersLevel      81196
+jnxContainersWithin     81525
+jnxContainersType       81746
+jnxContainersDescr      81813
+jnxContainersCount      81905
+jnxContentsLastChange   82153
+jnxContentsTable        82325
+jnxContentsEntry        82392
+jnxContentsContainerIndex 82459
+jnxContentsL1Index      82565
+jnxContentsL2Index      82707
+jnxContentsL3Index      82849
+jnxContentsType         82993
+jnxContentsDescr        83086
+jnxContentsSerialNo     83178
+jnxContentsRevision     83289
+jnxContentsInstalled    83395
+jnxContentsPartNo       83583
+jnxContentsChassisId    83692
+jnxContentsChassisDescr 83813
+jnxContentsChassisCleiCode 83948
+jnxLEDLastChange        85479
+jnxLEDTable             85651
+jnxLEDEntry             85716
+jnxLEDAssociateTable    85781
+jnxLEDAssociateIndex    85873
+jnxLEDL1Index           85977
+jnxLEDL2Index           86133
+jnxLEDL3Index           86289
+jnxLEDOriginator        86446
+jnxLEDDescr             86519
+jnxLEDState             86608
+jnxLEDStateOrdered      86679
+jnxFilledLastChange     86889
+jnxFilledTable          87070
+jnxFilledEntry          87142
+jnxFilledContainerIndex 87214
+jnxFilledL1Index        87318
+jnxFilledL2Index        87460
+jnxFilledL3Index        87602
+jnxFilledDescr          87746
+jnxFilledState          87838
+jnxFilledChassisId      87911
+jnxFilledChassisDescr   88032
+jnxOperatingTable       88167
+jnxOperatingEntry       88242
+jnxOperatingContentsIndex 88317
+jnxOperatingL1Index     88428
+jnxOperatingL2Index     88558
+jnxOperatingL3Index     88689
+jnxOperatingDescr       88821
+jnxOperatingState       88910
+jnxOperatingTemp        88986
+jnxOperatingCPU         89123
+jnxOperatingISR         89255
+jnxOperatingDRAMSize    89432
+jnxOperatingBuffer      89551
+jnxOperatingHeap        89694
+jnxOperatingUpTime      89831
+jnxOperatingLastRestart 90001
+jnxOperatingMemory      90143
+jnxOperatingStateOrdered 90283
+jnxOperatingChassisId   90507
+jnxOperatingChassisDescr 90628
+jnxOperatingRestartTime 90764
+jnxOperating1MinLoadAvg 90866
+jnxOperating5MinLoadAvg 91073
+jnxOperating15MinLoadAvg 91280
+jnxRedundancyTable      91489
+jnxRedundancyEntry      91570
+jnxRedundancyContentsIndex 91655
+jnxRedundancyL1Index    91767
+jnxRedundancyL2Index    91897
+jnxRedundancyL3Index    92028
+jnxRedundancyDescr      92160
+jnxRedundancyConfig     92249
+jnxRedundancyState      92513
+jnxRedundancySwitchoverCount 92596
+jnxRedundancySwitchoverTime 92926
+jnxRedundancySwitchoverReason 93192
+jnxRedundancyKeepaliveHeartbeat 93289
+jnxRedundancyKeepaliveTimeout 93551
+jnxRedundancyKeepaliveElapsed 93767
+jnxRedundancyKeepaliveLoss 93971
+jnxRedundancyChassisId  94217
+jnxRedundancyChassisDescr 94338
+jnxFruTable             94475
+jnxFruEntry             94544
+jnxFruContentsIndex     94617
+jnxFruL1Index           94726
+jnxFruL2Index           94856
+jnxFruL3Index           94987
+jnxFruName              95119
+jnxFruType              95208
+jnxFruSlot              95278
+jnxFruState             95444
+jnxFruTemp              95519
+jnxFruOfflineReason     95656
+jnxFruLastPowerOff      95731
+jnxFruLastPowerOn       95875
+jnxFruPowerUpTime       96018
+jnxFruChassisId         96220
+jnxFruChassisDescr      96341
+jnxFruPsdAssignment     96476
+jnxBoxKernelMemoryUsedPercent 96607
+jnxBoxSystemDomainType  96747
+jnxBoxPersonality       96894
+mplsLspInfoUp           97042
+mplsLspInfoDown         97221
+mplsLspInfoChange       97407
+mplsLspInfoPathDown     97650
+mplsLspInfoPathUp       97819
+mplsVersion             97984
+mplsSignalingProto      98044
+mplsConfiguredLsps      98108
+mplsActiveLsps          98174
+mplsTEDistProtocol      98236
+mplsAdminGroupList      98422
+mplsAdminGroup          98681
+mplsAdminGroupNumber    98870
+mplsAdminGroupName      98944
+mplsLspList             99017
+mplsLspEntry            99212
+mplsLspName             99446
+mplsLspState            99646
+mplsLspOctets           99719
+mplsLspPackets          100155
+mplsLspAge              100592
+mplsLspTimeUp           100724
+mplsLspPrimaryTimeUp    100972
+mplsLspTransitions      101285
+mplsLspLastTransition   101418
+mplsLspPathChanges      101548
+mplsLspLastPathChange   101758
+mplsLspConfiguredPaths  101884
+mplsLspStandbyPaths     101968
+mplsLspOperationalPaths 102070
+mplsLspFrom             102254
+mplsLspTo               102324
+mplsPathName            102399
+mplsPathType            102633
+mplsPathExplicitRoute   103081
+mplsPathRecordRoute     103575
+mplsPathBandwidth       103883
+mplsPathCOS             104083
+mplsPathInclude         104472
+mplsPathExclude         104958
+mplsPathSetupPriority   105440
+mplsPathHoldPriority    105586
+mplsPathProperties      105731
+mplsLspUp               106028
+mplsLspDown             106250
+mplsLspChange           106479
+mplsLspPathDown         106769
+mplsLspPathUp           106981
+mplsLspInfoList         107189
+mplsLspInfoEntry        107269
+mplsLspInfoName         107387
+mplsLspInfoState        107459
+mplsLspInfoOctets       107532
+mplsLspInfoPackets      107968
+mplsLspInfoAge          108405
+mplsLspInfoTimeUp       108537
+mplsLspInfoPrimaryTimeUp 108793
+mplsLspInfoTransitions  109115
+mplsLspInfoLastTransition 109248
+mplsLspInfoPathChanges  109380
+mplsLspInfoLastPathChange 109590
+mplsLspInfoConfiguredPaths 109718
+mplsLspInfoStandbyPaths 109805
+mplsLspInfoOperationalPaths 109907
+mplsLspInfoFrom         110095
+mplsLspInfoTo           110165
+mplsPathInfoName        110240
+mplsPathInfoType        110478
+mplsPathInfoExplicitRoute 110934
+mplsPathInfoRecordRoute 111434
+mplsPathInfoBandwidth   111746
+mplsPathInfoCOS         111950
+mplsPathInfoInclude     112343
+mplsPathInfoExclude     112833
+mplsPathInfoSetupPriority 113319
+mplsPathInfoHoldPriority 113471
+mplsPathInfoProperties  113621
+mplsLspInfoAggrOctets   113922
+mplsLspInfoAggrPackets  114466
+mplsPathInfoRecordRouteWithLabels 115009
+ifJnxTable              115375
+ifJnxEntry              115600
+ifIn1SecRate            115734
+ifIn1SecOctets          115876
+ifIn1SecPkts            116041
+ifOut1SecRate           116185
+ifOut1SecOctets         116325
+ifOut1SecPkts           116488
+ifHCIn1SecRate          116631
+ifHCOut1SecRate         116825
+ifJnxInErrors           117018
+ifJnxInFrameErrors      117118
+ifJnxInQDrops           117242
+ifJnxInRunts            117380
+ifJnxInGiants           117502
+ifJnxInDiscards         117625
+ifJnxInHslCrcErrors     117802
+ifJnxInHslFifoOverFlows 118036
+ifJnxInL3Incompletes    118252
+ifJnxInL2ChanErrors     118402
+ifJnxInL2MismatchTimeouts 118573
+ifJnxInInvalidVCs       118785
+ifJnxInFifoErrors       118918
+ifJnxBucketDrops        119074
+ifJnxSramErrors         119239
+ifJnxOutErrors          119391
+ifJnxCollisions         119491
+ifJnxCarrierTrans       119619
+ifJnxOutQDrops          119765
+ifJnxOutAgedErrors      119903
+ifJnxOutFifoErrors      120104
+ifJnxOutHslFifoUnderFlows 120261
+ifJnxOutHslCrcErrors    120481
+ifJnxCrcErrors          120718
+ifJnxFcsErrors          120794
+ifHCIn1SecOctets        120870
+ifHCOut1SecOctets       121067
+ifChassisTable          121263
+ifChassisEntry          121582
+ifChassisFpc            121716
+ifChassisPic            122217
+ifChassisPort           122693
+ifChassisChannel        123182
+ifChassisLogicalUnit    123599
+ifChassisPicIndex       124077
+ifJnxErrors             124893
+ifJnxPolTable           125039
+ifJnxPolEntry           125306
+ifJnxInPolLowOctets     125454
+ifJnxInPolLowPkts       125535
+ifJnxInPolLow1SecRate   125615
+ifJnxInPolMLowOctets    125701
+ifJnxInPolMLowPkts      125789
+ifJnxInPolMLow1SecRate  125876
+ifJnxInPolMHighOctets   125969
+ifJnxInPolMHighPkts     126058
+ifJnxInPolMHigh1SecRate 126146
+ifJnxInPolHighOctets    126240
+ifJnxInPolHighPkts      126322
+ifJnxInPolHigh1SecRate  126403
+ifJnxInPolDropOctets    126490
+ifJnxInPolDropPkts      126572
+ifJnxInPolDrop1SecRate  126653
+ifJnxOutPolLowOctets    126740
+ifJnxOutPolLowPkts      126822
+ifJnxOutPolLow1SecRate  126903
+ifJnxOutPolMLowOctets   126990
+ifJnxOutPolMLowPkts     127079
+ifJnxOutPolMLow1SecRate 127166
+ifJnxOutPolMHighOctets  127260
+ifJnxOutPolMHighPkts    127350
+ifJnxOutPolMHigh1SecRate 127439
+ifJnxOutPolHighOctets   127535
+ifJnxOutPolHighPkts     127618
+ifJnxOutPolHigh1SecRate 127700
+ifJnxOutPolDropOctets   127788
+ifJnxOutPolDropPkts     127871
+ifJnxOutPolDrop1SecRate 127953
+jnxHrStorageTable       128041
+jnxHrStorageEntry       128130
+jnxHrStoragePercentUsed 128275
+jnxHrSystemOpenFiles    128458
+jnxOpticsConfigTable    128537
+jnxOpticsConfigEntry    128620
+jnxOpticsConfigContainerIndex 128747
+jnxOpticsConfigL1Index  128847
+jnxOpticsConfigL2Index  128966
+jnxOpticsConfigL3Index  129084
+jnxOpticsType           129185
+jnxLaserEnable          129412
+jnxWavelength           129495
+jnxSpacing              129619
+jnxModulation           129751
+jnxTxOpticalPower       130106
+jnxRxOpticalPower       130217
+jnxModuleTempHighThresh 130327
+jnxModuleTempLowThresh  130626
+jnxTxPowerHighThresh    130923
+jnxTxPowerLowThresh     131171
+jnxRxPowerHighThresh    131418
+jnxRxPowerLowThresh     131665
+jnx24HourModuleTempHighThresh 131912
+jnx24HourModuleTempLowThresh 132220
+jnx24HourTxPowerHighThresh 132525
+jnx24HourTxPowerLowThresh 132776
+jnx24HourRxPowerHighThresh 133025
+jnx24HourRxPowerLowThresh 133276
+jnxRxLosPowerWarningThresh 133525
+jnxRxLosPowerAlarmThresh 133698
+jnxOpticsCurrentStatus  133865
+jnxTxPowerHighEnableTCA 133906
+jnxTxPowerLowEnableTCA  133988
+jnxRxPowerHighEnableTCA 134069
+jnxRxPowerLowEnableTCA  134151
+jnxModuleTempHighEnableTCA 134232
+jnxModuleTempLowEnableTCA 134320
+jnxCarFreqOffsetHighEnableTCA 134406
+jnxCarFreqOffsetLowEnableTCA 134510
+jnxCarFreqOffsetHighThresh 134605
+jnx24HourCarFreqOffsetHighThresh 134869
+jnxCarFreqOffsetLowThresh 135143
+jnx24HourCarFreqOffsetLowThresh 135403
+jnxOpticsTraceToneCfgTable 135673
+jnxOpticsTraceToneCfgEntry 135751
+jnxOpticsTraceToneCfgContainerIndex 135829
+jnxOpticsTraceToneCfgL1Index 135935
+jnxOpticsTraceToneCfgL2Index 136059
+jnxOpticsTraceToneCfgL3Index 136182
+jnxOpticsTraceToneCfgTxEnable 136302
+jnxOpticsTraceToneCfgRxEnable 136405
+jnxOpticsTraceToneCfgDestId 136507
+jnxOpticsTraceToneCfgTxMsg 136755
+jnxOpticsTraceToneCfgRxMsg 136854
+jnxOpticsNotificationTrigDefaultHoldtimeUp 136953
+jnxOpticsNotificationTrigDefaultHoldtimeDown 137168
+jnxOpticsNotificationTrigTable 137381
+jnxOpticsNotificationTrigEntry 137486
+jnxOpticsNotificationTrigContainerIndex 137648
+jnxOpticsNotificationTrigL1Index 137757
+jnxOpticsNotificationTrigL2Index 137889
+jnxOpticsNotificationTrigL3Index 138020
+jnxOpticsNotificationTrigAlmId 138166
+jnxOpticsNotificationTrigSeverity 138337
+jnxOpticsNotificationTrigIgnore 138470
+jnxOpticsNotificationTrigHoldtimeUp 138600
+jnxOpticsNotificationTrigHoldtimeDown 138808
+jnxOpticsTrigServiceStateAction 139010
+jnxOpticsClearAllPMs    139184
+jnxOpticsClearIfPMsTable 139315
+jnxOpticsClearIfPMsEntry 139443
+jnxOpticsClearCurrent   139542
+jnxOpticsClearInterfaceInterval 139658
+jnxOpticsClearInterfaceDay 139808
+jnxOpticsClearInterfaceAll 139971
+jnxOpticsPMCurrentTable 140084
+jnxOpticsPMCurrentEntry 140154
+jnxPMCurChromaticDispersion 140275
+jnxPMCurDiffGroupDelay  140444
+jnxPMCurPolarizationState 140551
+jnxPMCurPolarDepLoss    140660
+jnxPMCurQ               141036
+jnxPMCurSNR             141166
+jnxPMCurTxOutputPower   141279
+jnxPMCurRxInputPower    141406
+jnxPMCurMinChromaticDispersion 141531
+jnxPMCurMaxChromaticDispersion 141710
+jnxPMCurAvgChromaticDispersion 141889
+jnxPMCurMinDiffGroupDelay 142072
+jnxPMCurMaxDiffGroupDelay 142187
+jnxPMCurAvgDiffGroupDelay 142302
+jnxPMCurMinPolarState   142421
+jnxPMCurMaxPolarState   142529
+jnxPMCurAvgPolarState   142637
+jnxPMCurMinPolarDepLoss 142745
+jnxPMCurMaxPolarDepLoss 142874
+jnxPMCurAvgPolarDepLoss 143003
+jnxPMCurMinQ            143132
+jnxPMCurMaxQ            143266
+jnxPMCurAvgQ            143400
+jnxPMCurMinSNR          143534
+jnxPMCurMaxSNR          143651
+jnxPMCurAvgSNR          143768
+jnxPMCurMinTxOutputPower 143885
+jnxPMCurMaxTxOutputPower 144018
+jnxPMCurAvgTxOutputPower 144151
+jnxPMCurMinRxInputPower 144284
+jnxPMCurMaxRxInputPower 144413
+jnxPMCurAvgRxInputPower 144542
+jnxPMCurSuspectedFlag   144671
+jnxPMCurSuspectReason   144761
+jnxPMCurTxLaserBiasCurrent 145346
+jnxPMCurMinTxLaserBiasCurrent 145491
+jnxPMCurMaxTxLaserBiasCurrent 145650
+jnxPMCurAvgTxLaserBiasCurrent 145809
+jnxPMCurTemperature     145960
+jnxPMCurMinTemperature  146092
+jnxPMCurMaxTemperature  146234
+jnxPMCurAvgTemperature  146373
+jnxPMCurCarFreqOffset   146512
+jnxPMCurMinCarFreqOffset 146649
+jnxPMCurMaxCarFreqOffset 146796
+jnxPMCurAvgCarFreqOffset 146943
+jnxPMCurRxLaserBiasCurrent 147089
+jnxPMCurMinRxLaserBiasCurrent 147235
+jnxPMCurMaxRxLaserBiasCurrent 147395
+jnxPMCurAvgRxLaserBiasCurrent 147555
+jnxOpticsPMIntervalTable 147715
+jnxOpticsPMIntervalEntry 147787
+jnxOpticsPMIntervalNumber 147910
+jnxPMIntMinChromaticDispersion 147991
+jnxPMIntMaxChromaticDispersion 148197
+jnxPMIntAvgChromaticDispersion 148403
+jnxPMIntMinDiffGroupDelay 148613
+jnxPMIntMaxDiffGroupDelay 148802
+jnxPMIntAvgDiffGroupDelay 148991
+jnxPMIntMinPolarState   149184
+jnxPMIntMaxPolarState   149320
+jnxPMIntAvgPolarState   149456
+jnxPMIntMinPolarDependentLoss 149596
+jnxPMIntMaxPolarDependentLoss 149754
+jnxPMIntAvgPolarDependentLoss 149912
+jnxPMIntMinQ            150090
+jnxPMIntMaxQ            150210
+jnxPMIntAvgQ            150330
+jnxPMIntMinSNR          150450
+jnxPMIntMaxSNR          150572
+jnxPMIntAvgSNR          150694
+jnxPMIntMinTxOutputPower 150816
+jnxPMIntMaxTxOutputPower 150952
+jnxPMIntAvgTxOutputPower 151089
+jnxPMIntMinRxInputPower 151230
+jnxPMIntMaxRxInputPower 151363
+jnxPMIntAvgRxInputPower 151497
+jnxPMIntTimeStamp       151635
+jnxPMIntSuspectedFlag   151697
+jnxPMIntSuspectReason   151787
+jnxPMIntMinTxLaserBiasCurrent 152372
+jnxPMIntMaxTxLaserBiasCurrent 152532
+jnxPMIntAvgTxLaserBiasCurrent 152692
+jnxPMIntMinTemperature  152852
+jnxPMIntMaxTemperature  152994
+jnxPMIntAvgTemperature  153133
+jnxPMIntMinCarFreqOffset 153272
+jnxPMIntMaxCarFreqOffset 153419
+jnxPMIntAvgCarFreqOffset 153566
+jnxPMIntMinRxLaserBiasCurrent 153713
+jnxPMIntMaxRxLaserBiasCurrent 153872
+jnxPMIntAvgRxLaserBiasCurrent 154031
+jnxOpticsPMDayTable     154190
+jnxOpticsPMDayEntry     154264
+jnxOpticsPMDayIndex     154380
+jnxPMDayMinChromaticDispersion 154454
+jnxPMDayMaxChromaticDispersion 154645
+jnxPMDayAvgChromaticDispersion 154836
+jnxPMDayMinDiffGroupDelay 155031
+jnxPMDayMaxDiffGroupDelay 155205
+jnxPMDayAvgDiffGroupDelay 155379
+jnxPMDayMinPolarState   155557
+jnxPMDayMaxPolarState   155678
+jnxPMDayAvgPolarState   155799
+jnxPMDayMinPolarDependentLoss 155924
+jnxPMDayMaxPolarDependentLoss 156067
+jnxPMDayAvgPolarDependentLoss 156210
+jnxPMDayMinQ            156381
+jnxPMDayMaxQ            156486
+jnxPMDayAvgQ            156591
+jnxPMDayMinSNR          156696
+jnxPMDayMaxSNR          156803
+jnxPMDayAvgSNR          156910
+jnxPMDayMinTxOutputPower 157017
+jnxPMDayMaxTxOutputPower 157138
+jnxPMDayAvgTxOutputPower 157261
+jnxPMDayMinRxInputPower 157388
+jnxPMDayMaxRxInputPower 157507
+jnxPMDayAvgRxInputPower 157627
+jnxPMDayTimeStamp       157751
+jnxPMDaySuspectedFlag   157808
+jnxPMDaySuspectReason   157898
+jnxPMDayMinTxLaserBiasCurrent 158307
+jnxPMDayMaxTxLaserBiasCurrent 158459
+jnxPMDayAvgTxLaserBiasCurrent 158619
+jnxPMDayMinTemperature  158779
+jnxPMDayMaxTemperature  158921
+jnxPMDayAvgTemperature  159060
+jnxPMDayMinCarFreqOffset 159199
+jnxPMDayMaxCarFreqOffset 159346
+jnxPMDayAvgCarFreqOffset 159493
+jnxPMDayMinRxLaserBiasCurrent 159640
+jnxPMDayMaxRxLaserBiasCurrent 159791
+jnxPMDayAvgRxLaserBiasCurrent 159950
+jnxOpticsNotificationTable 160109
+jnxOpticsNotificationEntry 160184
+jnxOpticsNotificationLocation 160272
+jnxOpticsNotificationDirection 160403
+jnxOpticsLastNotificationId 160540
+jnxOpticsNotificationSeverity 160672
+jnxOpticsNotificationDate 160830
+jnxTraps                160930
+jnxPowerSupplyFailure   161002
+jnxFanFailure           161251
+jnxOverTemperature      161503
+jnxRedundancySwitchover 161749
+jnxFruRemoval           162097
+jnxFruInsertion         162321
+jnxFruPowerOff          162548
+jnxFruPowerOn           162775
+jnxFruFailed            163000
+jnxFruOffline           163317
+jnxFruOnline            163579
+jnxFruCheck             163839
+jnxFEBSwitchover        164165
+jnxHardDiskFailed       164417
+jnxHardDiskMissing      164748
+jnxBootFromBackup       165007
+jnxFmLinkErr            165280
+jnxFmCellDropErr        165451
+jnxExtSrcLockLost       165632
+jnxPlaneOffline         165853
+jnxPlaneOnline          166101
+jnxPlaneCheck           166347
+jnxPlaneFault           166659
+jnxPowerSupplyInputFailure 166971
+jnxPowerSupplyOK        167252
+jnxFanOK                167504
+jnxTemperatureOK        167753
+jnxFruOK                168000
+jnxExtSrcLockAcquired   168326
+jnxHardDiskOK           168555
+jnxPowerSupplyInputOK   168824
+jnxOpticsNotificationSet 169105
+jnxOpticsNotificationCleared 169190
+snmpTrapOID             169283
+snmpTrapEnterprise      169537
+coldStart               169861
+warmStart               170122
+linkDown                170375
+linkUp                  170791
+authenticationFailure   171209
+snmpSetSerialNo         171626
+snmpSetGroup            172067
+systemGroup             172271
+snmpBasicNotificationsGroup 172400
+snmpGroup               172552
+snmpCommunityGroup1     172694
+snmpObsoleteGroup       172885
+snmpWarmStartNotificationGroup 173062
+snmpNotificationGroup   173294

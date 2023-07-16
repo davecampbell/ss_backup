@@ -1,0 +1,173 @@
+<DeviceMap
+	Release = "11.0"
+	Description = ""
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	InterfaceName = ""
+	Separator = ""
+	StartInterfaceNum = "0"
+	Username = "">
+	<Device>
+		<General
+			Name = "10.1.1.1"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "C:\apps\SimpleSoft\SimpleAgentPro\cmf\mib2.cmf"
+			AgentFile = "C:\apps\SimpleSoft\SimpleAgentPro\var\juniper-ex4300.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+	<Device>
+		<General
+			Name = "10.1.1.2"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "C:\apps\SimpleSoft\SimpleAgentPro\cmf\mib2.cmf"
+			AgentFile = "C:\apps\SimpleSoft\SimpleAgentPro\var\juniper-ex4300.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+	<Device>
+		<General
+			Name = "10.1.1.3"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "C:\apps\SimpleSoft\SimpleAgentPro\cmf\mib2.cmf"
+			AgentFile = "C:\apps\SimpleSoft\SimpleAgentPro\var\juniper-ex4300.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+	<Device>
+		<General
+			Name = "10.1.1.4"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "C:\apps\SimpleSoft\SimpleAgentPro\cmf\mib2.cmf"
+			AgentFile = "C:\apps\SimpleSoft\SimpleAgentPro\var\juniper-ex4300.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+	<Device>
+		<General
+			Name = "10.1.1.5"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "C:\apps\SimpleSoft\SimpleAgentPro\cmf\mib2.cmf"
+			AgentFile = "C:\apps\SimpleSoft\SimpleAgentPro\var\juniper-ex4300.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+	<Device>
+		<General
+			Name = "10.1.1.6"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "C:\apps\SimpleSoft\SimpleAgentPro\cmf\mib2.cmf"
+			AgentFile = "C:\apps\SimpleSoft\SimpleAgentPro\var\juniper-ex4300.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+</DeviceMap>

@@ -1,0 +1,38 @@
+<DeviceMap
+	Release = "11.0"
+	Description = ""
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	InterfaceName = ""
+	Separator = ""
+	StartInterfaceNum = "0"
+	Username = "">
+	<Device>
+		<General
+			Name = "192.168.50.1"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "C:\apps\SimpleSoft\SimpleAgentPro\cmf\meraki-cloud-dashboard.cmf"
+			AgentFile = "C:\apps\SimpleSoft\SimpleAgentPro\var\meraki-cloud-dashboard-2.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+</DeviceMap>

@@ -1,0 +1,36 @@
+<DeviceMap
+	Release = "11.0"
+	Description = ""
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	InterfaceName = ""
+	Separator = ""
+	StartInterfaceNum = "0"
+	Username = "">
+	<Device>
+		<General
+			Name = "192.168.85.2"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "C:\apps\SimpleSoft\SimpleAgentPro\cmf\ciena.cmf"
+			AgentFile = "C:\apps\SimpleSoft\SimpleAgentPro\var\ciena_8114.var"
+			TrapMgr = ""
+			SnmpStr = "V2"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+		/>
+	</Device>
+</DeviceMap>

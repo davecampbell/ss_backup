@@ -1,0 +1,2435 @@
+1.3.6.1.2.1.1.1           sysDescr                OctetString  RO  S   (0,255) d
+1.3.6.1.2.1.1.2           sysObjectID             ObjectID     RO  S   
+1.3.6.1.2.1.1.3           sysUpTime               TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.2.1.1.4           sysContact              OctetString  RW  S   (0,255) d
+1.3.6.1.2.1.1.5           sysName                 OctetString  RW  S   (0,255) d
+1.3.6.1.2.1.1.6           sysLocation             OctetString  RW  S   (0,255) d
+1.3.6.1.2.1.1.7           sysServices             Integer      RO  S   (0,127)
+1.3.6.1.2.1.1.8           sysORLastChange         TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.2.1.1.9.1.1       sysORIndex              Integer      NA  C1  (1,2147483647)
+1.3.6.1.2.1.1.9.1.2       sysORID                 ObjectID     RO  C2  
+1.3.6.1.2.1.1.9.1.3       sysORDescr              OctetString  RO  C3  (0,255) d
+1.3.6.1.2.1.1.9.1.4       sysORUpTime             TimeTicks    RO  C4  (0,4294967295)
+1.3.6.1.2.1.2.1           ifNumber                Integer      RO  S   (-2147483648,2147483647)
+1.3.6.1.2.1.2.2.1.1       ifIndex                 Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.2.2.1.2       ifDescr                 OctetString  RO  C2  (0,255) d
+1.3.6.1.2.1.2.2.1.3       ifType                  Integer      RO  C3  (1,234) e
+1.3.6.1.2.1.2.2.1.4       ifMtu                   Integer      RO  C4  (-2147483648,2147483647)
+1.3.6.1.2.1.2.2.1.5       ifSpeed                 Gauge        RO  C5  (0,4294967295)
+1.3.6.1.2.1.2.2.1.6       ifPhysAddress           OctetString  RO  C6  
+1.3.6.1.2.1.2.2.1.7       ifAdminStatus           Integer      RW  C7  (1,3) e
+1.3.6.1.2.1.2.2.1.8       ifOperStatus            Integer      RO  C8  (1,7) e
+1.3.6.1.2.1.2.2.1.9       ifLastChange            TimeTicks    RO  C9  (0,4294967295)
+1.3.6.1.2.1.2.2.1.10      ifInOctets              Counter      RO  C10 (0,4294967295)
+1.3.6.1.2.1.2.2.1.11      ifInUcastPkts           Counter      RO  C11 (0,4294967295)
+1.3.6.1.2.1.2.2.1.12      ifInNUcastPkts          Counter      RO  C12 (0,4294967295)
+1.3.6.1.2.1.2.2.1.13      ifInDiscards            Counter      RO  C13 (0,4294967295)
+1.3.6.1.2.1.2.2.1.14      ifInErrors              Counter      RO  C14 (0,4294967295)
+1.3.6.1.2.1.2.2.1.15      ifInUnknownProtos       Counter      RO  C15 (0,4294967295)
+1.3.6.1.2.1.2.2.1.16      ifOutOctets             Counter      RO  C16 (0,4294967295)
+1.3.6.1.2.1.2.2.1.17      ifOutUcastPkts          Counter      RO  C17 (0,4294967295)
+1.3.6.1.2.1.2.2.1.18      ifOutNUcastPkts         Counter      RO  C18 (0,4294967295)
+1.3.6.1.2.1.2.2.1.19      ifOutDiscards           Counter      RO  C19 (0,4294967295)
+1.3.6.1.2.1.2.2.1.20      ifOutErrors             Counter      RO  C20 (0,4294967295)
+1.3.6.1.2.1.2.2.1.21      ifOutQLen               Gauge        RO  C21 (0,4294967295)
+1.3.6.1.2.1.2.2.1.22      ifSpecific              ObjectID     RO  C22 
+1.3.6.1.2.1.11.1          snmpInPkts              Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.2          snmpOutPkts             Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.3          snmpInBadVersions       Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.4          snmpInBadCommunityNames Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.5          snmpInBadCommunityUses  Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.6          snmpInASNParseErrs      Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.8          snmpInTooBigs           Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.9          snmpInNoSuchNames       Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.10         snmpInBadValues         Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.11         snmpInReadOnlys         Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.12         snmpInGenErrs           Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.13         snmpInTotalReqVars      Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.14         snmpInTotalSetVars      Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.15         snmpInGetRequests       Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.16         snmpInGetNexts          Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.17         snmpInSetRequests       Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.18         snmpInGetResponses      Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.19         snmpInTraps             Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.20         snmpOutTooBigs          Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.21         snmpOutNoSuchNames      Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.22         snmpOutBadValues        Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.24         snmpOutGenErrs          Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.25         snmpOutGetRequests      Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.26         snmpOutGetNexts         Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.27         snmpOutSetRequests      Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.28         snmpOutGetResponses     Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.29         snmpOutTraps            Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.30         snmpEnableAuthenTraps   Integer      RW  S   (1,2) e
+1.3.6.1.2.1.11.31         snmpSilentDrops         Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.11.32         snmpProxyDrops          Counter      RO  S   (0,4294967295)
+1.3.6.1.2.1.25.1.1        hrSystemUptime          TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.2.1.25.1.2        hrSystemDate            OctetString  RW  S   (8,11)
+1.3.6.1.2.1.25.1.3        hrSystemInitialLoadDevice Integer      RW  S   (1,2147483647)
+1.3.6.1.2.1.25.1.4        hrSystemInitialLoadParameters OctetString  RW  S   (0,128)
+1.3.6.1.2.1.25.1.5        hrSystemNumUsers        Gauge        RO  S   (0,4294967295)
+1.3.6.1.2.1.25.1.6        hrSystemProcesses       Gauge        RO  S   (0,4294967295)
+1.3.6.1.2.1.25.1.7        hrSystemMaxProcesses    Integer      RO  S   (0,2147483647)
+1.3.6.1.2.1.25.2.2        hrMemorySize            Integer      RO  S   (0,2147483647)
+1.3.6.1.2.1.25.2.3.1.1    hrStorageIndex          Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.2.3.1.2    hrStorageType           ObjectID     RO  C2  
+1.3.6.1.2.1.25.2.3.1.3    hrStorageDescr          OctetString  RO  C3  (0,255) d
+1.3.6.1.2.1.25.2.3.1.4    hrStorageAllocationUnits Integer      RO  C4  (1,2147483647)
+1.3.6.1.2.1.25.2.3.1.5    hrStorageSize           Integer      RW  C5  (0,2147483647)
+1.3.6.1.2.1.25.2.3.1.6    hrStorageUsed           Integer      RO  C6  (0,2147483647)
+1.3.6.1.2.1.25.2.3.1.7    hrStorageAllocationFailures Counter      RO  C7  (0,4294967295)
+1.3.6.1.2.1.25.3.2.1.1    hrDeviceIndex           Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.3.2.1.2    hrDeviceType            ObjectID     RO  C2  
+1.3.6.1.2.1.25.3.2.1.3    hrDeviceDescr           OctetString  RO  C3  (0,64) d
+1.3.6.1.2.1.25.3.2.1.4    hrDeviceID              ObjectID     RO  C4  
+1.3.6.1.2.1.25.3.2.1.5    hrDeviceStatus          Integer      RO  C5  (1,5) e
+1.3.6.1.2.1.25.3.2.1.6    hrDeviceErrors          Counter      RO  C6  (0,4294967295)
+1.3.6.1.2.1.25.3.3.1.1    hrProcessorFrwID        ObjectID     RO  C1  
+1.3.6.1.2.1.25.3.3.1.2    hrProcessorLoad         Integer      RO  C2  (0,100)
+1.3.6.1.2.1.25.3.4.1.1    hrNetworkIfIndex        Integer      RO  C1  (0,2147483647)
+1.3.6.1.2.1.25.3.5.1.1    hrPrinterStatus         Integer      RO  C1  (1,5) e
+1.3.6.1.2.1.25.3.5.1.2    hrPrinterDetectedErrorState OctetString  RO  C2  
+1.3.6.1.2.1.25.3.6.1.1    hrDiskStorageAccess     Integer      RO  C1  (1,2) e
+1.3.6.1.2.1.25.3.6.1.2    hrDiskStorageMedia      Integer      RO  C2  (1,8) e
+1.3.6.1.2.1.25.3.6.1.3    hrDiskStorageRemoveble  Integer      RO  C3  (1,2) e
+1.3.6.1.2.1.25.3.6.1.4    hrDiskStorageCapacity   Integer      RO  C4  (0,2147483647)
+1.3.6.1.2.1.25.3.7.1.1    hrPartitionIndex        Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.3.7.1.2    hrPartitionLabel        OctetString  RO  C2  (0,128)
+1.3.6.1.2.1.25.3.7.1.3    hrPartitionID           OctetString  RO  C3  
+1.3.6.1.2.1.25.3.7.1.4    hrPartitionSize         Integer      RO  C4  (0,2147483647)
+1.3.6.1.2.1.25.3.7.1.5    hrPartitionFSIndex      Integer      RO  C5  (0,2147483647)
+1.3.6.1.2.1.25.3.8.1.1    hrFSIndex               Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.3.8.1.2    hrFSMountPoint          OctetString  RO  C2  (0,128)
+1.3.6.1.2.1.25.3.8.1.3    hrFSRemoteMountPoint    OctetString  RO  C3  (0,128)
+1.3.6.1.2.1.25.3.8.1.4    hrFSType                ObjectID     RO  C4  
+1.3.6.1.2.1.25.3.8.1.5    hrFSAccess              Integer      RO  C5  (1,2) e
+1.3.6.1.2.1.25.3.8.1.6    hrFSBootable            Integer      RO  C6  (1,2) e
+1.3.6.1.2.1.25.3.8.1.7    hrFSStorageIndex        Integer      RO  C7  (0,2147483647)
+1.3.6.1.2.1.25.3.8.1.8    hrFSLastFullBackupDate  OctetString  RW  C8  (8,11)
+1.3.6.1.2.1.25.3.8.1.9    hrFSLastPartialBackupDate OctetString  RW  C9  (8,11)
+1.3.6.1.2.1.25.4.1        hrSWOSIndex             Integer      RO  S   (1,2147483647)
+1.3.6.1.2.1.25.4.2.1.1    hrSWRunIndex            Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.4.2.1.2    hrSWRunName             OctetString  RO  C2  (0,64)
+1.3.6.1.2.1.25.4.2.1.3    hrSWRunID               ObjectID     RO  C3  
+1.3.6.1.2.1.25.4.2.1.4    hrSWRunPath             OctetString  RO  C4  (0,128)
+1.3.6.1.2.1.25.4.2.1.5    hrSWRunParameters       OctetString  RO  C5  (0,128)
+1.3.6.1.2.1.25.4.2.1.6    hrSWRunType             Integer      RO  C6  (1,4) e
+1.3.6.1.2.1.25.4.2.1.7    hrSWRunStatus           Integer      RW  C7  (1,4) e
+1.3.6.1.2.1.25.5.1.1.1    hrSWRunPerfCPU          Integer      RO  C1  (0,2147483647)
+1.3.6.1.2.1.25.5.1.1.2    hrSWRunPerfMem          Integer      RO  C2  (0,2147483647)
+1.3.6.1.2.1.25.6.1        hrSWInstalledLastChange TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.2.1.25.6.2        hrSWInstalledLastUpdateTime TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.2.1.25.6.3.1.1    hrSWInstalledIndex      Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.6.3.1.2    hrSWInstalledName       OctetString  RO  C2  (0,64)
+1.3.6.1.2.1.25.6.3.1.3    hrSWInstalledID         ObjectID     RO  C3  
+1.3.6.1.2.1.25.6.3.1.4    hrSWInstalledType       Integer      RO  C4  (1,4) e
+1.3.6.1.2.1.25.6.3.1.5    hrSWInstalledDate       OctetString  RO  C5  (8,11)
+1.3.6.1.2.1.31.1.1.1.1    ifName                  OctetString  RO  C1  (0,255) d
+1.3.6.1.2.1.31.1.1.1.2    ifInMulticastPkts       Counter      RO  C2  (0,4294967295)
+1.3.6.1.2.1.31.1.1.1.3    ifInBroadcastPkts       Counter      RO  C3  (0,4294967295)
+1.3.6.1.2.1.31.1.1.1.4    ifOutMulticastPkts      Counter      RO  C4  (0,4294967295)
+1.3.6.1.2.1.31.1.1.1.5    ifOutBroadcastPkts      Counter      RO  C5  (0,4294967295)
+1.3.6.1.2.1.31.1.1.1.6    ifHCInOctets            Counter64    RO  C6  
+1.3.6.1.2.1.31.1.1.1.7    ifHCInUcastPkts         Counter64    RO  C7  
+1.3.6.1.2.1.31.1.1.1.8    ifHCInMulticastPkts     Counter64    RO  C8  
+1.3.6.1.2.1.31.1.1.1.9    ifHCInBroadcastPkts     Counter64    RO  C9  
+1.3.6.1.2.1.31.1.1.1.10   ifHCOutOctets           Counter64    RO  C10 
+1.3.6.1.2.1.31.1.1.1.11   ifHCOutUcastPkts        Counter64    RO  C11 
+1.3.6.1.2.1.31.1.1.1.12   ifHCOutMulticastPkts    Counter64    RO  C12 
+1.3.6.1.2.1.31.1.1.1.13   ifHCOutBroadcastPkts    Counter64    RO  C13 
+1.3.6.1.2.1.31.1.1.1.14   ifLinkUpDownTrapEnable  Integer      RW  C14 (1,2) e
+1.3.6.1.2.1.31.1.1.1.15   ifHighSpeed             Gauge        RO  C15 (0,4294967295)
+1.3.6.1.2.1.31.1.1.1.16   ifPromiscuousMode       Integer      RW  C16 (1,2) e
+1.3.6.1.2.1.31.1.1.1.17   ifConnectorPresent      Integer      RO  C17 (1,2) e
+1.3.6.1.2.1.31.1.1.1.18   ifAlias                 OctetString  RW  C18 (0,64) d
+1.3.6.1.2.1.31.1.1.1.19   ifCounterDiscontinuityTime TimeTicks    RO  C19 (0,4294967295)
+1.3.6.1.2.1.31.1.2.1.1    ifStackHigherLayer      Integer      NA  C1  (0,2147483647)
+1.3.6.1.2.1.31.1.2.1.2    ifStackLowerLayer       Integer      NA  C2  (0,2147483647)
+1.3.6.1.2.1.31.1.2.1.3    ifStackStatus           Integer      RC  C3  (1,6) r
+1.3.6.1.2.1.31.1.3.1.1    ifTestId                Integer      RW  C1  (0,2147483647)
+1.3.6.1.2.1.31.1.3.1.2    ifTestStatus            Integer      RW  C2  (1,2) e
+1.3.6.1.2.1.31.1.3.1.3    ifTestType              ObjectID     RW  C3  
+1.3.6.1.2.1.31.1.3.1.4    ifTestResult            Integer      RO  C4  (1,7) e
+1.3.6.1.2.1.31.1.3.1.5    ifTestCode              ObjectID     RO  C5  
+1.3.6.1.2.1.31.1.3.1.6    ifTestOwner             OctetString  RW  C6  (0,255)
+1.3.6.1.2.1.31.1.4.1.1    ifRcvAddressAddress     OctetString  NA  C1  
+1.3.6.1.2.1.31.1.4.1.2    ifRcvAddressStatus      Integer      RC  C2  (1,6) r
+1.3.6.1.2.1.31.1.4.1.3    ifRcvAddressType        Integer      RC  C3  (1,3) e
+1.3.6.1.2.1.31.1.5        ifTableLastChange       TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.2.1.31.1.6        ifStackLastChange       TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.4.1.2636.3.1.1    jnxBoxClass             ObjectID     RO  S   
+1.3.6.1.4.1.2636.3.1.2    jnxBoxDescr             OctetString  RO  S   (0,255) d
+1.3.6.1.4.1.2636.3.1.3    jnxBoxSerialNo          OctetString  RO  S   (0,255) d
+1.3.6.1.4.1.2636.3.1.4    jnxBoxRevision          OctetString  RO  S   (0,255) d
+1.3.6.1.4.1.2636.3.1.5    jnxBoxInstalled         TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.4.1.2636.3.1.6.1.1 jnxContainersIndex      Integer      RO  C1  (1,2147483647)
+1.3.6.1.4.1.2636.3.1.6.1.2 jnxContainersView       Integer      RO  C2  (1,63)
+1.3.6.1.4.1.2636.3.1.6.1.3 jnxContainersLevel      Integer      RO  C3  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.1.6.1.4 jnxContainersWithin     Integer      RO  C4  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.1.6.1.5 jnxContainersType       ObjectID     RO  C5  
+1.3.6.1.4.1.2636.3.1.6.1.6 jnxContainersDescr      OctetString  RO  C6  (0,255) d
+1.3.6.1.4.1.2636.3.1.6.1.7 jnxContainersCount      Integer      RO  C7  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.1.7    jnxContentsLastChange   TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.4.1.2636.3.1.8.1.1 jnxContentsContainerIndex Integer      RO  C1  (1,2147483647)
+1.3.6.1.4.1.2636.3.1.8.1.2 jnxContentsL1Index      Integer      RO  C2  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.8.1.3 jnxContentsL2Index      Integer      RO  C3  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.8.1.4 jnxContentsL3Index      Integer      RO  C4  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.8.1.5 jnxContentsType         ObjectID     RO  C5  
+1.3.6.1.4.1.2636.3.1.8.1.6 jnxContentsDescr        OctetString  RO  C6  (0,255) d
+1.3.6.1.4.1.2636.3.1.8.1.7 jnxContentsSerialNo     OctetString  RO  C7  (0,255) d
+1.3.6.1.4.1.2636.3.1.8.1.8 jnxContentsRevision     OctetString  RO  C8  (0,255) d
+1.3.6.1.4.1.2636.3.1.8.1.9 jnxContentsInstalled    TimeTicks    RO  C9  (0,4294967295)
+1.3.6.1.4.1.2636.3.1.8.1.10 jnxContentsPartNo       OctetString  RO  C10 (0,255) d
+1.3.6.1.4.1.2636.3.1.8.1.11 jnxContentsChassisId    Integer      RO  C11 (1,42) e
+1.3.6.1.4.1.2636.3.1.8.1.12 jnxContentsChassisDescr OctetString  RO  C12 (0,255) d
+1.3.6.1.4.1.2636.3.1.8.1.13 jnxContentsChassisCleiCode OctetString  RO  C13 (0,255) d
+1.3.6.1.4.1.2636.3.1.9    jnxLEDLastChange        TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.4.1.2636.3.1.10.1.1 jnxLEDAssociateTable    Integer      RO  C1  (1,3) e
+1.3.6.1.4.1.2636.3.1.10.1.2 jnxLEDAssociateIndex    Integer      RO  C2  (1,2147483647)
+1.3.6.1.4.1.2636.3.1.10.1.3 jnxLEDL1Index           Integer      RO  C3  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.10.1.4 jnxLEDL2Index           Integer      RO  C4  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.10.1.5 jnxLEDL3Index           Integer      RO  C5  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.10.1.6 jnxLEDOriginator        ObjectID     RO  C6  
+1.3.6.1.4.1.2636.3.1.10.1.7 jnxLEDDescr             OctetString  RO  C7  (0,255) d
+1.3.6.1.4.1.2636.3.1.10.1.8 jnxLEDState             Integer      RO  C8  (1,6) e
+1.3.6.1.4.1.2636.3.1.10.1.9 jnxLEDStateOrdered      Integer      RO  C9  (1,6) e
+1.3.6.1.4.1.2636.3.1.11   jnxFilledLastChange     TimeTicks    RO  S   (0,4294967295)
+1.3.6.1.4.1.2636.3.1.12.1.1 jnxFilledContainerIndex Integer      RO  C1  (1,2147483647)
+1.3.6.1.4.1.2636.3.1.12.1.2 jnxFilledL1Index        Integer      RO  C2  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.12.1.3 jnxFilledL2Index        Integer      RO  C3  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.12.1.4 jnxFilledL3Index        Integer      RO  C4  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.12.1.5 jnxFilledDescr          OctetString  RO  C5  (0,255) d
+1.3.6.1.4.1.2636.3.1.12.1.6 jnxFilledState          Integer      RO  C6  (1,3) e
+1.3.6.1.4.1.2636.3.1.12.1.7 jnxFilledChassisId      Integer      RO  C7  (1,42) e
+1.3.6.1.4.1.2636.3.1.12.1.8 jnxFilledChassisDescr   OctetString  RO  C8  (0,255) d
+1.3.6.1.4.1.2636.3.1.13.1.1 jnxOperatingContentsIndex Integer      RO  C1  (1,2147483647)
+1.3.6.1.4.1.2636.3.1.13.1.2 jnxOperatingL1Index     Integer      RO  C2  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.13.1.3 jnxOperatingL2Index     Integer      RO  C3  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.13.1.4 jnxOperatingL3Index     Integer      RO  C4  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.13.1.5 jnxOperatingDescr       OctetString  RO  C5  (0,255) d
+1.3.6.1.4.1.2636.3.1.13.1.6 jnxOperatingState       Integer      RO  C6  (1,7) e
+1.3.6.1.4.1.2636.3.1.13.1.7 jnxOperatingTemp        Gauge        RO  C7  (0,4294967295)
+1.3.6.1.4.1.2636.3.1.13.1.8 jnxOperatingCPU         Gauge        RO  C8  (0,4294967295)
+1.3.6.1.4.1.2636.3.1.13.1.9 jnxOperatingISR         Gauge        RO  C9  (0,4294967295)
+1.3.6.1.4.1.2636.3.1.13.1.10 jnxOperatingDRAMSize    Integer      RO  C10 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.1.13.1.11 jnxOperatingBuffer      Gauge        RO  C11 (0,4294967295)
+1.3.6.1.4.1.2636.3.1.13.1.12 jnxOperatingHeap        Gauge        RO  C12 (0,4294967295)
+1.3.6.1.4.1.2636.3.1.13.1.13 jnxOperatingUpTime      Integer      RO  C13 (0,2147483647)
+1.3.6.1.4.1.2636.3.1.13.1.14 jnxOperatingLastRestart TimeTicks    RO  C14 (0,4294967295)
+1.3.6.1.4.1.2636.3.1.13.1.15 jnxOperatingMemory      Integer      RO  C15 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.1.13.1.16 jnxOperatingStateOrdered Integer      RO  C16 (1,7) e
+1.3.6.1.4.1.2636.3.1.13.1.17 jnxOperatingChassisId   Integer      RO  C17 (1,42) e
+1.3.6.1.4.1.2636.3.1.13.1.18 jnxOperatingChassisDescr OctetString  RO  C18 (0,255) d
+1.3.6.1.4.1.2636.3.1.13.1.19 jnxOperatingRestartTime OctetString  RO  C19 (8,11)
+1.3.6.1.4.1.2636.3.1.13.1.20 jnxOperating1MinLoadAvg Gauge        RO  C20 (0,4294967295)
+1.3.6.1.4.1.2636.3.1.13.1.21 jnxOperating5MinLoadAvg Gauge        RO  C21 (0,4294967295)
+1.3.6.1.4.1.2636.3.1.13.1.22 jnxOperating15MinLoadAvg Gauge        RO  C22 (0,4294967295)
+1.3.6.1.4.1.2636.3.1.14.1.1 jnxRedundancyContentsIndex Integer      RO  C1  (1,2147483647)
+1.3.6.1.4.1.2636.3.1.14.1.2 jnxRedundancyL1Index    Integer      RO  C2  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.14.1.3 jnxRedundancyL2Index    Integer      RO  C3  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.14.1.4 jnxRedundancyL3Index    Integer      RO  C4  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.14.1.5 jnxRedundancyDescr      OctetString  RO  C5  (0,255) d
+1.3.6.1.4.1.2636.3.1.14.1.6 jnxRedundancyConfig     Integer      RO  C6  (1,5) e
+1.3.6.1.4.1.2636.3.1.14.1.7 jnxRedundancyState      Integer      RO  C7  (1,4) e
+1.3.6.1.4.1.2636.3.1.14.1.8 jnxRedundancySwitchoverCount Counter      RO  C8  (0,4294967295)
+1.3.6.1.4.1.2636.3.1.14.1.9 jnxRedundancySwitchoverTime TimeTicks    RO  C9  (0,4294967295)
+1.3.6.1.4.1.2636.3.1.14.1.10 jnxRedundancySwitchoverReason Integer      RO  C10 (1,4) e
+1.3.6.1.4.1.2636.3.1.14.1.11 jnxRedundancyKeepaliveHeartbeat Integer      RO  C11 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.1.14.1.12 jnxRedundancyKeepaliveTimeout Integer      RO  C12 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.1.14.1.13 jnxRedundancyKeepaliveElapsed Integer      RO  C13 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.1.14.1.14 jnxRedundancyKeepaliveLoss Counter      RO  C14 (0,4294967295)
+1.3.6.1.4.1.2636.3.1.14.1.15 jnxRedundancyChassisId  Integer      RO  C15 (1,42) e
+1.3.6.1.4.1.2636.3.1.14.1.16 jnxRedundancyChassisDescr OctetString  RO  C16 (0,255) d
+1.3.6.1.4.1.2636.3.1.15.1.1 jnxFruContentsIndex     Integer      RO  C1  (1,2147483647)
+1.3.6.1.4.1.2636.3.1.15.1.2 jnxFruL1Index           Integer      RO  C2  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.15.1.3 jnxFruL2Index           Integer      RO  C3  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.15.1.4 jnxFruL3Index           Integer      RO  C4  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.15.1.5 jnxFruName              OctetString  RO  C5  (0,255) d
+1.3.6.1.4.1.2636.3.1.15.1.6 jnxFruType              Integer      RO  C6  (1,20) e
+1.3.6.1.4.1.2636.3.1.15.1.7 jnxFruSlot              Integer      RO  C7  (0,2147483647)
+1.3.6.1.4.1.2636.3.1.15.1.8 jnxFruState             Integer      RO  C8  (1,10) e
+1.3.6.1.4.1.2636.3.1.15.1.9 jnxFruTemp              Gauge        RO  C9  (0,4294967295)
+1.3.6.1.4.1.2636.3.1.15.1.10 jnxFruOfflineReason     Integer      RO  C10 (1,97) e
+1.3.6.1.4.1.2636.3.1.15.1.11 jnxFruLastPowerOff      TimeTicks    RO  C11 (0,4294967295)
+1.3.6.1.4.1.2636.3.1.15.1.12 jnxFruLastPowerOn       TimeTicks    RO  C12 (0,4294967295)
+1.3.6.1.4.1.2636.3.1.15.1.13 jnxFruPowerUpTime       Integer      RO  C13 (0,2147483647)
+1.3.6.1.4.1.2636.3.1.15.1.14 jnxFruChassisId         Integer      RO  C14 (1,42) e
+1.3.6.1.4.1.2636.3.1.15.1.15 jnxFruChassisDescr      OctetString  RO  C15 (0,255) d
+1.3.6.1.4.1.2636.3.1.15.1.16 jnxFruPsdAssignment     Integer      RO  C16 (0,31)
+1.3.6.1.4.1.2636.3.1.16   jnxBoxKernelMemoryUsedPercent Integer      RO  S   (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.1.17   jnxBoxSystemDomainType  Integer      RO  S   (1,3) e
+1.3.6.1.4.1.2636.3.1.18   jnxBoxPersonality       ObjectID     RO  S   
+1.3.6.1.4.1.2636.3.2.1.1  mplsVersion             Integer      RO  S   (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.1.2  mplsSignalingProto      Integer      RO  S   (1,4) e
+1.3.6.1.4.1.2636.3.2.1.3  mplsConfiguredLsps      Integer      RO  S   (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.1.4  mplsActiveLsps          Integer      RO  S   (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.2.1  mplsTEDistProtocol      Integer      RO  S   (1,4) e
+1.3.6.1.4.1.2636.3.2.2.2.1.1 mplsAdminGroupNumber    Integer      RO  C1  (0,31)
+1.3.6.1.4.1.2636.3.2.2.2.1.2 mplsAdminGroupName      OctetString  RO  C2  (0,16) d
+1.3.6.1.4.1.2636.3.2.3.1.1 mplsLspName             OctetString  RO  C1  (32,32) d
+1.3.6.1.4.1.2636.3.2.3.1.2 mplsLspState            Integer      RO  C2  (1,5) e
+1.3.6.1.4.1.2636.3.2.3.1.3 mplsLspOctets           Counter64    RO  C3  
+1.3.6.1.4.1.2636.3.2.3.1.4 mplsLspPackets          Counter64    RO  C4  
+1.3.6.1.4.1.2636.3.2.3.1.5 mplsLspAge              TimeTicks    RO  C5  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.3.1.6 mplsLspTimeUp           TimeTicks    RO  C6  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.3.1.7 mplsLspPrimaryTimeUp    TimeTicks    RO  C7  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.3.1.8 mplsLspTransitions      Counter      RO  C8  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.3.1.9 mplsLspLastTransition   TimeTicks    RO  C9  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.3.1.10 mplsLspPathChanges      Counter      RO  C10 (0,4294967295)
+1.3.6.1.4.1.2636.3.2.3.1.11 mplsLspLastPathChange   TimeTicks    RO  C11 (0,4294967295)
+1.3.6.1.4.1.2636.3.2.3.1.12 mplsLspConfiguredPaths  Integer      RO  C12 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.3.1.13 mplsLspStandbyPaths     Integer      RO  C13 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.3.1.14 mplsLspOperationalPaths Integer      RO  C14 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.3.1.15 mplsLspFrom             IpAddress    RO  C15 (4,4)
+1.3.6.1.4.1.2636.3.2.3.1.16 mplsLspTo               IpAddress    RO  C16 (4,4)
+1.3.6.1.4.1.2636.3.2.3.1.17 mplsPathName            OctetString  RO  C17 (0,16) d
+1.3.6.1.4.1.2636.3.2.3.1.18 mplsPathType            Integer      RO  C18 (1,5) e
+1.3.6.1.4.1.2636.3.2.3.1.19 mplsPathExplicitRoute   OctetString  RO  C19 (0,1024)
+1.3.6.1.4.1.2636.3.2.3.1.20 mplsPathRecordRoute     OctetString  RO  C20 (0,1024)
+1.3.6.1.4.1.2636.3.2.3.1.21 mplsPathBandwidth       Integer      RO  C21 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.3.1.22 mplsPathCOS             Integer      RO  C22 (0,255)
+1.3.6.1.4.1.2636.3.2.3.1.23 mplsPathInclude         Integer      RO  C23 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.3.1.24 mplsPathExclude         Integer      RO  C24 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.3.1.25 mplsPathSetupPriority   Integer      RO  C25 (0,7)
+1.3.6.1.4.1.2636.3.2.3.1.26 mplsPathHoldPriority    Integer      RO  C26 (0,7)
+1.3.6.1.4.1.2636.3.2.3.1.27 mplsPathProperties      Integer      RO  C27 (1,64) e
+1.3.6.1.4.1.2636.3.2.5.1.1 mplsLspInfoName         OctetString  NA  C1  (1,64) d
+1.3.6.1.4.1.2636.3.2.5.1.2 mplsLspInfoState        Integer      RO  C2  (1,5) e
+1.3.6.1.4.1.2636.3.2.5.1.3 mplsLspInfoOctets       Counter64    RO  C3  
+1.3.6.1.4.1.2636.3.2.5.1.4 mplsLspInfoPackets      Counter64    RO  C4  
+1.3.6.1.4.1.2636.3.2.5.1.5 mplsLspInfoAge          TimeTicks    RO  C5  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.5.1.6 mplsLspInfoTimeUp       TimeTicks    RO  C6  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.5.1.7 mplsLspInfoPrimaryTimeUp TimeTicks    RO  C7  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.5.1.8 mplsLspInfoTransitions  Counter      RO  C8  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.5.1.9 mplsLspInfoLastTransition TimeTicks    RO  C9  (0,4294967295)
+1.3.6.1.4.1.2636.3.2.5.1.10 mplsLspInfoPathChanges  Counter      RO  C10 (0,4294967295)
+1.3.6.1.4.1.2636.3.2.5.1.11 mplsLspInfoLastPathChange TimeTicks    RO  C11 (0,4294967295)
+1.3.6.1.4.1.2636.3.2.5.1.12 mplsLspInfoConfiguredPaths Integer      RO  C12 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.5.1.13 mplsLspInfoStandbyPaths Integer      RO  C13 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.5.1.14 mplsLspInfoOperationalPaths Integer      RO  C14 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.5.1.15 mplsLspInfoFrom         IpAddress    RO  C15 (4,4)
+1.3.6.1.4.1.2636.3.2.5.1.16 mplsLspInfoTo           IpAddress    RO  C16 (4,4)
+1.3.6.1.4.1.2636.3.2.5.1.17 mplsPathInfoName        OctetString  RO  C17 (0,16) d
+1.3.6.1.4.1.2636.3.2.5.1.18 mplsPathInfoType        Integer      RO  C18 (1,5) e
+1.3.6.1.4.1.2636.3.2.5.1.19 mplsPathInfoExplicitRoute OctetString  RO  C19 (0,1024)
+1.3.6.1.4.1.2636.3.2.5.1.20 mplsPathInfoRecordRoute OctetString  RO  C20 (0,1024)
+1.3.6.1.4.1.2636.3.2.5.1.21 mplsPathInfoBandwidth   Integer      RO  C21 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.5.1.22 mplsPathInfoCOS         Integer      RO  C22 (0,255)
+1.3.6.1.4.1.2636.3.2.5.1.23 mplsPathInfoInclude     Integer      RO  C23 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.5.1.24 mplsPathInfoExclude     Integer      RO  C24 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.2.5.1.25 mplsPathInfoSetupPriority Integer      RO  C25 (0,7)
+1.3.6.1.4.1.2636.3.2.5.1.26 mplsPathInfoHoldPriority Integer      RO  C26 (0,7)
+1.3.6.1.4.1.2636.3.2.5.1.27 mplsPathInfoProperties  Integer      RO  C27 (1,64) e
+1.3.6.1.4.1.2636.3.2.5.1.28 mplsLspInfoAggrOctets   Counter64    RO  C28 
+1.3.6.1.4.1.2636.3.2.5.1.29 mplsLspInfoAggrPackets  Counter64    RO  C29 
+1.3.6.1.4.1.2636.3.2.5.1.30 mplsPathInfoRecordRouteWithLabels OctetString  RO  C30 (0,1024)
+1.3.6.1.4.1.2636.3.3.1.1.1 ifIn1SecRate            Gauge        RO  C1  (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.2 ifIn1SecOctets          Gauge        RO  C2  (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.3 ifIn1SecPkts            Gauge        RO  C3  (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.4 ifOut1SecRate           Gauge        RO  C4  (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.5 ifOut1SecOctets         Gauge        RO  C5  (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.6 ifOut1SecPkts           Gauge        RO  C6  (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.7 ifHCIn1SecRate          Counter64    RO  C7  
+1.3.6.1.4.1.2636.3.3.1.1.8 ifHCOut1SecRate         Counter64    RO  C8  
+1.3.6.1.4.1.2636.3.3.1.1.9 ifJnxInErrors           Counter64    RO  C9  
+1.3.6.1.4.1.2636.3.3.1.1.10 ifJnxInFrameErrors      Counter64    RO  C10 
+1.3.6.1.4.1.2636.3.3.1.1.11 ifJnxInQDrops           Counter64    RO  C11 
+1.3.6.1.4.1.2636.3.3.1.1.12 ifJnxInRunts            Counter64    RO  C12 
+1.3.6.1.4.1.2636.3.3.1.1.13 ifJnxInGiants           Counter64    RO  C13 
+1.3.6.1.4.1.2636.3.3.1.1.14 ifJnxInDiscards         Counter64    RO  C14 
+1.3.6.1.4.1.2636.3.3.1.1.15 ifJnxInHslCrcErrors     Counter64    RO  C15 
+1.3.6.1.4.1.2636.3.3.1.1.16 ifJnxInHslFifoOverFlows Counter64    RO  C16 
+1.3.6.1.4.1.2636.3.3.1.1.17 ifJnxInL3Incompletes    Counter64    RO  C17 
+1.3.6.1.4.1.2636.3.3.1.1.18 ifJnxInL2ChanErrors     Counter64    RO  C18 
+1.3.6.1.4.1.2636.3.3.1.1.19 ifJnxInL2MismatchTimeouts Counter64    RO  C19 
+1.3.6.1.4.1.2636.3.3.1.1.20 ifJnxInInvalidVCs       Counter64    RO  C20 
+1.3.6.1.4.1.2636.3.3.1.1.21 ifJnxInFifoErrors       Counter      RO  C21 (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.22 ifJnxBucketDrops        Counter64    RO  C22 
+1.3.6.1.4.1.2636.3.3.1.1.23 ifJnxSramErrors         Counter      RO  C23 (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.24 ifJnxOutErrors          Counter64    RO  C24 
+1.3.6.1.4.1.2636.3.3.1.1.25 ifJnxCollisions         Counter64    RO  C25 
+1.3.6.1.4.1.2636.3.3.1.1.26 ifJnxCarrierTrans       Counter64    RO  C26 
+1.3.6.1.4.1.2636.3.3.1.1.27 ifJnxOutQDrops          Counter64    RO  C27 
+1.3.6.1.4.1.2636.3.3.1.1.28 ifJnxOutAgedErrors      Counter64    RO  C28 
+1.3.6.1.4.1.2636.3.3.1.1.29 ifJnxOutFifoErrors      Counter      RO  C29 (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.30 ifJnxOutHslFifoUnderFlows Counter64    RO  C30 
+1.3.6.1.4.1.2636.3.3.1.1.31 ifJnxOutHslCrcErrors    Counter      RO  C31 (0,4294967295)
+1.3.6.1.4.1.2636.3.3.1.1.32 ifJnxCrcErrors          Counter64    RO  C32 
+1.3.6.1.4.1.2636.3.3.1.1.33 ifJnxFcsErrors          Counter64    RO  C33 
+1.3.6.1.4.1.2636.3.3.1.1.34 ifHCIn1SecOctets        Counter64    RO  C34 
+1.3.6.1.4.1.2636.3.3.1.1.35 ifHCOut1SecOctets       Counter64    RO  C35 
+1.3.6.1.4.1.2636.3.3.2.1.1 ifChassisFpc            Integer      RO  C1  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.3.2.1.2 ifChassisPic            Integer      RO  C2  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.3.2.1.3 ifChassisPort           Integer      RO  C3  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.3.2.1.4 ifChassisChannel        Integer      RO  C4  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.3.2.1.5 ifChassisLogicalUnit    Integer      RO  C5  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.3.2.1.6 ifChassisPicIndex       OctetString  RO  C6  
+1.3.6.1.4.1.2636.3.3.4.1.1 ifJnxInPolLowOctets     Counter64    RO  C1  
+1.3.6.1.4.1.2636.3.3.4.1.2 ifJnxInPolLowPkts       Counter64    RO  C2  
+1.3.6.1.4.1.2636.3.3.4.1.3 ifJnxInPolLow1SecRate   Counter64    RO  C3  
+1.3.6.1.4.1.2636.3.3.4.1.4 ifJnxInPolMLowOctets    Counter64    RO  C4  
+1.3.6.1.4.1.2636.3.3.4.1.5 ifJnxInPolMLowPkts      Counter64    RO  C5  
+1.3.6.1.4.1.2636.3.3.4.1.6 ifJnxInPolMLow1SecRate  Counter64    RO  C6  
+1.3.6.1.4.1.2636.3.3.4.1.7 ifJnxInPolMHighOctets   Counter64    RO  C7  
+1.3.6.1.4.1.2636.3.3.4.1.8 ifJnxInPolMHighPkts     Counter64    RO  C8  
+1.3.6.1.4.1.2636.3.3.4.1.9 ifJnxInPolMHigh1SecRate Counter64    RO  C9  
+1.3.6.1.4.1.2636.3.3.4.1.10 ifJnxInPolHighOctets    Counter64    RO  C10 
+1.3.6.1.4.1.2636.3.3.4.1.11 ifJnxInPolHighPkts      Counter64    RO  C11 
+1.3.6.1.4.1.2636.3.3.4.1.12 ifJnxInPolHigh1SecRate  Counter64    RO  C12 
+1.3.6.1.4.1.2636.3.3.4.1.13 ifJnxInPolDropOctets    Counter64    RO  C13 
+1.3.6.1.4.1.2636.3.3.4.1.14 ifJnxInPolDropPkts      Counter64    RO  C14 
+1.3.6.1.4.1.2636.3.3.4.1.15 ifJnxInPolDrop1SecRate  Counter64    RO  C15 
+1.3.6.1.4.1.2636.3.3.4.1.16 ifJnxOutPolLowOctets    Counter64    RO  C16 
+1.3.6.1.4.1.2636.3.3.4.1.17 ifJnxOutPolLowPkts      Counter64    RO  C17 
+1.3.6.1.4.1.2636.3.3.4.1.18 ifJnxOutPolLow1SecRate  Counter64    RO  C18 
+1.3.6.1.4.1.2636.3.3.4.1.19 ifJnxOutPolMLowOctets   Counter64    RO  C19 
+1.3.6.1.4.1.2636.3.3.4.1.20 ifJnxOutPolMLowPkts     Counter64    RO  C20 
+1.3.6.1.4.1.2636.3.3.4.1.21 ifJnxOutPolMLow1SecRate Counter64    RO  C21 
+1.3.6.1.4.1.2636.3.3.4.1.22 ifJnxOutPolMHighOctets  Counter64    RO  C22 
+1.3.6.1.4.1.2636.3.3.4.1.23 ifJnxOutPolMHighPkts    Counter64    RO  C23 
+1.3.6.1.4.1.2636.3.3.4.1.24 ifJnxOutPolMHigh1SecRate Counter64    RO  C24 
+1.3.6.1.4.1.2636.3.3.4.1.25 ifJnxOutPolHighOctets   Counter64    RO  C25 
+1.3.6.1.4.1.2636.3.3.4.1.26 ifJnxOutPolHighPkts     Counter64    RO  C26 
+1.3.6.1.4.1.2636.3.3.4.1.27 ifJnxOutPolHigh1SecRate Counter64    RO  C27 
+1.3.6.1.4.1.2636.3.3.4.1.28 ifJnxOutPolDropOctets   Counter64    RO  C28 
+1.3.6.1.4.1.2636.3.3.4.1.29 ifJnxOutPolDropPkts     Counter64    RO  C29 
+1.3.6.1.4.1.2636.3.3.4.1.30 ifJnxOutPolDrop1SecRate Counter64    RO  C30 
+1.3.6.1.4.1.2636.3.31.1.1.1.1 jnxHrStoragePercentUsed Gauge        RO  C1  (0,4294967295)
+1.3.6.1.4.1.2636.3.31.2.1 jnxHrSystemOpenFiles    Gauge        RO  S   (0,4294967295)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.1 jnxOpticsConfigContainerIndex Integer      NA  C1  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.2 jnxOpticsConfigL1Index  Integer      NA  C2  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.3 jnxOpticsConfigL2Index  Integer      NA  C3  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.4 jnxOpticsConfigL3Index  Integer      NA  C4  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.5 jnxOpticsType           Integer      RO  C5  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.6 jnxLaserEnable          Integer      RW  C6  (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.7 jnxWavelength           Gauge        RW  C7  (0,4294967295)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.8 jnxSpacing              Integer      RO  C8  (1,5) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.9 jnxModulation           Gauge        RO  C9  (0,4294967295)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.10 jnxTxOpticalPower       Integer      RW  C10 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.11 jnxRxOpticalPower       Integer      RO  C11 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.12 jnxModuleTempHighThresh Integer      RO  C12 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.13 jnxModuleTempLowThresh  Integer      RO  C13 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.14 jnxTxPowerHighThresh    Integer      RW  C14 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.15 jnxTxPowerLowThresh     Integer      RW  C15 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.16 jnxRxPowerHighThresh    Integer      RW  C16 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.17 jnxRxPowerLowThresh     Integer      RW  C17 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.18 jnx24HourModuleTempHighThresh Integer      RO  C18 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.19 jnx24HourModuleTempLowThresh Integer      RO  C19 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.20 jnx24HourTxPowerHighThresh Integer      RW  C20 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.21 jnx24HourTxPowerLowThresh Integer      RW  C21 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.22 jnx24HourRxPowerHighThresh Integer      RW  C22 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.23 jnx24HourRxPowerLowThresh Integer      RW  C23 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.24 jnxRxLosPowerWarningThresh Integer      RW  C24 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.25 jnxRxLosPowerAlarmThresh Integer      RW  C25 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.26 jnxOpticsCurrentStatus  Bits         RO  C26 (1,33) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.27 jnxTxPowerHighEnableTCA Integer      RW  C27 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.28 jnxTxPowerLowEnableTCA  Integer      RW  C28 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.29 jnxRxPowerHighEnableTCA Integer      RW  C29 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.30 jnxRxPowerLowEnableTCA  Integer      RW  C30 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.31 jnxModuleTempHighEnableTCA Integer      RW  C31 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.32 jnxModuleTempLowEnableTCA Integer      RW  C32 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.33 jnxCarFreqOffsetHighEnableTCA Integer      RW  C33 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.34 jnxCarFreqOffsetLowEnableTCA Integer      RW  C34 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.1.1.35 jnxCarFreqOffsetHighThresh Integer      RW  C35 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.36 jnx24HourCarFreqOffsetHighThresh Integer      RW  C36 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.37 jnxCarFreqOffsetLowThresh Integer      RW  C37 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.1.1.38 jnx24HourCarFreqOffsetLowThresh Integer      RW  C38 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.2.1.1 jnxOpticsTraceToneCfgContainerIndex Integer      NA  C1  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.2.1.2 jnxOpticsTraceToneCfgL1Index Integer      NA  C2  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.2.1.3 jnxOpticsTraceToneCfgL2Index Integer      NA  C3  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.2.1.4 jnxOpticsTraceToneCfgL3Index Integer      NA  C4  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.2.1.5 jnxOpticsTraceToneCfgTxEnable Integer      RW  C5  (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.2.1.6 jnxOpticsTraceToneCfgRxEnable Integer      RW  C6  (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.2.1.7 jnxOpticsTraceToneCfgDestId OctetString  RW  C7  
+1.3.6.1.4.1.2636.3.71.1.1.2.1.8 jnxOpticsTraceToneCfgTxMsg OctetString  RW  C8  
+1.3.6.1.4.1.2636.3.71.1.1.2.1.9 jnxOpticsTraceToneCfgRxMsg OctetString  RO  C9  
+1.3.6.1.4.1.2636.3.71.1.1.3 jnxOpticsNotificationTrigDefaultHoldtimeUp Integer      RW  S   (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.4 jnxOpticsNotificationTrigDefaultHoldtimeDown Integer      RW  S   (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.5.1.1 jnxOpticsNotificationTrigContainerIndex Integer      NA  C1  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.5.1.2 jnxOpticsNotificationTrigL1Index Integer      NA  C2  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.5.1.3 jnxOpticsNotificationTrigL2Index Integer      NA  C3  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.5.1.4 jnxOpticsNotificationTrigL3Index Integer      NA  C4  (1,1024)
+1.3.6.1.4.1.2636.3.71.1.1.5.1.5 jnxOpticsNotificationTrigAlmId Integer      NA  C5  (1,43) e
+1.3.6.1.4.1.2636.3.71.1.1.5.1.6 jnxOpticsNotificationTrigSeverity Integer      RW  C6  (1,4) e
+1.3.6.1.4.1.2636.3.71.1.1.5.1.7 jnxOpticsNotificationTrigIgnore Integer      RW  C7  (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.5.1.8 jnxOpticsNotificationTrigHoldtimeUp Integer      RW  C8  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.5.1.9 jnxOpticsNotificationTrigHoldtimeDown Integer      RW  C9  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.1.5.1.10 jnxOpticsTrigServiceStateAction Integer      RO  C10 (0,2) e
+1.3.6.1.4.1.2636.3.71.1.1.6 jnxOpticsClearAllPMs    Integer      RW  S   (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.7.1.1 jnxOpticsClearCurrent   Integer      RW  C1  (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.7.1.2 jnxOpticsClearInterfaceInterval Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.7.1.3 jnxOpticsClearInterfaceDay Integer      RW  C3  (1,2) e
+1.3.6.1.4.1.2636.3.71.1.1.7.1.4 jnxOpticsClearInterfaceAll Integer      RW  C4  (1,2) e
+1.3.6.1.4.1.2636.3.71.1.2.1.1.1 jnxPMCurChromaticDispersion Integer      RO  C1  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.2 jnxPMCurDiffGroupDelay  Integer      RO  C2  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.3 jnxPMCurPolarizationState Integer      RO  C3  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.4 jnxPMCurPolarDepLoss    Integer      RO  C4  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.5 jnxPMCurQ               Integer      RO  C5  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.6 jnxPMCurSNR             Integer      RO  C6  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.7 jnxPMCurTxOutputPower   Integer      RO  C7  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.8 jnxPMCurRxInputPower    Integer      RO  C8  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.9 jnxPMCurMinChromaticDispersion Integer      RO  C9  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.10 jnxPMCurMaxChromaticDispersion Integer      RO  C10 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.11 jnxPMCurAvgChromaticDispersion Integer      RO  C11 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.12 jnxPMCurMinDiffGroupDelay Integer      RO  C12 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.13 jnxPMCurMaxDiffGroupDelay Integer      RO  C13 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.14 jnxPMCurAvgDiffGroupDelay Integer      RO  C14 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.15 jnxPMCurMinPolarState   Integer      RO  C15 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.16 jnxPMCurMaxPolarState   Integer      RO  C16 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.17 jnxPMCurAvgPolarState   Integer      RO  C17 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.18 jnxPMCurMinPolarDepLoss Integer      RO  C18 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.19 jnxPMCurMaxPolarDepLoss Integer      RO  C19 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.20 jnxPMCurAvgPolarDepLoss Integer      RO  C20 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.21 jnxPMCurMinQ            Integer      RO  C21 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.22 jnxPMCurMaxQ            Integer      RO  C22 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.23 jnxPMCurAvgQ            Integer      RO  C23 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.24 jnxPMCurMinSNR          Integer      RO  C24 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.25 jnxPMCurMaxSNR          Integer      RO  C25 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.26 jnxPMCurAvgSNR          Integer      RO  C26 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.27 jnxPMCurMinTxOutputPower Integer      RO  C27 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.28 jnxPMCurMaxTxOutputPower Integer      RO  C28 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.29 jnxPMCurAvgTxOutputPower Integer      RO  C29 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.30 jnxPMCurMinRxInputPower Integer      RO  C30 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.31 jnxPMCurMaxRxInputPower Integer      RO  C31 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.32 jnxPMCurAvgRxInputPower Integer      RO  C32 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.33 jnxPMCurSuspectedFlag   Integer      RO  C33 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.2.1.1.34 jnxPMCurSuspectReason   Integer      RO  C34 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.35 jnxPMCurTxLaserBiasCurrent Integer      RO  C35 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.36 jnxPMCurMinTxLaserBiasCurrent Integer      RO  C36 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.37 jnxPMCurMaxTxLaserBiasCurrent Integer      RO  C37 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.38 jnxPMCurAvgTxLaserBiasCurrent Integer      RO  C38 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.39 jnxPMCurTemperature     Integer      RO  C39 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.40 jnxPMCurMinTemperature  Integer      RO  C40 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.41 jnxPMCurMaxTemperature  Integer      RO  C41 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.42 jnxPMCurAvgTemperature  Integer      RO  C42 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.43 jnxPMCurCarFreqOffset   Integer      RO  C43 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.44 jnxPMCurMinCarFreqOffset Integer      RO  C44 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.45 jnxPMCurMaxCarFreqOffset Integer      RO  C45 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.46 jnxPMCurAvgCarFreqOffset Integer      RO  C46 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.47 jnxPMCurRxLaserBiasCurrent Integer      RO  C47 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.48 jnxPMCurMinRxLaserBiasCurrent Integer      RO  C48 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.49 jnxPMCurMaxRxLaserBiasCurrent Integer      RO  C49 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.1.1.50 jnxPMCurAvgRxLaserBiasCurrent Integer      RO  C50 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.1 jnxOpticsPMIntervalNumber Gauge        NA  C1  (1,96)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.2 jnxPMIntMinChromaticDispersion Integer      RO  C2  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.3 jnxPMIntMaxChromaticDispersion Integer      RO  C3  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.4 jnxPMIntAvgChromaticDispersion Integer      RO  C4  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.5 jnxPMIntMinDiffGroupDelay Integer      RO  C5  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.6 jnxPMIntMaxDiffGroupDelay Integer      RO  C6  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.7 jnxPMIntAvgDiffGroupDelay Integer      RO  C7  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.8 jnxPMIntMinPolarState   Integer      RO  C8  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.9 jnxPMIntMaxPolarState   Integer      RO  C9  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.10 jnxPMIntAvgPolarState   Integer      RO  C10 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.11 jnxPMIntMinPolarDependentLoss Integer      RO  C11 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.12 jnxPMIntMaxPolarDependentLoss Integer      RO  C12 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.13 jnxPMIntAvgPolarDependentLoss Integer      RO  C13 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.14 jnxPMIntMinQ            Integer      RO  C14 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.15 jnxPMIntMaxQ            Integer      RO  C15 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.16 jnxPMIntAvgQ            Integer      RO  C16 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.17 jnxPMIntMinSNR          Integer      RO  C17 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.18 jnxPMIntMaxSNR          Integer      RO  C18 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.19 jnxPMIntAvgSNR          Integer      RO  C19 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.20 jnxPMIntMinTxOutputPower Integer      RO  C20 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.21 jnxPMIntMaxTxOutputPower Integer      RO  C21 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.22 jnxPMIntAvgTxOutputPower Integer      RO  C22 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.23 jnxPMIntMinRxInputPower Integer      RO  C23 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.24 jnxPMIntMaxRxInputPower Integer      RO  C24 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.25 jnxPMIntAvgRxInputPower Integer      RO  C25 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.26 jnxPMIntTimeStamp       OctetString  RO  C26 (8,11)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.27 jnxPMIntSuspectedFlag   Integer      RO  C27 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.2.2.1.28 jnxPMIntSuspectReason   Integer      RO  C28 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.29 jnxPMIntMinTxLaserBiasCurrent Integer      RO  C29 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.30 jnxPMIntMaxTxLaserBiasCurrent Integer      RO  C30 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.31 jnxPMIntAvgTxLaserBiasCurrent Integer      RO  C31 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.32 jnxPMIntMinTemperature  Integer      RO  C32 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.33 jnxPMIntMaxTemperature  Integer      RO  C33 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.34 jnxPMIntAvgTemperature  Integer      RO  C34 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.35 jnxPMIntMinCarFreqOffset Integer      RO  C35 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.36 jnxPMIntMaxCarFreqOffset Integer      RO  C36 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.37 jnxPMIntAvgCarFreqOffset Integer      RO  C37 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.38 jnxPMIntMinRxLaserBiasCurrent Integer      RO  C38 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.39 jnxPMIntMaxRxLaserBiasCurrent Integer      RO  C39 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.2.1.40 jnxPMIntAvgRxLaserBiasCurrent Integer      RO  C40 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.1 jnxOpticsPMDayIndex     Gauge        NA  C1  (1,2)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.2 jnxPMDayMinChromaticDispersion Integer      RO  C2  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.3 jnxPMDayMaxChromaticDispersion Integer      RO  C3  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.4 jnxPMDayAvgChromaticDispersion Integer      RO  C4  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.5 jnxPMDayMinDiffGroupDelay Integer      RO  C5  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.6 jnxPMDayMaxDiffGroupDelay Integer      RO  C6  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.7 jnxPMDayAvgDiffGroupDelay Integer      RO  C7  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.8 jnxPMDayMinPolarState   Integer      RO  C8  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.9 jnxPMDayMaxPolarState   Integer      RO  C9  (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.10 jnxPMDayAvgPolarState   Integer      RO  C10 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.11 jnxPMDayMinPolarDependentLoss Integer      RO  C11 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.12 jnxPMDayMaxPolarDependentLoss Integer      RO  C12 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.13 jnxPMDayAvgPolarDependentLoss Integer      RO  C13 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.14 jnxPMDayMinQ            Integer      RO  C14 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.15 jnxPMDayMaxQ            Integer      RO  C15 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.16 jnxPMDayAvgQ            Integer      RO  C16 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.17 jnxPMDayMinSNR          Integer      RO  C17 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.18 jnxPMDayMaxSNR          Integer      RO  C18 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.19 jnxPMDayAvgSNR          Integer      RO  C19 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.20 jnxPMDayMinTxOutputPower Integer      RO  C20 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.21 jnxPMDayMaxTxOutputPower Integer      RO  C21 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.22 jnxPMDayAvgTxOutputPower Integer      RO  C22 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.23 jnxPMDayMinRxInputPower Integer      RO  C23 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.24 jnxPMDayMaxRxInputPower Integer      RO  C24 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.25 jnxPMDayAvgRxInputPower Integer      RO  C25 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.26 jnxPMDayTimeStamp       OctetString  RO  C26 (8,11)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.27 jnxPMDaySuspectedFlag   Integer      RO  C27 (1,2) e
+1.3.6.1.4.1.2636.3.71.1.2.3.1.28 jnxPMDaySuspectReason   Integer      RO  C28 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.29 jnxPMDayMinTxLaserBiasCurrent Integer      RO  C29 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.30 jnxPMDayMaxTxLaserBiasCurrent Integer      RO  C30 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.31 jnxPMDayAvgTxLaserBiasCurrent Integer      RO  C31 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.32 jnxPMDayMinTemperature  Integer      RO  C32 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.33 jnxPMDayMaxTemperature  Integer      RO  C33 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.34 jnxPMDayAvgTemperature  Integer      RO  C34 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.35 jnxPMDayMinCarFreqOffset Integer      RO  C35 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.36 jnxPMDayMaxCarFreqOffset Integer      RO  C36 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.37 jnxPMDayAvgCarFreqOffset Integer      RO  C37 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.38 jnxPMDayMinRxLaserBiasCurrent Integer      RO  C38 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.39 jnxPMDayMaxRxLaserBiasCurrent Integer      RO  C39 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.2.3.1.40 jnxPMDayAvgRxLaserBiasCurrent Integer      RO  C40 (-2147483648,2147483647)
+1.3.6.1.4.1.2636.3.71.1.3.1.1.1 jnxOpticsNotificationLocation Integer      NA  C1  (1,2) e
+1.3.6.1.4.1.2636.3.71.1.3.1.1.2 jnxOpticsNotificationDirection Integer      NA  C2  (1,3) e
+1.3.6.1.4.1.2636.3.71.1.3.1.1.3 jnxOpticsLastNotificationId Integer      NA  C3  (1,43) e
+1.3.6.1.4.1.2636.3.71.1.3.1.1.4 jnxOpticsNotificationSeverity Integer      NA  C4  (1,4) e
+1.3.6.1.4.1.2636.3.71.1.3.1.1.5 jnxOpticsNotificationDate OctetString  NA  C5  (8,11)
+1.3.6.1.6.3.1.1.4.1       snmpTrapOID             ObjectID     NA  S   
+1.3.6.1.6.3.1.1.4.3       snmpTrapEnterprise      ObjectID     NA  S   
+1.3.6.1.6.3.1.1.6.1       snmpSetSerialNo         Integer      RW  S   (0,2147483647)
+%en          1.3.6.1.2.1.1                            system
+%en          1.3.6.1.2.1.1.9                          sysORTable
+%en          1.3.6.1.2.1.1.9.1                        sysOREntry
+%en          1.3.6.1.2.1.2                            interfaces
+%en          1.3.6.1.2.1.2.2                          ifTable
+%en          1.3.6.1.2.1.2.2.1                        ifEntry
+%en          1.3.6.1.2.1.11                           snmp
+%en          1.3.6.1.2.1.25                           host
+%en          1.3.6.1.2.1.25.1                         hrSystem
+%en          1.3.6.1.2.1.25.2                         hrStorage
+%en          1.3.6.1.2.1.25.2.1                       hrStorageTypes
+%en          1.3.6.1.2.1.25.2.3                       hrStorageTable
+%en          1.3.6.1.2.1.25.2.3.1                     hrStorageEntry
+%en          1.3.6.1.2.1.25.3                         hrDevice
+%en          1.3.6.1.2.1.25.3.1                       hrDeviceTypes
+%en          1.3.6.1.2.1.25.3.2                       hrDeviceTable
+%en          1.3.6.1.2.1.25.3.2.1                     hrDeviceEntry
+%en          1.3.6.1.2.1.25.3.3                       hrProcessorTable
+%en          1.3.6.1.2.1.25.3.3.1                     hrProcessorEntry
+%en          1.3.6.1.2.1.25.3.4                       hrNetworkTable
+%en          1.3.6.1.2.1.25.3.4.1                     hrNetworkEntry
+%en          1.3.6.1.2.1.25.3.5                       hrPrinterTable
+%en          1.3.6.1.2.1.25.3.5.1                     hrPrinterEntry
+%en          1.3.6.1.2.1.25.3.6                       hrDiskStorageTable
+%en          1.3.6.1.2.1.25.3.6.1                     hrDiskStorageEntry
+%en          1.3.6.1.2.1.25.3.7                       hrPartitionTable
+%en          1.3.6.1.2.1.25.3.7.1                     hrPartitionEntry
+%en          1.3.6.1.2.1.25.3.8                       hrFSTable
+%en          1.3.6.1.2.1.25.3.8.1                     hrFSEntry
+%en          1.3.6.1.2.1.25.3.9                       hrFSTypes
+%en          1.3.6.1.2.1.25.4                         hrSWRun
+%en          1.3.6.1.2.1.25.4.2                       hrSWRunTable
+%en          1.3.6.1.2.1.25.4.2.1                     hrSWRunEntry
+%en          1.3.6.1.2.1.25.5                         hrSWRunPerf
+%en          1.3.6.1.2.1.25.5.1                       hrSWRunPerfTable
+%en          1.3.6.1.2.1.25.5.1.1                     hrSWRunPerfEntry
+%en          1.3.6.1.2.1.25.6                         hrSWInstalled
+%en          1.3.6.1.2.1.25.6.3                       hrSWInstalledTable
+%en          1.3.6.1.2.1.25.6.3.1                     hrSWInstalledEntry
+%en          1.3.6.1.2.1.25.7                         hrMIBAdminInfo
+%en          1.3.6.1.2.1.25.7.1                       hostResourcesMibModule
+%en          1.3.6.1.2.1.25.7.2                       hrMIBCompliances
+%en          1.3.6.1.2.1.25.7.3                       hrMIBGroups
+%en          1.3.6.1.2.1.30                           ianaifType
+%en          1.3.6.1.2.1.31                           ifMIB
+%en          1.3.6.1.2.1.31.1                         ifMIBObjects
+%en          1.3.6.1.2.1.31.1.1                       ifXTable
+%en          1.3.6.1.2.1.31.1.1.1                     ifXEntry
+%en          1.3.6.1.2.1.31.1.2                       ifStackTable
+%en          1.3.6.1.2.1.31.1.2.1                     ifStackEntry
+%en          1.3.6.1.2.1.31.1.3                       ifTestTable
+%en          1.3.6.1.2.1.31.1.3.1                     ifTestEntry
+%en          1.3.6.1.2.1.31.1.4                       ifRcvAddressTable
+%en          1.3.6.1.2.1.31.1.4.1                     ifRcvAddressEntry
+%en          1.3.6.1.2.1.31.2                         ifConformance
+%en          1.3.6.1.2.1.31.2.1                       ifGroups
+%en          1.3.6.1.2.1.31.2.2                       ifCompliances
+%en          1.3.6.1.2.1.78                           hcnumTC
+%en          1.3.6.1.4.1.2636                         juniperMIB
+%en          1.3.6.1.4.1.2636.1                       jnxProducts
+%en          1.3.6.1.4.1.2636.1.2                     jnxMediaFlow
+%en          1.3.6.1.4.1.2636.1.3                     jnxJunosSpace
+%en          1.3.6.1.4.1.2636.1.4                     jnxReservedProducts3
+%en          1.3.6.1.4.1.2636.1.5                     jnxReservedProducts4
+%en          1.3.6.1.4.1.2636.1.6                     jnxReservedProducts5
+%en          1.3.6.1.4.1.2636.1.7                     jnxSDKApplicationsRoot
+%en          1.3.6.1.4.1.2636.1.8                     jnxJAB
+%en          1.3.6.1.4.1.2636.1.9                     jnxStrm
+%en          1.3.6.1.4.1.2636.2                       jnxServices
+%en          1.3.6.1.4.1.2636.3                       jnxMibs
+%en          1.3.6.1.4.1.2636.3.1                     jnxBoxAnatomy
+%en          1.3.6.1.4.1.2636.3.1.6                   jnxContainersTable
+%en          1.3.6.1.4.1.2636.3.1.6.1                 jnxContainersEntry
+%en          1.3.6.1.4.1.2636.3.1.8                   jnxContentsTable
+%en          1.3.6.1.4.1.2636.3.1.8.1                 jnxContentsEntry
+%en          1.3.6.1.4.1.2636.3.1.10                  jnxLEDTable
+%en          1.3.6.1.4.1.2636.3.1.10.1                jnxLEDEntry
+%en          1.3.6.1.4.1.2636.3.1.12                  jnxFilledTable
+%en          1.3.6.1.4.1.2636.3.1.12.1                jnxFilledEntry
+%en          1.3.6.1.4.1.2636.3.1.13                  jnxOperatingTable
+%en          1.3.6.1.4.1.2636.3.1.13.1                jnxOperatingEntry
+%en          1.3.6.1.4.1.2636.3.1.14                  jnxRedundancyTable
+%en          1.3.6.1.4.1.2636.3.1.14.1                jnxRedundancyEntry
+%en          1.3.6.1.4.1.2636.3.1.15                  jnxFruTable
+%en          1.3.6.1.4.1.2636.3.1.15.1                jnxFruEntry
+%en          1.3.6.1.4.1.2636.3.2                     mpls
+%en          1.3.6.1.4.1.2636.3.2.0                   mplsLspTraps
+%en          1.3.6.1.4.1.2636.3.2.1                   mplsInfo
+%en          1.3.6.1.4.1.2636.3.2.2                   mplsTEInfo
+%en          1.3.6.1.4.1.2636.3.2.2.2                 mplsAdminGroupList
+%en          1.3.6.1.4.1.2636.3.2.2.2.1               mplsAdminGroup
+%en          1.3.6.1.4.1.2636.3.2.3                   mplsLspList
+%en          1.3.6.1.4.1.2636.3.2.3.1                 mplsLspEntry
+%en          1.3.6.1.4.1.2636.3.2.4                   mplsTraps
+%en          1.3.6.1.4.1.2636.3.2.5                   mplsLspInfoList
+%en          1.3.6.1.4.1.2636.3.2.5.1                 mplsLspInfoEntry
+%en          1.3.6.1.4.1.2636.3.3                     ifJnx
+%en          1.3.6.1.4.1.2636.3.3.1                   ifJnxTable
+%en          1.3.6.1.4.1.2636.3.3.1.1                 ifJnxEntry
+%en          1.3.6.1.4.1.2636.3.3.2                   ifChassisTable
+%en          1.3.6.1.4.1.2636.3.3.2.1                 ifChassisEntry
+%en          1.3.6.1.4.1.2636.3.3.3                   ifJnxNotification
+%en          1.3.6.1.4.1.2636.3.3.3.0                 ifJnxNotificationPrefix
+%en          1.3.6.1.4.1.2636.3.3.4                   ifJnxPolTable
+%en          1.3.6.1.4.1.2636.3.3.4.1                 ifJnxPolEntry
+%en          1.3.6.1.4.1.2636.3.31                    jnxHostResourcesMIB
+%en          1.3.6.1.4.1.2636.3.31.1                  jnxHrStorage
+%en          1.3.6.1.4.1.2636.3.31.1.1                jnxHrStorageTable
+%en          1.3.6.1.4.1.2636.3.31.1.1.1              jnxHrStorageEntry
+%en          1.3.6.1.4.1.2636.3.31.2                  jnxHrSystem
+%en          1.3.6.1.4.1.2636.3.39                    jnxJsMibRoot
+%en          1.3.6.1.4.1.2636.3.40                    jnxExMibRoot
+%en          1.3.6.1.4.1.2636.3.41                    jnxWxMibRoot
+%en          1.3.6.1.4.1.2636.3.42                    jnxDcfMibRoot
+%en          1.3.6.1.4.1.2636.3.43                    jnxReservedMibs5
+%en          1.3.6.1.4.1.2636.3.44                    jnxPfeMibRoot
+%en          1.3.6.1.4.1.2636.3.45                    jnxBfdMibRoot
+%en          1.3.6.1.4.1.2636.3.46                    jnxXstpMibs
+%en          1.3.6.1.4.1.2636.3.47                    jnxUtilMibRoot
+%en          1.3.6.1.4.1.2636.3.48                    jnxl2aldMibRoot
+%en          1.3.6.1.4.1.2636.3.49                    jnxL2tpMibRoot
+%en          1.3.6.1.4.1.2636.3.50                    jnxRpmMibRoot
+%en          1.3.6.1.4.1.2636.3.51                    jnxUserAAAMibRoot
+%en          1.3.6.1.4.1.2636.3.52                    jnxIpSecMibRoot
+%en          1.3.6.1.4.1.2636.3.53                    jnxL2cpMibRoot
+%en          1.3.6.1.4.1.2636.3.54                    jnxPwTdmMibRoot
+%en          1.3.6.1.4.1.2636.3.55                    jnxPwTCMibRoot
+%en          1.3.6.1.4.1.2636.3.56                    jnxOtnMibRoot
+%en          1.3.6.1.4.1.2636.3.58                    jnxPsuMIBRoot
+%en          1.3.6.1.4.1.2636.3.59                    jnxSvcsMibRoot
+%en          1.3.6.1.4.1.2636.3.60                    jnxDomMibRoot
+%en          1.3.6.1.4.1.2636.3.61                    jnxJdhcpMibRoot
+%en          1.3.6.1.4.1.2636.3.62                    jnxJdhcpv6MibRoot
+%en          1.3.6.1.4.1.2636.3.63                    jnxLicenseMibRoot
+%en          1.3.6.1.4.1.2636.3.64                    jnxSubscriberMibRoot
+%en          1.3.6.1.4.1.2636.3.65                    jnxMagMibRoot
+%en          1.3.6.1.4.1.2636.3.66                    jnxMobileGatewayMibRoot
+%en          1.3.6.1.4.1.2636.3.67                    jnxPppoeMibRoot
+%en          1.3.6.1.4.1.2636.3.68                    jnxPppMibRoot
+%en          1.3.6.1.4.1.2636.3.69                    jnxJVAEMibRoot
+%en          1.3.6.1.4.1.2636.3.70                    jnxIfOtnMibRoot
+%en          1.3.6.1.4.1.2636.3.71                    jnxOpticsMibRoot
+%en          1.3.6.1.4.1.2636.3.71.1                  jnxIfOpticsMib
+%en          1.3.6.1.4.1.2636.3.71.1.1                jnxOptics
+%en          1.3.6.1.4.1.2636.3.71.1.1.1              jnxOpticsConfigTable
+%en          1.3.6.1.4.1.2636.3.71.1.1.1.1            jnxOpticsConfigEntry
+%en          1.3.6.1.4.1.2636.3.71.1.1.2              jnxOpticsTraceToneCfgTable
+%en          1.3.6.1.4.1.2636.3.71.1.1.2.1            jnxOpticsTraceToneCfgEntry
+%en          1.3.6.1.4.1.2636.3.71.1.1.5              jnxOpticsNotificationTrigTable
+%en          1.3.6.1.4.1.2636.3.71.1.1.5.1            jnxOpticsNotificationTrigEntry
+%en          1.3.6.1.4.1.2636.3.71.1.1.7              jnxOpticsClearIfPMsTable
+%en          1.3.6.1.4.1.2636.3.71.1.1.7.1            jnxOpticsClearIfPMsEntry
+%en          1.3.6.1.4.1.2636.3.71.1.2                jnxOpticsPerformanceMonitoring
+%en          1.3.6.1.4.1.2636.3.71.1.2.1              jnxOpticsPMCurrentTable
+%en          1.3.6.1.4.1.2636.3.71.1.2.1.1            jnxOpticsPMCurrentEntry
+%en          1.3.6.1.4.1.2636.3.71.1.2.2              jnxOpticsPMIntervalTable
+%en          1.3.6.1.4.1.2636.3.71.1.2.2.1            jnxOpticsPMIntervalEntry
+%en          1.3.6.1.4.1.2636.3.71.1.2.3              jnxOpticsPMDayTable
+%en          1.3.6.1.4.1.2636.3.71.1.2.3.1            jnxOpticsPMDayEntry
+%en          1.3.6.1.4.1.2636.3.71.1.3                jnxOpticsAlarm
+%en          1.3.6.1.4.1.2636.3.71.1.3.1              jnxOpticsNotificationTable
+%en          1.3.6.1.4.1.2636.3.71.1.3.1.1            jnxOpticsNotificationEntry
+%en          1.3.6.1.4.1.2636.3.72                    jnxAlarmExtMibRoot
+%en          1.3.6.1.4.1.2636.3.73                    jnxoptIfMibRoot
+%en          1.3.6.1.4.1.2636.3.74                    jnxFruMibRoot
+%en          1.3.6.1.4.1.2636.3.75                    jnxTimingNotfnsMIBRoot
+%en          1.3.6.1.4.1.2636.3.76                    jnxSnmpSetMibRoot
+%en          1.3.6.1.4.1.2636.3.77                    jnxTwampMibRoot
+%en          1.3.6.1.4.1.2636.3.79                    jnxVmonMibRoot
+%en          1.3.6.1.4.1.2636.3.80                    jnxSGMibRoot
+%en          1.3.6.1.4.1.2636.3.81                    jnxFabricMibRoot
+%en          1.3.6.1.4.1.2636.3.82                    jnxSRDMibRoot
+%en          1.3.6.1.4.1.2636.3.83                    jnxOamMibRoot
+%en          1.3.6.1.4.1.2636.3.84                    jnxTunnelStatsMibRoot
+%en          1.3.6.1.4.1.2636.3.85                    jnxURLFMibRoot
+%en          1.3.6.1.4.1.2636.4                       jnxTraps
+%en          1.3.6.1.4.1.2636.4.1                     jnxChassisTraps
+%en          1.3.6.1.4.1.2636.4.2                     jnxChassisOKTraps
+%en          1.3.6.1.4.1.2636.4.3                     jnxRmonTraps
+%en          1.3.6.1.4.1.2636.4.4                     jnxLdpTraps
+%en          1.3.6.1.4.1.2636.4.5                     jnxCmNotifications
+%en          1.3.6.1.4.1.2636.4.6                     jnxSonetNotifications
+%en          1.3.6.1.4.1.2636.4.7                     jnxPMonNotifications
+%en          1.3.6.1.4.1.2636.4.8                     jnxCollectorNotifications
+%en          1.3.6.1.4.1.2636.4.9                     jnxPingNotifications
+%en          1.3.6.1.4.1.2636.4.10                    jnxSpNotifications
+%en          1.3.6.1.4.1.2636.4.11                    jnxDfcNotifications
+%en          1.3.6.1.4.1.2636.4.12                    jnxSyslogNotifications
+%en          1.3.6.1.4.1.2636.4.13                    jnxEventNotifications
+%en          1.3.6.1.4.1.2636.4.14                    jnxVccpNotifications
+%en          1.3.6.1.4.1.2636.4.15                    jnxOtnNotifications
+%en          1.3.6.1.4.1.2636.4.16                    jnxSAIDPNotifications
+%en          1.3.6.1.4.1.2636.4.17                    jnxCosNotifications
+%en          1.3.6.1.4.1.2636.4.18                    jnxDomNotifications
+%en          1.3.6.1.4.1.2636.4.19                    jnxFabricChassisTraps
+%en          1.3.6.1.4.1.2636.4.20                    jnxFabricChassisOKTraps
+%en          1.3.6.1.4.1.2636.4.21                    jnxIfOtnNotifications
+%en          1.3.6.1.4.1.2636.4.22                    jnxOpticsNotifications
+%en          1.3.6.1.4.1.2636.4.22.0                  jnxOpticsNotificationPrefix
+%en          1.3.6.1.4.1.2636.4.23                    jnxFruTraps
+%en          1.3.6.1.4.1.2636.4.24                    jnxSnmpSetTraps
+%en          1.3.6.1.4.1.2636.4.25                    jnxDomLaneNotifications
+%en          1.3.6.1.4.1.2636.4.27                    jnxTwampNotificationPrefix
+%en          1.3.6.1.4.1.2636.4.28                    jnxIplcNotifications
+%en          1.3.6.1.4.1.2636.4.29                    jnxIlaNotifications
+%en          1.3.6.1.4.1.2636.5                       jnxExperiment
+%en          1.3.6.1.4.1.2636.6                       jnxNsm
+%en          1.3.6.1.4.1.2636.7                       jnxCA
+%en          1.3.6.1.4.1.2636.8                       jnxAAA
+%en          1.3.6.1.4.1.2636.9                       jnxAdvancedInsightMgr
+%en          1.3.6.1.4.1.2636.10                      jnxBxMibRoot
+%en          1.3.6.1.4.1.2636.11                      jnxAgentCapability
+%en          1.3.6.1.6.3.1                            snmpMIB
+%en          1.3.6.1.6.3.1.1                          snmpMIBObjects
+%en          1.3.6.1.6.3.1.1.4                        snmpTrap
+%en          1.3.6.1.6.3.1.1.5                        snmpTraps
+%en          1.3.6.1.6.3.1.1.6                        snmpSet
+%en          1.3.6.1.6.3.1.2                          snmpMIBConformance
+%en          1.3.6.1.6.3.1.2.1                        snmpMIBCompliances
+%en          1.3.6.1.6.3.1.2.2                        snmpMIBGroups
+%ei   1.3.6.1.2.1.1.9.1 "sysORIndex"
+%ei   1.3.6.1.2.1.2.2.1 "ifIndex"
+%ev                  ifType           other           1
+%ev                  ifType           regular1822     2
+%ev                  ifType           hdh1822         3
+%ev                  ifType           ddnX25          4
+%ev                  ifType           rfc877x25       5
+%ev                  ifType           ethernetCsmacd  6
+%ev                  ifType           iso88023Csmacd  7
+%ev                  ifType           iso88024TokenBus 8
+%ev                  ifType           iso88025TokenRing 9
+%ev                  ifType           iso88026Man     10
+%ev                  ifType           starLan         11
+%ev                  ifType           proteon10Mbit   12
+%ev                  ifType           proteon80Mbit   13
+%ev                  ifType           hyperchannel    14
+%ev                  ifType           fddi            15
+%ev                  ifType           lapb            16
+%ev                  ifType           sdlc            17
+%ev                  ifType           ds1             18
+%ev                  ifType           e1              19
+%ev                  ifType           basicISDN       20
+%ev                  ifType           primaryISDN     21
+%ev                  ifType           propPointToPointSerial 22
+%ev                  ifType           ppp             23
+%ev                  ifType           softwareLoopback 24
+%ev                  ifType           eon             25
+%ev                  ifType           ethernet3Mbit   26
+%ev                  ifType           nsip            27
+%ev                  ifType           slip            28
+%ev                  ifType           ultra           29
+%ev                  ifType           ds3             30
+%ev                  ifType           sip             31
+%ev                  ifType           frameRelay      32
+%ev                  ifType           rs232           33
+%ev                  ifType           para            34
+%ev                  ifType           arcnet          35
+%ev                  ifType           arcnetPlus      36
+%ev                  ifType           atm             37
+%ev                  ifType           miox25          38
+%ev                  ifType           sonet           39
+%ev                  ifType           x25ple          40
+%ev                  ifType           iso88022llc     41
+%ev                  ifType           localTalk       42
+%ev                  ifType           smdsDxi         43
+%ev                  ifType           frameRelayService 44
+%ev                  ifType           v35             45
+%ev                  ifType           hssi            46
+%ev                  ifType           hippi           47
+%ev                  ifType           modem           48
+%ev                  ifType           aal5            49
+%ev                  ifType           sonetPath       50
+%ev                  ifType           sonetVT         51
+%ev                  ifType           smdsIcip        52
+%ev                  ifType           propVirtual     53
+%ev                  ifType           propMultiplexor 54
+%ev                  ifType           ieee80212       55
+%ev                  ifType           fibreChannel    56
+%ev                  ifType           hippiInterface  57
+%ev                  ifType           frameRelayInterconnect 58
+%ev                  ifType           aflane8023      59
+%ev                  ifType           aflane8025      60
+%ev                  ifType           cctEmul         61
+%ev                  ifType           fastEther       62
+%ev                  ifType           isdn            63
+%ev                  ifType           v11             64
+%ev                  ifType           v36             65
+%ev                  ifType           g703at64k       66
+%ev                  ifType           g703at2mb       67
+%ev                  ifType           qllc            68
+%ev                  ifType           fastEtherFX     69
+%ev                  ifType           channel         70
+%ev                  ifType           ieee80211       71
+%ev                  ifType           ibm370parChan   72
+%ev                  ifType           escon           73
+%ev                  ifType           dlsw            74
+%ev                  ifType           isdns           75
+%ev                  ifType           isdnu           76
+%ev                  ifType           lapd            77
+%ev                  ifType           ipSwitch        78
+%ev                  ifType           rsrb            79
+%ev                  ifType           atmLogical      80
+%ev                  ifType           ds0             81
+%ev                  ifType           ds0Bundle       82
+%ev                  ifType           bsc             83
+%ev                  ifType           async           84
+%ev                  ifType           cnr             85
+%ev                  ifType           iso88025Dtr     86
+%ev                  ifType           eplrs           87
+%ev                  ifType           arap            88
+%ev                  ifType           propCnls        89
+%ev                  ifType           hostPad         90
+%ev                  ifType           termPad         91
+%ev                  ifType           frameRelayMPI   92
+%ev                  ifType           x213            93
+%ev                  ifType           adsl            94
+%ev                  ifType           radsl           95
+%ev                  ifType           sdsl            96
+%ev                  ifType           vdsl            97
+%ev                  ifType           iso88025CRFPInt 98
+%ev                  ifType           myrinet         99
+%ev                  ifType           voiceEM         100
+%ev                  ifType           voiceFXO        101
+%ev                  ifType           voiceFXS        102
+%ev                  ifType           voiceEncap      103
+%ev                  ifType           voiceOverIp     104
+%ev                  ifType           atmDxi          105
+%ev                  ifType           atmFuni         106
+%ev                  ifType           atmIma          107
+%ev                  ifType           pppMultilinkBundle 108
+%ev                  ifType           ipOverCdlc      109
+%ev                  ifType           ipOverClaw      110
+%ev                  ifType           stackToStack    111
+%ev                  ifType           virtualIpAddress 112
+%ev                  ifType           mpc             113
+%ev                  ifType           ipOverAtm       114
+%ev                  ifType           iso88025Fiber   115
+%ev                  ifType           tdlc            116
+%ev                  ifType           gigabitEthernet 117
+%ev                  ifType           hdlc            118
+%ev                  ifType           lapf            119
+%ev                  ifType           v37             120
+%ev                  ifType           x25mlp          121
+%ev                  ifType           x25huntGroup    122
+%ev                  ifType           trasnpHdlc      123
+%ev                  ifType           interleave      124
+%ev                  ifType           fast            125
+%ev                  ifType           ip              126
+%ev                  ifType           docsCableMaclayer 127
+%ev                  ifType           docsCableDownstream 128
+%ev                  ifType           docsCableUpstream 129
+%ev                  ifType           a12MppSwitch    130
+%ev                  ifType           tunnel          131
+%ev                  ifType           coffee          132
+%ev                  ifType           ces             133
+%ev                  ifType           atmSubInterface 134
+%ev                  ifType           l2vlan          135
+%ev                  ifType           l3ipvlan        136
+%ev                  ifType           l3ipxvlan       137
+%ev                  ifType           digitalPowerline 138
+%ev                  ifType           mediaMailOverIp 139
+%ev                  ifType           dtm             140
+%ev                  ifType           dcn             141
+%ev                  ifType           ipForward       142
+%ev                  ifType           msdsl           143
+%ev                  ifType           ieee1394        144
+%ev                  ifType           if-gsn          145
+%ev                  ifType           dvbRccMacLayer  146
+%ev                  ifType           dvbRccDownstream 147
+%ev                  ifType           dvbRccUpstream  148
+%ev                  ifType           atmVirtual      149
+%ev                  ifType           mplsTunnel      150
+%ev                  ifType           srp             151
+%ev                  ifType           voiceOverAtm    152
+%ev                  ifType           voiceOverFrameRelay 153
+%ev                  ifType           idsl            154
+%ev                  ifType           compositeLink   155
+%ev                  ifType           ss7SigLink      156
+%ev                  ifType           propWirelessP2P 157
+%ev                  ifType           frForward       158
+%ev                  ifType           rfc1483         159
+%ev                  ifType           usb             160
+%ev                  ifType           ieee8023adLag   161
+%ev                  ifType           bgppolicyaccounting 162
+%ev                  ifType           frf16MfrBundle  163
+%ev                  ifType           h323Gatekeeper  164
+%ev                  ifType           h323Proxy       165
+%ev                  ifType           mpls            166
+%ev                  ifType           mfSigLink       167
+%ev                  ifType           hdsl2           168
+%ev                  ifType           shdsl           169
+%ev                  ifType           ds1FDL          170
+%ev                  ifType           pos             171
+%ev                  ifType           dvbAsiIn        172
+%ev                  ifType           dvbAsiOut       173
+%ev                  ifType           plc             174
+%ev                  ifType           nfas            175
+%ev                  ifType           tr008           176
+%ev                  ifType           gr303RDT        177
+%ev                  ifType           gr303IDT        178
+%ev                  ifType           isup            179
+%ev                  ifType           propDocsWirelessMaclayer 180
+%ev                  ifType           propDocsWirelessDownstream 181
+%ev                  ifType           propDocsWirelessUpstream 182
+%ev                  ifType           hiperlan2       183
+%ev                  ifType           propBWAp2Mp     184
+%ev                  ifType           sonetOverheadChannel 185
+%ev                  ifType           digitalWrapperOverheadChannel 186
+%ev                  ifType           aal2            187
+%ev                  ifType           radioMAC        188
+%ev                  ifType           atmRadio        189
+%ev                  ifType           imt             190
+%ev                  ifType           mvl             191
+%ev                  ifType           reachDSL        192
+%ev                  ifType           frDlciEndPt     193
+%ev                  ifType           atmVciEndPt     194
+%ev                  ifType           opticalChannel  195
+%ev                  ifType           opticalTransport 196
+%ev                  ifType           propAtm         197
+%ev                  ifType           voiceOverCable  198
+%ev                  ifType           infiniband      199
+%ev                  ifType           teLink          200
+%ev                  ifType           q2931           201
+%ev                  ifType           virtualTg       202
+%ev                  ifType           sipTg           203
+%ev                  ifType           sipSig          204
+%ev                  ifType           docsCableUpstreamChannel 205
+%ev                  ifType           econet          206
+%ev                  ifType           pon155          207
+%ev                  ifType           pon622          208
+%ev                  ifType           bridge          209
+%ev                  ifType           linegroup       210
+%ev                  ifType           voiceEMFGD      211
+%ev                  ifType           voiceFGDEANA    212
+%ev                  ifType           voiceDID        213
+%ev                  ifType           mpegTransport   214
+%ev                  ifType           sixToFour       215
+%ev                  ifType           gtp             216
+%ev                  ifType           pdnEtherLoop1   217
+%ev                  ifType           pdnEtherLoop2   218
+%ev                  ifType           opticalChannelGroup 219
+%ev                  ifType           homepna         220
+%ev                  ifType           gfp             221
+%ev                  ifType           ciscoISLvlan    222
+%ev                  ifType           actelisMetaLOOP 223
+%ev                  ifType           fcipLink        224
+%ev                  ifType           rpr             225
+%ev                  ifType           qam             226
+%ev                  ifType           lmp             227
+%ev                  ifType           cblVectaStar    228
+%ev                  ifType           docsCableMCmtsDownstream 229
+%ev                  ifType           adsl2           230
+%ev                  ifType           macSecControlledIF 231
+%ev                  ifType           macSecUncontrolledIF 232
+%ev                  ifType           aviciOpticalEther 233
+%ev                  ifType           atmbond         234
+%ev                  ifAdminStatus    up              1
+%ev                  ifAdminStatus    down            2
+%ev                  ifAdminStatus    testing         3
+%ev                  ifOperStatus     up              1
+%ev                  ifOperStatus     down            2
+%ev                  ifOperStatus     testing         3
+%ev                  ifOperStatus     unknown         4
+%ev                  ifOperStatus     dormant         5
+%ev                  ifOperStatus     notPresent      6
+%ev                  ifOperStatus     lowerLayerDown  7
+%ev                  snmpEnableAuthenTraps enabled         1
+%ev                  snmpEnableAuthenTraps disabled        2
+%ei   1.3.6.1.2.1.25.2.3.1 "hrStorageIndex"
+%ei   1.3.6.1.2.1.25.3.2.1 "hrDeviceIndex"
+%ev                  hrDeviceStatus   unknown         1
+%ev                  hrDeviceStatus   running         2
+%ev                  hrDeviceStatus   warning         3
+%ev                  hrDeviceStatus   testing         4
+%ev                  hrDeviceStatus   down            5
+%ei   1.3.6.1.2.1.25.3.3.1 "hrDeviceIndex"
+%ei   1.3.6.1.2.1.25.3.4.1 "hrDeviceIndex"
+%ei   1.3.6.1.2.1.25.3.5.1 "hrDeviceIndex"
+%ev                  hrPrinterStatus  other           1
+%ev                  hrPrinterStatus  unknown         2
+%ev                  hrPrinterStatus  idle            3
+%ev                  hrPrinterStatus  printing        4
+%ev                  hrPrinterStatus  warmup          5
+%ei   1.3.6.1.2.1.25.3.6.1 "hrDeviceIndex"
+%ev                  hrDiskStorageAccess readWrite       1
+%ev                  hrDiskStorageAccess readOnly        2
+%ev                  hrDiskStorageMedia other           1
+%ev                  hrDiskStorageMedia unknown         2
+%ev                  hrDiskStorageMedia hardDisk        3
+%ev                  hrDiskStorageMedia floppyDisk      4
+%ev                  hrDiskStorageMedia opticalDiskROM  5
+%ev                  hrDiskStorageMedia opticalDiskWORM 6
+%ev                  hrDiskStorageMedia opticalDiskRW   7
+%ev                  hrDiskStorageMedia ramDisk         8
+%ev                  hrDiskStorageRemoveble true            1
+%ev                  hrDiskStorageRemoveble false           2
+%ei   1.3.6.1.2.1.25.3.7.1 "hrDeviceIndex hrPartitionIndex"
+%ei   1.3.6.1.2.1.25.3.8.1 "hrFSIndex"
+%ev                  hrFSAccess       readWrite       1
+%ev                  hrFSAccess       readOnly        2
+%ev                  hrFSBootable     true            1
+%ev                  hrFSBootable     false           2
+%ei   1.3.6.1.2.1.25.4.2.1 "hrSWRunIndex"
+%ev                  hrSWRunType      unknown         1
+%ev                  hrSWRunType      operatingSystem 2
+%ev                  hrSWRunType      deviceDriver    3
+%ev                  hrSWRunType      application     4
+%ev                  hrSWRunStatus    running         1
+%ev                  hrSWRunStatus    runnable        2
+%ev                  hrSWRunStatus    notRunnable     3
+%ev                  hrSWRunStatus    invalid         4
+%ei   1.3.6.1.2.1.25.5.1.1 "hrSWRunIndex"
+%ei   1.3.6.1.2.1.25.6.3.1 "hrSWInstalledIndex"
+%ev                  hrSWInstalledType unknown         1
+%ev                  hrSWInstalledType operatingSystem 2
+%ev                  hrSWInstalledType deviceDriver    3
+%ev                  hrSWInstalledType application     4
+%module     hostResourcesMibModule 1.3.6.1.2.1.25.7.1
+%module     ianaifType           1.3.6.1.2.1.30
+%module     ifMIB                1.3.6.1.2.1.31
+%ei   1.3.6.1.2.1.31.1.1.1 "ifIndex"
+%ev                  ifLinkUpDownTrapEnable enabled         1
+%ev                  ifLinkUpDownTrapEnable disabled        2
+%ev                  ifPromiscuousMode true            1
+%ev                  ifPromiscuousMode false           2
+%ev                  ifConnectorPresent true            1
+%ev                  ifConnectorPresent false           2
+%ei   1.3.6.1.2.1.31.1.2.1 "ifStackHigherLayer ifStackLowerLayer"
+%ev                  ifStackStatus    active          1
+%ev                  ifStackStatus    notInService    2
+%ev                  ifStackStatus    notReady        3
+%ev                  ifStackStatus    createAndGo     4
+%ev                  ifStackStatus    createAndWait   5
+%ev                  ifStackStatus    destroy         6
+%ei   1.3.6.1.2.1.31.1.3.1 "ifIndex"
+%ev                  ifTestStatus     notInUse        1
+%ev                  ifTestStatus     inUse           2
+%ev                  ifTestResult     none            1
+%ev                  ifTestResult     success         2
+%ev                  ifTestResult     inProgress      3
+%ev                  ifTestResult     notSupported    4
+%ev                  ifTestResult     unAbleToRun     5
+%ev                  ifTestResult     aborted         6
+%ev                  ifTestResult     failed          7
+%ei   1.3.6.1.2.1.31.1.4.1 "ifIndex ifRcvAddressAddress"
+%ev                  ifRcvAddressStatus active          1
+%ev                  ifRcvAddressStatus notInService    2
+%ev                  ifRcvAddressStatus notReady        3
+%ev                  ifRcvAddressStatus createAndGo     4
+%ev                  ifRcvAddressStatus createAndWait   5
+%ev                  ifRcvAddressStatus destroy         6
+%ev                  ifRcvAddressType other           1
+%ev                  ifRcvAddressType volatile        2
+%ev                  ifRcvAddressType nonVolatile     3
+%module     hcnumTC              1.3.6.1.2.1.78
+%module     juniperMIB           1.3.6.1.4.1.2636
+%module     jnxBoxAnatomy        1.3.6.1.4.1.2636.3.1
+%ei   1.3.6.1.4.1.2636.3.1.6.1 "jnxContainersIndex"
+%ei   1.3.6.1.4.1.2636.3.1.8.1 "jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index"
+%ev                  jnxContentsChassisId unknown         1
+%ev                  jnxContentsChassisId singleChassis   2
+%ev                  jnxContentsChassisId scc             3
+%ev                  jnxContentsChassisId lcc0            4
+%ev                  jnxContentsChassisId lcc1            5
+%ev                  jnxContentsChassisId lcc2            6
+%ev                  jnxContentsChassisId lcc3            7
+%ev                  jnxContentsChassisId jcs1            8
+%ev                  jnxContentsChassisId jcs2            9
+%ev                  jnxContentsChassisId jcs3            10
+%ev                  jnxContentsChassisId jcs4            11
+%ev                  jnxContentsChassisId node0           12
+%ev                  jnxContentsChassisId node1           13
+%ev                  jnxContentsChassisId sfc0            14
+%ev                  jnxContentsChassisId sfc1            15
+%ev                  jnxContentsChassisId sfc2            16
+%ev                  jnxContentsChassisId sfc3            17
+%ev                  jnxContentsChassisId sfc4            18
+%ev                  jnxContentsChassisId lcc4            19
+%ev                  jnxContentsChassisId lcc5            20
+%ev                  jnxContentsChassisId lcc6            21
+%ev                  jnxContentsChassisId lcc7            22
+%ev                  jnxContentsChassisId lcc8            23
+%ev                  jnxContentsChassisId lcc9            24
+%ev                  jnxContentsChassisId lcc10           25
+%ev                  jnxContentsChassisId lcc11           26
+%ev                  jnxContentsChassisId lcc12           27
+%ev                  jnxContentsChassisId lcc13           28
+%ev                  jnxContentsChassisId lcc14           29
+%ev                  jnxContentsChassisId lcc15           30
+%ev                  jnxContentsChassisId member0         31
+%ev                  jnxContentsChassisId member1         32
+%ev                  jnxContentsChassisId member2         33
+%ev                  jnxContentsChassisId member3         34
+%ev                  jnxContentsChassisId member4         35
+%ev                  jnxContentsChassisId member5         36
+%ev                  jnxContentsChassisId member6         37
+%ev                  jnxContentsChassisId member7         38
+%ev                  jnxContentsChassisId nodeDevice      39
+%ev                  jnxContentsChassisId interconnectDevice 40
+%ev                  jnxContentsChassisId controlPlaneDevice 41
+%ev                  jnxContentsChassisId directorDevice  42
+%ei   1.3.6.1.4.1.2636.3.1.10.1 "jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index"
+%ev                  jnxLEDAssociateTable other           1
+%ev                  jnxLEDAssociateTable jnxContainersTable 2
+%ev                  jnxLEDAssociateTable jnxContentsTable 3
+%ev                  jnxLEDState      other           1
+%ev                  jnxLEDState      green           2
+%ev                  jnxLEDState      yellow          3
+%ev                  jnxLEDState      red             4
+%ev                  jnxLEDState      blue            5
+%ev                  jnxLEDState      amber           6
+%ev                  jnxLEDStateOrdered blue            1
+%ev                  jnxLEDStateOrdered green           2
+%ev                  jnxLEDStateOrdered amber           3
+%ev                  jnxLEDStateOrdered yellow          4
+%ev                  jnxLEDStateOrdered red             5
+%ev                  jnxLEDStateOrdered other           6
+%ei   1.3.6.1.4.1.2636.3.1.12.1 "jnxFilledContainerIndex jnxFilledL1Index jnxFilledL2Index jnxFilledL3Index"
+%ev                  jnxFilledState   unknown         1
+%ev                  jnxFilledState   empty           2
+%ev                  jnxFilledState   filled          3
+%ev                  jnxFilledChassisId unknown         1
+%ev                  jnxFilledChassisId singleChassis   2
+%ev                  jnxFilledChassisId scc             3
+%ev                  jnxFilledChassisId lcc0            4
+%ev                  jnxFilledChassisId lcc1            5
+%ev                  jnxFilledChassisId lcc2            6
+%ev                  jnxFilledChassisId lcc3            7
+%ev                  jnxFilledChassisId jcs1            8
+%ev                  jnxFilledChassisId jcs2            9
+%ev                  jnxFilledChassisId jcs3            10
+%ev                  jnxFilledChassisId jcs4            11
+%ev                  jnxFilledChassisId node0           12
+%ev                  jnxFilledChassisId node1           13
+%ev                  jnxFilledChassisId sfc0            14
+%ev                  jnxFilledChassisId sfc1            15
+%ev                  jnxFilledChassisId sfc2            16
+%ev                  jnxFilledChassisId sfc3            17
+%ev                  jnxFilledChassisId sfc4            18
+%ev                  jnxFilledChassisId lcc4            19
+%ev                  jnxFilledChassisId lcc5            20
+%ev                  jnxFilledChassisId lcc6            21
+%ev                  jnxFilledChassisId lcc7            22
+%ev                  jnxFilledChassisId lcc8            23
+%ev                  jnxFilledChassisId lcc9            24
+%ev                  jnxFilledChassisId lcc10           25
+%ev                  jnxFilledChassisId lcc11           26
+%ev                  jnxFilledChassisId lcc12           27
+%ev                  jnxFilledChassisId lcc13           28
+%ev                  jnxFilledChassisId lcc14           29
+%ev                  jnxFilledChassisId lcc15           30
+%ev                  jnxFilledChassisId member0         31
+%ev                  jnxFilledChassisId member1         32
+%ev                  jnxFilledChassisId member2         33
+%ev                  jnxFilledChassisId member3         34
+%ev                  jnxFilledChassisId member4         35
+%ev                  jnxFilledChassisId member5         36
+%ev                  jnxFilledChassisId member6         37
+%ev                  jnxFilledChassisId member7         38
+%ev                  jnxFilledChassisId nodeDevice      39
+%ev                  jnxFilledChassisId interconnectDevice 40
+%ev                  jnxFilledChassisId controlPlaneDevice 41
+%ev                  jnxFilledChassisId directorDevice  42
+%ei   1.3.6.1.4.1.2636.3.1.13.1 "jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index"
+%ev                  jnxOperatingState unknown         1
+%ev                  jnxOperatingState running         2
+%ev                  jnxOperatingState ready           3
+%ev                  jnxOperatingState reset           4
+%ev                  jnxOperatingState runningAtFullSpeed 5
+%ev                  jnxOperatingState down            6
+%ev                  jnxOperatingState standby         7
+%ev                  jnxOperatingStateOrdered running         1
+%ev                  jnxOperatingStateOrdered standby         2
+%ev                  jnxOperatingStateOrdered ready           3
+%ev                  jnxOperatingStateOrdered runningAtFullSpeed 4
+%ev                  jnxOperatingStateOrdered reset           5
+%ev                  jnxOperatingStateOrdered down            6
+%ev                  jnxOperatingStateOrdered unknown         7
+%ev                  jnxOperatingChassisId unknown         1
+%ev                  jnxOperatingChassisId singleChassis   2
+%ev                  jnxOperatingChassisId scc             3
+%ev                  jnxOperatingChassisId lcc0            4
+%ev                  jnxOperatingChassisId lcc1            5
+%ev                  jnxOperatingChassisId lcc2            6
+%ev                  jnxOperatingChassisId lcc3            7
+%ev                  jnxOperatingChassisId jcs1            8
+%ev                  jnxOperatingChassisId jcs2            9
+%ev                  jnxOperatingChassisId jcs3            10
+%ev                  jnxOperatingChassisId jcs4            11
+%ev                  jnxOperatingChassisId node0           12
+%ev                  jnxOperatingChassisId node1           13
+%ev                  jnxOperatingChassisId sfc0            14
+%ev                  jnxOperatingChassisId sfc1            15
+%ev                  jnxOperatingChassisId sfc2            16
+%ev                  jnxOperatingChassisId sfc3            17
+%ev                  jnxOperatingChassisId sfc4            18
+%ev                  jnxOperatingChassisId lcc4            19
+%ev                  jnxOperatingChassisId lcc5            20
+%ev                  jnxOperatingChassisId lcc6            21
+%ev                  jnxOperatingChassisId lcc7            22
+%ev                  jnxOperatingChassisId lcc8            23
+%ev                  jnxOperatingChassisId lcc9            24
+%ev                  jnxOperatingChassisId lcc10           25
+%ev                  jnxOperatingChassisId lcc11           26
+%ev                  jnxOperatingChassisId lcc12           27
+%ev                  jnxOperatingChassisId lcc13           28
+%ev                  jnxOperatingChassisId lcc14           29
+%ev                  jnxOperatingChassisId lcc15           30
+%ev                  jnxOperatingChassisId member0         31
+%ev                  jnxOperatingChassisId member1         32
+%ev                  jnxOperatingChassisId member2         33
+%ev                  jnxOperatingChassisId member3         34
+%ev                  jnxOperatingChassisId member4         35
+%ev                  jnxOperatingChassisId member5         36
+%ev                  jnxOperatingChassisId member6         37
+%ev                  jnxOperatingChassisId member7         38
+%ev                  jnxOperatingChassisId nodeDevice      39
+%ev                  jnxOperatingChassisId interconnectDevice 40
+%ev                  jnxOperatingChassisId controlPlaneDevice 41
+%ev                  jnxOperatingChassisId directorDevice  42
+%ei   1.3.6.1.4.1.2636.3.1.14.1 "jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index"
+%ev                  jnxRedundancyConfig unknown         1
+%ev                  jnxRedundancyConfig master          2
+%ev                  jnxRedundancyConfig backup          3
+%ev                  jnxRedundancyConfig disabled        4
+%ev                  jnxRedundancyConfig notApplicable   5
+%ev                  jnxRedundancyState unknown         1
+%ev                  jnxRedundancyState master          2
+%ev                  jnxRedundancyState backup          3
+%ev                  jnxRedundancyState disabled        4
+%ev                  jnxRedundancySwitchoverReason other           1
+%ev                  jnxRedundancySwitchoverReason neverSwitched   2
+%ev                  jnxRedundancySwitchoverReason userSwitched    3
+%ev                  jnxRedundancySwitchoverReason autoSwitched    4
+%ev                  jnxRedundancyChassisId unknown         1
+%ev                  jnxRedundancyChassisId singleChassis   2
+%ev                  jnxRedundancyChassisId scc             3
+%ev                  jnxRedundancyChassisId lcc0            4
+%ev                  jnxRedundancyChassisId lcc1            5
+%ev                  jnxRedundancyChassisId lcc2            6
+%ev                  jnxRedundancyChassisId lcc3            7
+%ev                  jnxRedundancyChassisId jcs1            8
+%ev                  jnxRedundancyChassisId jcs2            9
+%ev                  jnxRedundancyChassisId jcs3            10
+%ev                  jnxRedundancyChassisId jcs4            11
+%ev                  jnxRedundancyChassisId node0           12
+%ev                  jnxRedundancyChassisId node1           13
+%ev                  jnxRedundancyChassisId sfc0            14
+%ev                  jnxRedundancyChassisId sfc1            15
+%ev                  jnxRedundancyChassisId sfc2            16
+%ev                  jnxRedundancyChassisId sfc3            17
+%ev                  jnxRedundancyChassisId sfc4            18
+%ev                  jnxRedundancyChassisId lcc4            19
+%ev                  jnxRedundancyChassisId lcc5            20
+%ev                  jnxRedundancyChassisId lcc6            21
+%ev                  jnxRedundancyChassisId lcc7            22
+%ev                  jnxRedundancyChassisId lcc8            23
+%ev                  jnxRedundancyChassisId lcc9            24
+%ev                  jnxRedundancyChassisId lcc10           25
+%ev                  jnxRedundancyChassisId lcc11           26
+%ev                  jnxRedundancyChassisId lcc12           27
+%ev                  jnxRedundancyChassisId lcc13           28
+%ev                  jnxRedundancyChassisId lcc14           29
+%ev                  jnxRedundancyChassisId lcc15           30
+%ev                  jnxRedundancyChassisId member0         31
+%ev                  jnxRedundancyChassisId member1         32
+%ev                  jnxRedundancyChassisId member2         33
+%ev                  jnxRedundancyChassisId member3         34
+%ev                  jnxRedundancyChassisId member4         35
+%ev                  jnxRedundancyChassisId member5         36
+%ev                  jnxRedundancyChassisId member6         37
+%ev                  jnxRedundancyChassisId member7         38
+%ev                  jnxRedundancyChassisId nodeDevice      39
+%ev                  jnxRedundancyChassisId interconnectDevice 40
+%ev                  jnxRedundancyChassisId controlPlaneDevice 41
+%ev                  jnxRedundancyChassisId directorDevice  42
+%ei   1.3.6.1.4.1.2636.3.1.15.1 "jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index"
+%ev                  jnxFruType       other           1
+%ev                  jnxFruType       clockGenerator  2
+%ev                  jnxFruType       flexiblePicConcentrator 3
+%ev                  jnxFruType       switchingAndForwardingModule 4
+%ev                  jnxFruType       controlBoard    5
+%ev                  jnxFruType       routingEngine   6
+%ev                  jnxFruType       powerEntryModule 7
+%ev                  jnxFruType       frontPanelModule 8
+%ev                  jnxFruType       switchInterfaceBoard 9
+%ev                  jnxFruType       processorMezzanineBoardForSIB 10
+%ev                  jnxFruType       portInterfaceCard 11
+%ev                  jnxFruType       craftInterfacePanel 12
+%ev                  jnxFruType       fan             13
+%ev                  jnxFruType       lineCardChassis 14
+%ev                  jnxFruType       forwardingEngineBoard 15
+%ev                  jnxFruType       protectedSystemDomain 16
+%ev                  jnxFruType       powerDistributionUnit 17
+%ev                  jnxFruType       powerSupplyModule 18
+%ev                  jnxFruType       switchFabricBoard 19
+%ev                  jnxFruType       adapterCard     20
+%ev                  jnxFruState      unknown         1
+%ev                  jnxFruState      empty           2
+%ev                  jnxFruState      present         3
+%ev                  jnxFruState      ready           4
+%ev                  jnxFruState      announceOnline  5
+%ev                  jnxFruState      online          6
+%ev                  jnxFruState      anounceOffline  7
+%ev                  jnxFruState      offline         8
+%ev                  jnxFruState      diagnostic      9
+%ev                  jnxFruState      standby         10
+%ev                  jnxFruOfflineReason unknown         1
+%ev                  jnxFruOfflineReason none            2
+%ev                  jnxFruOfflineReason error           3
+%ev                  jnxFruOfflineReason noPower         4
+%ev                  jnxFruOfflineReason configPowerOff  5
+%ev                  jnxFruOfflineReason configHoldInReset 6
+%ev                  jnxFruOfflineReason cliCommand      7
+%ev                  jnxFruOfflineReason buttonPress     8
+%ev                  jnxFruOfflineReason cliRestart      9
+%ev                  jnxFruOfflineReason overtempShutdown 10
+%ev                  jnxFruOfflineReason masterClockDown 11
+%ev                  jnxFruOfflineReason singleSfmModeChange 12
+%ev                  jnxFruOfflineReason packetSchedulingModeChange 13
+%ev                  jnxFruOfflineReason physicalRemoval 14
+%ev                  jnxFruOfflineReason unresponsiveRestart 15
+%ev                  jnxFruOfflineReason sonetClockAbsent 16
+%ev                  jnxFruOfflineReason rddPowerOff     17
+%ev                  jnxFruOfflineReason majorErrors     18
+%ev                  jnxFruOfflineReason minorErrors     19
+%ev                  jnxFruOfflineReason lccHardRestart  20
+%ev                  jnxFruOfflineReason lccVersionMismatch 21
+%ev                  jnxFruOfflineReason powerCycle      22
+%ev                  jnxFruOfflineReason reconnect       23
+%ev                  jnxFruOfflineReason overvoltage     24
+%ev                  jnxFruOfflineReason pfeVersionMismatch 25
+%ev                  jnxFruOfflineReason febRddCfgChange 26
+%ev                  jnxFruOfflineReason fpcMisconfig    27
+%ev                  jnxFruOfflineReason fruReconnectFail 28
+%ev                  jnxFruOfflineReason fruFwddReset    29
+%ev                  jnxFruOfflineReason fruFebSwitch    30
+%ev                  jnxFruOfflineReason fruFebOffline   31
+%ev                  jnxFruOfflineReason fruInServSoftUpgradeError 32
+%ev                  jnxFruOfflineReason fruChasdPowerRatingExceed 33
+%ev                  jnxFruOfflineReason fruConfigOffline 34
+%ev                  jnxFruOfflineReason fruServiceRestartRequest 35
+%ev                  jnxFruOfflineReason spuResetRequest 36
+%ev                  jnxFruOfflineReason spuFlowdDown    37
+%ev                  jnxFruOfflineReason spuSpi4Down     38
+%ev                  jnxFruOfflineReason spuWatchdogTimeout 39
+%ev                  jnxFruOfflineReason spuCoreDump     40
+%ev                  jnxFruOfflineReason fpgaSpi4LinkDown 41
+%ev                  jnxFruOfflineReason i3Spi4LinkDown  42
+%ev                  jnxFruOfflineReason cppDisconnect   43
+%ev                  jnxFruOfflineReason cpuNotBoot      44
+%ev                  jnxFruOfflineReason spuCoreDumpComplete 45
+%ev                  jnxFruOfflineReason rstOnSpcSpuFailure 46
+%ev                  jnxFruOfflineReason softRstOnSpcSpuFailure 47
+%ev                  jnxFruOfflineReason hwAuthenticationFailure 48
+%ev                  jnxFruOfflineReason reconnectFpcFail 49
+%ev                  jnxFruOfflineReason fpcAppFailed    50
+%ev                  jnxFruOfflineReason fpcKernelCrash  51
+%ev                  jnxFruOfflineReason spuFlowdDownNoCore 52
+%ev                  jnxFruOfflineReason spuFlowdCoreDumpIncomplete 53
+%ev                  jnxFruOfflineReason spuFlowdCoreDumpComplete 54
+%ev                  jnxFruOfflineReason spuIdpdDownNoCore 55
+%ev                  jnxFruOfflineReason spuIdpdCoreDumpIncomplete 56
+%ev                  jnxFruOfflineReason spuIdpdCoreDumpComplete 57
+%ev                  jnxFruOfflineReason spuCoreDumpIncomplete 58
+%ev                  jnxFruOfflineReason spuIdpdDown     59
+%ev                  jnxFruOfflineReason fruPfeReset     60
+%ev                  jnxFruOfflineReason fruReconnectNotReady 61
+%ev                  jnxFruOfflineReason fruSfLinkDown   62
+%ev                  jnxFruOfflineReason fruFabricDown   63
+%ev                  jnxFruOfflineReason fruAntiCounterfeitRetry 64
+%ev                  jnxFruOfflineReason fruFPCChassisClusterDisable 65
+%ev                  jnxFruOfflineReason spuFipsError    66
+%ev                  jnxFruOfflineReason fruFPCFabricDownOffline 67
+%ev                  jnxFruOfflineReason febCfgChange    68
+%ev                  jnxFruOfflineReason routeLocalizationRoleChange 69
+%ev                  jnxFruOfflineReason fruFpcUnsupported 70
+%ev                  jnxFruOfflineReason psdVersionMismatch 71
+%ev                  jnxFruOfflineReason fruResetThresholdExceeded 72
+%ev                  jnxFruOfflineReason picBounce       73
+%ev                  jnxFruOfflineReason badVoltage      74
+%ev                  jnxFruOfflineReason fruFPCReducedFabricBW 75
+%ev                  jnxFruOfflineReason fruAutoheal     76
+%ev                  jnxFruOfflineReason builtinPicBounce 77
+%ev                  jnxFruOfflineReason fruFabricDegraded 78
+%ev                  jnxFruOfflineReason fruFPCFabricDegradedOffline 79
+%ev                  jnxFruOfflineReason fruUnsupportedSlot 80
+%ev                  jnxFruOfflineReason fruRouteLocalizationMisCfg 81
+%ev                  jnxFruOfflineReason fruTypeConfigMismatch 82
+%ev                  jnxFruOfflineReason lccModeChanged  83
+%ev                  jnxFruOfflineReason hwFault         84
+%ev                  jnxFruOfflineReason fruPICOfflineOnEccErrors 85
+%ev                  jnxFruOfflineReason fruFpcIncompatible 86
+%ev                  jnxFruOfflineReason fruFpcFanTrayPEMIncompatible 87
+%ev                  jnxFruOfflineReason fruUnsupportedFirmware 88
+%ev                  jnxFruOfflineReason openflowConfigChange 89
+%ev                  jnxFruOfflineReason fruFpcScbIncompatible 90
+%ev                  jnxFruOfflineReason fruReUnresponsive 91
+%ev                  jnxFruOfflineReason hwError         92
+%ev                  jnxFruOfflineReason fruErrorManagerReqFPCReset 93
+%ev                  jnxFruOfflineReason fruIncompatibleWithPEM 94
+%ev                  jnxFruOfflineReason fruIncompatibleWithSIB 95
+%ev                  jnxFruOfflineReason sibIncompatibleWithOtherSIB 96
+%ev                  jnxFruOfflineReason fruPfeErrors    97
+%ev                  jnxFruChassisId  unknown         1
+%ev                  jnxFruChassisId  singleChassis   2
+%ev                  jnxFruChassisId  scc             3
+%ev                  jnxFruChassisId  lcc0            4
+%ev                  jnxFruChassisId  lcc1            5
+%ev                  jnxFruChassisId  lcc2            6
+%ev                  jnxFruChassisId  lcc3            7
+%ev                  jnxFruChassisId  jcs1            8
+%ev                  jnxFruChassisId  jcs2            9
+%ev                  jnxFruChassisId  jcs3            10
+%ev                  jnxFruChassisId  jcs4            11
+%ev                  jnxFruChassisId  node0           12
+%ev                  jnxFruChassisId  node1           13
+%ev                  jnxFruChassisId  sfc0            14
+%ev                  jnxFruChassisId  sfc1            15
+%ev                  jnxFruChassisId  sfc2            16
+%ev                  jnxFruChassisId  sfc3            17
+%ev                  jnxFruChassisId  sfc4            18
+%ev                  jnxFruChassisId  lcc4            19
+%ev                  jnxFruChassisId  lcc5            20
+%ev                  jnxFruChassisId  lcc6            21
+%ev                  jnxFruChassisId  lcc7            22
+%ev                  jnxFruChassisId  lcc8            23
+%ev                  jnxFruChassisId  lcc9            24
+%ev                  jnxFruChassisId  lcc10           25
+%ev                  jnxFruChassisId  lcc11           26
+%ev                  jnxFruChassisId  lcc12           27
+%ev                  jnxFruChassisId  lcc13           28
+%ev                  jnxFruChassisId  lcc14           29
+%ev                  jnxFruChassisId  lcc15           30
+%ev                  jnxFruChassisId  member0         31
+%ev                  jnxFruChassisId  member1         32
+%ev                  jnxFruChassisId  member2         33
+%ev                  jnxFruChassisId  member3         34
+%ev                  jnxFruChassisId  member4         35
+%ev                  jnxFruChassisId  member5         36
+%ev                  jnxFruChassisId  member6         37
+%ev                  jnxFruChassisId  member7         38
+%ev                  jnxFruChassisId  nodeDevice      39
+%ev                  jnxFruChassisId  interconnectDevice 40
+%ev                  jnxFruChassisId  controlPlaneDevice 41
+%ev                  jnxFruChassisId  directorDevice  42
+%ev                  jnxBoxSystemDomainType notApplicable   1
+%ev                  jnxBoxSystemDomainType rootSystemDomain 2
+%ev                  jnxBoxSystemDomainType protectedSystemDomain 3
+%module     mpls                 1.3.6.1.4.1.2636.3.2
+%ev                  mplsSignalingProto none            1
+%ev                  mplsSignalingProto other           2
+%ev                  mplsSignalingProto rsvp            3
+%ev                  mplsSignalingProto ldp             4
+%ev                  mplsTEDistProtocol none            1
+%ev                  mplsTEDistProtocol isis            2
+%ev                  mplsTEDistProtocol ospf            3
+%ev                  mplsTEDistProtocol isis-ospf       4
+%ei   1.3.6.1.4.1.2636.3.2.2.2.1 "mplsAdminGroupNumber"
+%ei   1.3.6.1.4.1.2636.3.2.3.1 "mplsLspName"
+%ev                  mplsLspState     unknown         1
+%ev                  mplsLspState     up              2
+%ev                  mplsLspState     down            3
+%ev                  mplsLspState     notInService    4
+%ev                  mplsLspState     backupActive    5
+%ev                  mplsPathType     other           1
+%ev                  mplsPathType     primary         2
+%ev                  mplsPathType     standby         3
+%ev                  mplsPathType     secondary       4
+%ev                  mplsPathType     bypass          5
+%ev                  mplsPathProperties record-route    1
+%ev                  mplsPathProperties adaptive        2
+%ev                  mplsPathProperties cspf            4
+%ev                  mplsPathProperties mergeable       8
+%ev                  mplsPathProperties preemptable     16
+%ev                  mplsPathProperties preemptive      32
+%ev                  mplsPathProperties fast-reroute    64
+%ei   1.3.6.1.4.1.2636.3.2.5.1 "*mplsLspInfoName"
+%ev                  mplsLspInfoState unknown         1
+%ev                  mplsLspInfoState up              2
+%ev                  mplsLspInfoState down            3
+%ev                  mplsLspInfoState notInService    4
+%ev                  mplsLspInfoState backupActive    5
+%ev                  mplsPathInfoType other           1
+%ev                  mplsPathInfoType primary         2
+%ev                  mplsPathInfoType standby         3
+%ev                  mplsPathInfoType secondary       4
+%ev                  mplsPathInfoType bypass          5
+%ev                  mplsPathInfoProperties record-route    1
+%ev                  mplsPathInfoProperties adaptive        2
+%ev                  mplsPathInfoProperties cspf            4
+%ev                  mplsPathInfoProperties mergeable       8
+%ev                  mplsPathInfoProperties preemptable     16
+%ev                  mplsPathInfoProperties preemptive      32
+%ev                  mplsPathInfoProperties fast-reroute    64
+%module     ifJnx                1.3.6.1.4.1.2636.3.3
+%ei   1.3.6.1.4.1.2636.3.3.1.1 "ifIndex"
+%ei   1.3.6.1.4.1.2636.3.3.2.1 "ifIndex"
+%ei   1.3.6.1.4.1.2636.3.3.4.1 "ifIndex"
+%module     jnxHostResourcesMIB  1.3.6.1.4.1.2636.3.31
+%ei   1.3.6.1.4.1.2636.3.31.1.1.1 "hrStorageIndex"
+%module     jnxIfOpticsMib       1.3.6.1.4.1.2636.3.71.1
+%ei   1.3.6.1.4.1.2636.3.71.1.1.1.1 "jnxOpticsConfigContainerIndex jnxOpticsConfigL1Index jnxOpticsConfigL2Index jnxOpticsConfigL3Index"
+%ev                  jnxLaserEnable   true            1
+%ev                  jnxLaserEnable   false           2
+%ev                  jnxSpacing       spacing100Ghz   1
+%ev                  jnxSpacing       spacing50Ghz    2
+%ev                  jnxSpacing       spacing25Ghz    3
+%ev                  jnxSpacing       spacing12point5Ghz 4
+%ev                  jnxSpacing       spacing6point5Ghz 5
+%ev                  jnxOpticsCurrentStatus opticalLos      1
+%ev                  jnxOpticsCurrentStatus wavelenthLockErr 2
+%ev                  jnxOpticsCurrentStatus powerHighAlarm  3
+%ev                  jnxOpticsCurrentStatus powerLowAlarm   4
+%ev                  jnxOpticsCurrentStatus biasCurrentHighAlarm 5
+%ev                  jnxOpticsCurrentStatus biasCurrentLowAlarm 6
+%ev                  jnxOpticsCurrentStatus temperatureHighAlarm 7
+%ev                  jnxOpticsCurrentStatus temperaturelowAlarm 8
+%ev                  jnxOpticsCurrentStatus txPLLLockAlarm  9
+%ev                  jnxOpticsCurrentStatus rxPLLLockAlarm  10
+%ev                  jnxOpticsCurrentStatus avgPowerAlarm   11
+%ev                  jnxOpticsCurrentStatus rxLossAvgPowerAlarm 12
+%ev                  jnxOpticsCurrentStatus lossofACPowerAlarm 13
+%ev                  jnxOpticsCurrentStatus txPowerHighThreshAlert 14
+%ev                  jnxOpticsCurrentStatus txPowerLowThreshAlert 15
+%ev                  jnxOpticsCurrentStatus rxPowerHighThreshAlert 16
+%ev                  jnxOpticsCurrentStatus rxPowerLowThreshAlert 17
+%ev                  jnxOpticsCurrentStatus moduleTempHighThreshAlert 18
+%ev                  jnxOpticsCurrentStatus moduleTempLowThreshAlert 19
+%ev                  jnxOpticsCurrentStatus txPowerHigh24HourThreshAlert 20
+%ev                  jnxOpticsCurrentStatus txPowerLow24HourThreshAlert 21
+%ev                  jnxOpticsCurrentStatus rxPowerHigh24HourThreshAlert 22
+%ev                  jnxOpticsCurrentStatus rxPowerLow24HourThreshAlert 23
+%ev                  jnxOpticsCurrentStatus moduleTempHigh24HourThreshAlert 24
+%ev                  jnxOpticsCurrentStatus moduleTempLow24HourThreshAlert 25
+%ev                  jnxOpticsCurrentStatus powerRxHighAlarm 26
+%ev                  jnxOpticsCurrentStatus powerRxLowAlarm 27
+%ev                  jnxOpticsCurrentStatus powerTxHighWarning 28
+%ev                  jnxOpticsCurrentStatus powerTxLowWarning 29
+%ev                  jnxOpticsCurrentStatus powerRxHighWarning 30
+%ev                  jnxOpticsCurrentStatus powerRxLowWarning 31
+%ev                  jnxOpticsCurrentStatus temperatureHighWarning 32
+%ev                  jnxOpticsCurrentStatus temperaturelowWarning 33
+%ev                  jnxTxPowerHighEnableTCA true            1
+%ev                  jnxTxPowerHighEnableTCA false           2
+%ev                  jnxTxPowerLowEnableTCA true            1
+%ev                  jnxTxPowerLowEnableTCA false           2
+%ev                  jnxRxPowerHighEnableTCA true            1
+%ev                  jnxRxPowerHighEnableTCA false           2
+%ev                  jnxRxPowerLowEnableTCA true            1
+%ev                  jnxRxPowerLowEnableTCA false           2
+%ev                  jnxModuleTempHighEnableTCA true            1
+%ev                  jnxModuleTempHighEnableTCA false           2
+%ev                  jnxModuleTempLowEnableTCA true            1
+%ev                  jnxModuleTempLowEnableTCA false           2
+%ev                  jnxCarFreqOffsetHighEnableTCA true            1
+%ev                  jnxCarFreqOffsetHighEnableTCA false           2
+%ev                  jnxCarFreqOffsetLowEnableTCA true            1
+%ev                  jnxCarFreqOffsetLowEnableTCA false           2
+%ei   1.3.6.1.4.1.2636.3.71.1.1.2.1 "jnxOpticsTraceToneCfgContainerIndex jnxOpticsTraceToneCfgL1Index jnxOpticsTraceToneCfgL2Index jnxOpticsTraceToneCfgL3Index"
+%ev                  jnxOpticsTraceToneCfgTxEnable true            1
+%ev                  jnxOpticsTraceToneCfgTxEnable false           2
+%ev                  jnxOpticsTraceToneCfgRxEnable true            1
+%ev                  jnxOpticsTraceToneCfgRxEnable false           2
+%ei   1.3.6.1.4.1.2636.3.71.1.1.5.1 "jnxOpticsNotificationTrigContainerIndex jnxOpticsNotificationTrigL1Index jnxOpticsNotificationTrigL2Index jnxOpticsNotificationTrigL3Index jnxOpticsNotificationTrigAlmId"
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsLOS    1
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsWavelenthLockErr 2
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsPowerHighAlarm 3
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsPowerLowAlarm 4
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsBiasCurrentHighAlarm 5
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsBiasCurrentLowAlarm 6
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsTemperatureHighAlarm 7
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsTemperaturelowAlarm 8
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsTxPLLLockAlarm 9
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxPLLLockAlarm 10
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsAvgPowerAlarm 11
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxLossAvgPowerAlarm 12
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsLossofACPowerAlarm 13
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsTxPowerHighThreshAlert 14
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsTxPowerLowThreshAlert 15
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxPowerHighThreshAlert 16
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxPowerLowThreshAlert 17
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsModuleTempHighThreshAlert 18
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsModuleTempLowThreshAlert 19
+%ev                  jnxOpticsNotificationTrigAlmId jnxOptics24HourTxPowerHighThreshAlert 20
+%ev                  jnxOpticsNotificationTrigAlmId jnxOptics24HourTxPowerLowThreshAlert 21
+%ev                  jnxOpticsNotificationTrigAlmId jnxOptics24HourRxPowerHighThreshAlert 22
+%ev                  jnxOpticsNotificationTrigAlmId jnxOptics24HourRxPowerLowThreshAlert 23
+%ev                  jnxOpticsNotificationTrigAlmId jnxOptics24HourModuleTempHighThreshAlert 24
+%ev                  jnxOpticsNotificationTrigAlmId jnxOptics24HourModuleTempLowThreshAlert 25
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxPowerHighAlarm 26
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxPowerLowAlarm 27
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsTxPowerHighWarning 28
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsTxPowerLowWarning 29
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxPowerHighWarning 30
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxPowerLowWarning 31
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsModuleTempHighWarning 32
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsModuleTempLowWarning 33
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxCarrierFreqHigh 34
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsRxCarrierFreqLow 35
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsChromaticDispHighWarning 36
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsChromaticDispLowWarning 37
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsQLowWarning 38
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsOSNRLowWarning 39
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsCarrierFreqHighAlert 40
+%ev                  jnxOpticsNotificationTrigAlmId jnxOpticsCarrierFreqLowAlert 41
+%ev                  jnxOpticsNotificationTrigAlmId jnxOptics24HourCarrierFreqHighAlert 42
+%ev                  jnxOpticsNotificationTrigAlmId jnxOptics24HourCarrierFreqLowAlert 43
+%ev                  jnxOpticsNotificationTrigSeverity jnxCritical     1
+%ev                  jnxOpticsNotificationTrigSeverity jnxMajor        2
+%ev                  jnxOpticsNotificationTrigSeverity jnxMinor        3
+%ev                  jnxOpticsNotificationTrigSeverity jnxInfo         4
+%ev                  jnxOpticsNotificationTrigIgnore true            1
+%ev                  jnxOpticsNotificationTrigIgnore false           2
+%ev                  jnxOpticsTrigServiceStateAction jnxNotSupported 0
+%ev                  jnxOpticsTrigServiceStateAction jnxNonServiceAffecting 1
+%ev                  jnxOpticsTrigServiceStateAction jnxServiceAffecting 2
+%ev                  jnxOpticsClearAllPMs true            1
+%ev                  jnxOpticsClearAllPMs false           2
+%ei   1.3.6.1.4.1.2636.3.71.1.1.7.1 "ifIndex"
+%ev                  jnxOpticsClearCurrent true            1
+%ev                  jnxOpticsClearCurrent false           2
+%ev                  jnxOpticsClearInterfaceInterval true            1
+%ev                  jnxOpticsClearInterfaceInterval false           2
+%ev                  jnxOpticsClearInterfaceDay true            1
+%ev                  jnxOpticsClearInterfaceDay false           2
+%ev                  jnxOpticsClearInterfaceAll true            1
+%ev                  jnxOpticsClearInterfaceAll false           2
+%ei   1.3.6.1.4.1.2636.3.71.1.2.1.1 "ifIndex"
+%ev                  jnxPMCurSuspectedFlag true            1
+%ev                  jnxPMCurSuspectedFlag false           2
+%ei   1.3.6.1.4.1.2636.3.71.1.2.2.1 "ifIndex jnxOpticsPMIntervalNumber"
+%ev                  jnxPMIntSuspectedFlag true            1
+%ev                  jnxPMIntSuspectedFlag false           2
+%ei   1.3.6.1.4.1.2636.3.71.1.2.3.1 "ifIndex jnxOpticsPMDayIndex"
+%ev                  jnxPMDaySuspectedFlag true            1
+%ev                  jnxPMDaySuspectedFlag false           2
+%ei   1.3.6.1.4.1.2636.3.71.1.3.1.1 "ifIndex jnxOpticsNotificationLocation jnxOpticsNotificationDirection"
+%ev                  jnxOpticsNotificationLocation jnxNearEnd      1
+%ev                  jnxOpticsNotificationLocation jnxFarEnd       2
+%ev                  jnxOpticsNotificationDirection jnxTxDir        1
+%ev                  jnxOpticsNotificationDirection jnxRxDir        2
+%ev                  jnxOpticsNotificationDirection jnxBiDir        3
+%ev                  jnxOpticsLastNotificationId jnxOpticsLOS    1
+%ev                  jnxOpticsLastNotificationId jnxOpticsWavelenthLockErr 2
+%ev                  jnxOpticsLastNotificationId jnxOpticsPowerHighAlarm 3
+%ev                  jnxOpticsLastNotificationId jnxOpticsPowerLowAlarm 4
+%ev                  jnxOpticsLastNotificationId jnxOpticsBiasCurrentHighAlarm 5
+%ev                  jnxOpticsLastNotificationId jnxOpticsBiasCurrentLowAlarm 6
+%ev                  jnxOpticsLastNotificationId jnxOpticsTemperatureHighAlarm 7
+%ev                  jnxOpticsLastNotificationId jnxOpticsTemperaturelowAlarm 8
+%ev                  jnxOpticsLastNotificationId jnxOpticsTxPLLLockAlarm 9
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxPLLLockAlarm 10
+%ev                  jnxOpticsLastNotificationId jnxOpticsAvgPowerAlarm 11
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxLossAvgPowerAlarm 12
+%ev                  jnxOpticsLastNotificationId jnxOpticsLossofACPowerAlarm 13
+%ev                  jnxOpticsLastNotificationId jnxOpticsTxPowerHighThreshAlert 14
+%ev                  jnxOpticsLastNotificationId jnxOpticsTxPowerLowThreshAlert 15
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxPowerHighThreshAlert 16
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxPowerLowThreshAlert 17
+%ev                  jnxOpticsLastNotificationId jnxOpticsModuleTempHighThreshAlert 18
+%ev                  jnxOpticsLastNotificationId jnxOpticsModuleTempLowThreshAlert 19
+%ev                  jnxOpticsLastNotificationId jnxOptics24HourTxPowerHighThreshAlert 20
+%ev                  jnxOpticsLastNotificationId jnxOptics24HourTxPowerLowThreshAlert 21
+%ev                  jnxOpticsLastNotificationId jnxOptics24HourRxPowerHighThreshAlert 22
+%ev                  jnxOpticsLastNotificationId jnxOptics24HourRxPowerLowThreshAlert 23
+%ev                  jnxOpticsLastNotificationId jnxOptics24HourModuleTempHighThreshAlert 24
+%ev                  jnxOpticsLastNotificationId jnxOptics24HourModuleTempLowThreshAlert 25
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxPowerHighAlarm 26
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxPowerLowAlarm 27
+%ev                  jnxOpticsLastNotificationId jnxOpticsTxPowerHighWarning 28
+%ev                  jnxOpticsLastNotificationId jnxOpticsTxPowerLowWarning 29
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxPowerHighWarning 30
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxPowerLowWarning 31
+%ev                  jnxOpticsLastNotificationId jnxOpticsModuleTempHighWarning 32
+%ev                  jnxOpticsLastNotificationId jnxOpticsModuleTempLowWarning 33
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxCarrierFreqHigh 34
+%ev                  jnxOpticsLastNotificationId jnxOpticsRxCarrierFreqLow 35
+%ev                  jnxOpticsLastNotificationId jnxOpticsChromaticDispHighWarning 36
+%ev                  jnxOpticsLastNotificationId jnxOpticsChromaticDispLowWarning 37
+%ev                  jnxOpticsLastNotificationId jnxOpticsQLowWarning 38
+%ev                  jnxOpticsLastNotificationId jnxOpticsOSNRLowWarning 39
+%ev                  jnxOpticsLastNotificationId jnxOpticsCarrierFreqHighAlert 40
+%ev                  jnxOpticsLastNotificationId jnxOpticsCarrierFreqLowAlert 41
+%ev                  jnxOpticsLastNotificationId jnxOptics24HourCarrierFreqHighAlert 42
+%ev                  jnxOpticsLastNotificationId jnxOptics24HourCarrierFreqLowAlert 43
+%ev                  jnxOpticsNotificationSeverity jnxCritical     1
+%ev                  jnxOpticsNotificationSeverity jnxMajor        2
+%ev                  jnxOpticsNotificationSeverity jnxMinor        3
+%ev                  jnxOpticsNotificationSeverity jnxInfo         4
+%module     snmpMIB              1.3.6.1.6.3.1
+%trap       mplsLspInfoUp    1.3.6.1.4.1.2636.3.2.0.1 7          0
+%tvar       mplsLspInfoUp    mplsLspInfoName
+%tvar       mplsLspInfoUp    mplsPathInfoName
+%trap       mplsLspInfoDown  1.3.6.1.4.1.2636.3.2.0.2 7          0
+%tvar       mplsLspInfoDown  mplsLspInfoName
+%tvar       mplsLspInfoDown  mplsPathInfoName
+%trap       mplsLspInfoChange 1.3.6.1.4.1.2636.3.2.0.3 7          0
+%tvar       mplsLspInfoChange mplsLspInfoName
+%tvar       mplsLspInfoChange mplsPathInfoName
+%trap       mplsLspInfoPathDown 1.3.6.1.4.1.2636.3.2.0.4 7          0
+%tvar       mplsLspInfoPathDown mplsLspInfoName
+%tvar       mplsLspInfoPathDown mplsPathInfoName
+%trap       mplsLspInfoPathUp 1.3.6.1.4.1.2636.3.2.0.5 7          0
+%tvar       mplsLspInfoPathUp mplsLspInfoName
+%tvar       mplsLspInfoPathUp mplsPathInfoName
+%trap       mplsLspUp        1.3.6.1.4.1.2636.3.2.4.1 7          0
+%tvar       mplsLspUp        mplsLspName
+%tvar       mplsLspUp        mplsPathName
+%trap       mplsLspDown      1.3.6.1.4.1.2636.3.2.4.2 7          0
+%tvar       mplsLspDown      mplsLspName
+%tvar       mplsLspDown      mplsPathName
+%trap       mplsLspChange    1.3.6.1.4.1.2636.3.2.4.3 7          0
+%tvar       mplsLspChange    mplsLspName
+%tvar       mplsLspChange    mplsPathName
+%trap       mplsLspPathDown  1.3.6.1.4.1.2636.3.2.4.4 7          0
+%tvar       mplsLspPathDown  mplsLspName
+%tvar       mplsLspPathDown  mplsPathName
+%trap       mplsLspPathUp    1.3.6.1.4.1.2636.3.2.4.5 7          0
+%tvar       mplsLspPathUp    mplsLspName
+%tvar       mplsLspPathUp    mplsPathName
+%trap       ifJnxErrors      1.3.6.1.4.1.2636.3.3.3.0.1 7          0
+%tvar       ifJnxErrors      ifJnxCrcErrors
+%tvar       ifJnxErrors      ifJnxFcsErrors
+%trap       jnxPowerSupplyFailure 1.3.6.1.4.1.2636.4.1.1 7          0
+%tvar       jnxPowerSupplyFailure jnxContentsContainerIndex
+%tvar       jnxPowerSupplyFailure jnxContentsL1Index
+%tvar       jnxPowerSupplyFailure jnxContentsL2Index
+%tvar       jnxPowerSupplyFailure jnxContentsL3Index
+%tvar       jnxPowerSupplyFailure jnxContentsDescr
+%tvar       jnxPowerSupplyFailure jnxOperatingState
+%trap       jnxFanFailure    1.3.6.1.4.1.2636.4.1.2 7          0
+%tvar       jnxFanFailure    jnxContentsContainerIndex
+%tvar       jnxFanFailure    jnxContentsL1Index
+%tvar       jnxFanFailure    jnxContentsL2Index
+%tvar       jnxFanFailure    jnxContentsL3Index
+%tvar       jnxFanFailure    jnxContentsDescr
+%tvar       jnxFanFailure    jnxOperatingState
+%trap       jnxOverTemperature 1.3.6.1.4.1.2636.4.1.3 7          0
+%tvar       jnxOverTemperature jnxContentsContainerIndex
+%tvar       jnxOverTemperature jnxContentsL1Index
+%tvar       jnxOverTemperature jnxContentsL2Index
+%tvar       jnxOverTemperature jnxContentsL3Index
+%tvar       jnxOverTemperature jnxContentsDescr
+%tvar       jnxOverTemperature jnxOperatingTemp
+%trap       jnxRedundancySwitchover 1.3.6.1.4.1.2636.4.1.4 7          0
+%tvar       jnxRedundancySwitchover jnxRedundancyContentsIndex
+%tvar       jnxRedundancySwitchover jnxRedundancyL1Index
+%tvar       jnxRedundancySwitchover jnxRedundancyL2Index
+%tvar       jnxRedundancySwitchover jnxRedundancyL3Index
+%tvar       jnxRedundancySwitchover jnxRedundancyDescr
+%tvar       jnxRedundancySwitchover jnxRedundancyConfig
+%tvar       jnxRedundancySwitchover jnxRedundancyState
+%tvar       jnxRedundancySwitchover jnxRedundancySwitchoverCount
+%tvar       jnxRedundancySwitchover jnxRedundancySwitchoverTime
+%tvar       jnxRedundancySwitchover jnxRedundancySwitchoverReason
+%trap       jnxFruRemoval    1.3.6.1.4.1.2636.4.1.5 7          0
+%tvar       jnxFruRemoval    jnxFruContentsIndex
+%tvar       jnxFruRemoval    jnxFruL1Index
+%tvar       jnxFruRemoval    jnxFruL2Index
+%tvar       jnxFruRemoval    jnxFruL3Index
+%tvar       jnxFruRemoval    jnxFruName
+%tvar       jnxFruRemoval    jnxFruType
+%tvar       jnxFruRemoval    jnxFruSlot
+%trap       jnxFruInsertion  1.3.6.1.4.1.2636.4.1.6 7          0
+%tvar       jnxFruInsertion  jnxFruContentsIndex
+%tvar       jnxFruInsertion  jnxFruL1Index
+%tvar       jnxFruInsertion  jnxFruL2Index
+%tvar       jnxFruInsertion  jnxFruL3Index
+%tvar       jnxFruInsertion  jnxFruName
+%tvar       jnxFruInsertion  jnxFruType
+%tvar       jnxFruInsertion  jnxFruSlot
+%trap       jnxFruPowerOff   1.3.6.1.4.1.2636.4.1.7 7          0
+%tvar       jnxFruPowerOff   jnxFruContentsIndex
+%tvar       jnxFruPowerOff   jnxFruL1Index
+%tvar       jnxFruPowerOff   jnxFruL2Index
+%tvar       jnxFruPowerOff   jnxFruL3Index
+%tvar       jnxFruPowerOff   jnxFruName
+%tvar       jnxFruPowerOff   jnxFruType
+%tvar       jnxFruPowerOff   jnxFruSlot
+%tvar       jnxFruPowerOff   jnxFruOfflineReason
+%tvar       jnxFruPowerOff   jnxFruLastPowerOff
+%tvar       jnxFruPowerOff   jnxFruLastPowerOn
+%trap       jnxFruPowerOn    1.3.6.1.4.1.2636.4.1.8 7          0
+%tvar       jnxFruPowerOn    jnxFruContentsIndex
+%tvar       jnxFruPowerOn    jnxFruL1Index
+%tvar       jnxFruPowerOn    jnxFruL2Index
+%tvar       jnxFruPowerOn    jnxFruL3Index
+%tvar       jnxFruPowerOn    jnxFruName
+%tvar       jnxFruPowerOn    jnxFruType
+%tvar       jnxFruPowerOn    jnxFruSlot
+%tvar       jnxFruPowerOn    jnxFruOfflineReason
+%tvar       jnxFruPowerOn    jnxFruLastPowerOff
+%tvar       jnxFruPowerOn    jnxFruLastPowerOn
+%trap       jnxFruFailed     1.3.6.1.4.1.2636.4.1.9 7          0
+%tvar       jnxFruFailed     jnxFruContentsIndex
+%tvar       jnxFruFailed     jnxFruL1Index
+%tvar       jnxFruFailed     jnxFruL2Index
+%tvar       jnxFruFailed     jnxFruL3Index
+%tvar       jnxFruFailed     jnxFruName
+%tvar       jnxFruFailed     jnxFruType
+%tvar       jnxFruFailed     jnxFruSlot
+%trap       jnxFruOffline    1.3.6.1.4.1.2636.4.1.10 7          0
+%tvar       jnxFruOffline    jnxFruContentsIndex
+%tvar       jnxFruOffline    jnxFruL1Index
+%tvar       jnxFruOffline    jnxFruL2Index
+%tvar       jnxFruOffline    jnxFruL3Index
+%tvar       jnxFruOffline    jnxFruName
+%tvar       jnxFruOffline    jnxFruType
+%tvar       jnxFruOffline    jnxFruSlot
+%tvar       jnxFruOffline    jnxFruOfflineReason
+%tvar       jnxFruOffline    jnxFruLastPowerOff
+%tvar       jnxFruOffline    jnxFruLastPowerOn
+%trap       jnxFruOnline     1.3.6.1.4.1.2636.4.1.11 7          0
+%tvar       jnxFruOnline     jnxFruContentsIndex
+%tvar       jnxFruOnline     jnxFruL1Index
+%tvar       jnxFruOnline     jnxFruL2Index
+%tvar       jnxFruOnline     jnxFruL3Index
+%tvar       jnxFruOnline     jnxFruName
+%tvar       jnxFruOnline     jnxFruType
+%tvar       jnxFruOnline     jnxFruSlot
+%trap       jnxFruCheck      1.3.6.1.4.1.2636.4.1.12 7          0
+%tvar       jnxFruCheck      jnxFruContentsIndex
+%tvar       jnxFruCheck      jnxFruL1Index
+%tvar       jnxFruCheck      jnxFruL2Index
+%tvar       jnxFruCheck      jnxFruL3Index
+%tvar       jnxFruCheck      jnxFruName
+%tvar       jnxFruCheck      jnxFruType
+%tvar       jnxFruCheck      jnxFruSlot
+%trap       jnxFEBSwitchover 1.3.6.1.4.1.2636.4.1.13 7          0
+%tvar       jnxFEBSwitchover jnxFruContentsIndex
+%tvar       jnxFEBSwitchover jnxFruL1Index
+%tvar       jnxFEBSwitchover jnxFruL2Index
+%tvar       jnxFEBSwitchover jnxFruL3Index
+%tvar       jnxFEBSwitchover jnxFruName
+%tvar       jnxFEBSwitchover jnxFruType
+%tvar       jnxFEBSwitchover jnxFruSlot
+%trap       jnxHardDiskFailed 1.3.6.1.4.1.2636.4.1.14 7          0
+%tvar       jnxHardDiskFailed jnxFruContentsIndex
+%tvar       jnxHardDiskFailed jnxFruL1Index
+%tvar       jnxHardDiskFailed jnxFruL2Index
+%tvar       jnxHardDiskFailed jnxFruL3Index
+%tvar       jnxHardDiskFailed jnxFruName
+%tvar       jnxHardDiskFailed jnxFruType
+%tvar       jnxHardDiskFailed jnxFruSlot
+%trap       jnxHardDiskMissing 1.3.6.1.4.1.2636.4.1.15 7          0
+%tvar       jnxHardDiskMissing jnxFruContentsIndex
+%tvar       jnxHardDiskMissing jnxFruL1Index
+%tvar       jnxHardDiskMissing jnxFruL2Index
+%tvar       jnxHardDiskMissing jnxFruL3Index
+%tvar       jnxHardDiskMissing jnxFruName
+%tvar       jnxHardDiskMissing jnxFruType
+%tvar       jnxHardDiskMissing jnxFruSlot
+%trap       jnxBootFromBackup 1.3.6.1.4.1.2636.4.1.16 7          0
+%tvar       jnxBootFromBackup jnxFruContentsIndex
+%tvar       jnxBootFromBackup jnxFruL1Index
+%tvar       jnxBootFromBackup jnxFruL2Index
+%tvar       jnxBootFromBackup jnxFruL3Index
+%tvar       jnxBootFromBackup jnxFruName
+%tvar       jnxBootFromBackup jnxFruType
+%tvar       jnxBootFromBackup jnxFruSlot
+%trap       jnxFmLinkErr     1.3.6.1.4.1.2636.4.1.17 7          0
+%tvar       jnxFmLinkErr     jnxFruContentsIndex
+%tvar       jnxFmLinkErr     jnxFruL1Index
+%tvar       jnxFmLinkErr     jnxFruL2Index
+%tvar       jnxFmLinkErr     jnxFruL3Index
+%tvar       jnxFmLinkErr     jnxFruName
+%tvar       jnxFmLinkErr     jnxFruType
+%tvar       jnxFmLinkErr     jnxFruSlot
+%trap       jnxFmCellDropErr 1.3.6.1.4.1.2636.4.1.18 7          0
+%tvar       jnxFmCellDropErr jnxFruContentsIndex
+%tvar       jnxFmCellDropErr jnxFruL1Index
+%tvar       jnxFmCellDropErr jnxFruL2Index
+%tvar       jnxFmCellDropErr jnxFruL3Index
+%tvar       jnxFmCellDropErr jnxFruName
+%tvar       jnxFmCellDropErr jnxFruType
+%tvar       jnxFmCellDropErr jnxFruSlot
+%trap       jnxExtSrcLockLost 1.3.6.1.4.1.2636.4.1.19 7          0
+%tvar       jnxExtSrcLockLost jnxFruContentsIndex
+%tvar       jnxExtSrcLockLost jnxFruL1Index
+%tvar       jnxExtSrcLockLost jnxFruL2Index
+%tvar       jnxExtSrcLockLost jnxFruL3Index
+%tvar       jnxExtSrcLockLost jnxFruName
+%tvar       jnxExtSrcLockLost jnxFruType
+%tvar       jnxExtSrcLockLost jnxFruSlot
+%trap       jnxPlaneOffline  1.3.6.1.4.1.2636.4.1.20 7          0
+%tvar       jnxPlaneOffline  jnxFruContentsIndex
+%tvar       jnxPlaneOffline  jnxFruL1Index
+%tvar       jnxPlaneOffline  jnxFruL2Index
+%tvar       jnxPlaneOffline  jnxFruL3Index
+%tvar       jnxPlaneOffline  jnxFruName
+%tvar       jnxPlaneOffline  jnxFruType
+%tvar       jnxPlaneOffline  jnxFruSlot
+%tvar       jnxPlaneOffline  jnxFruOfflineReason
+%tvar       jnxPlaneOffline  jnxFruLastPowerOff
+%tvar       jnxPlaneOffline  jnxFruLastPowerOn
+%trap       jnxPlaneOnline   1.3.6.1.4.1.2636.4.1.21 7          0
+%tvar       jnxPlaneOnline   jnxFruContentsIndex
+%tvar       jnxPlaneOnline   jnxFruL1Index
+%tvar       jnxPlaneOnline   jnxFruL2Index
+%tvar       jnxPlaneOnline   jnxFruL3Index
+%tvar       jnxPlaneOnline   jnxFruName
+%tvar       jnxPlaneOnline   jnxFruType
+%tvar       jnxPlaneOnline   jnxFruSlot
+%trap       jnxPlaneCheck    1.3.6.1.4.1.2636.4.1.22 7          0
+%tvar       jnxPlaneCheck    jnxFruContentsIndex
+%tvar       jnxPlaneCheck    jnxFruL1Index
+%tvar       jnxPlaneCheck    jnxFruL2Index
+%tvar       jnxPlaneCheck    jnxFruL3Index
+%tvar       jnxPlaneCheck    jnxFruName
+%tvar       jnxPlaneCheck    jnxFruType
+%tvar       jnxPlaneCheck    jnxFruSlot
+%trap       jnxPlaneFault    1.3.6.1.4.1.2636.4.1.23 7          0
+%tvar       jnxPlaneFault    jnxFruContentsIndex
+%tvar       jnxPlaneFault    jnxFruL1Index
+%tvar       jnxPlaneFault    jnxFruL2Index
+%tvar       jnxPlaneFault    jnxFruL3Index
+%tvar       jnxPlaneFault    jnxFruName
+%tvar       jnxPlaneFault    jnxFruType
+%tvar       jnxPlaneFault    jnxFruSlot
+%trap       jnxPowerSupplyInputFailure 1.3.6.1.4.1.2636.4.1.24 7          0
+%tvar       jnxPowerSupplyInputFailure jnxContentsContainerIndex
+%tvar       jnxPowerSupplyInputFailure jnxContentsL1Index
+%tvar       jnxPowerSupplyInputFailure jnxContentsL2Index
+%tvar       jnxPowerSupplyInputFailure jnxContentsL3Index
+%tvar       jnxPowerSupplyInputFailure jnxContentsDescr
+%tvar       jnxPowerSupplyInputFailure jnxOperatingState
+%trap       jnxPowerSupplyOK 1.3.6.1.4.1.2636.4.2.1 7          0
+%tvar       jnxPowerSupplyOK jnxContentsContainerIndex
+%tvar       jnxPowerSupplyOK jnxContentsL1Index
+%tvar       jnxPowerSupplyOK jnxContentsL2Index
+%tvar       jnxPowerSupplyOK jnxContentsL3Index
+%tvar       jnxPowerSupplyOK jnxContentsDescr
+%tvar       jnxPowerSupplyOK jnxOperatingState
+%trap       jnxFanOK         1.3.6.1.4.1.2636.4.2.2 7          0
+%tvar       jnxFanOK         jnxContentsContainerIndex
+%tvar       jnxFanOK         jnxContentsL1Index
+%tvar       jnxFanOK         jnxContentsL2Index
+%tvar       jnxFanOK         jnxContentsL3Index
+%tvar       jnxFanOK         jnxContentsDescr
+%tvar       jnxFanOK         jnxOperatingState
+%trap       jnxTemperatureOK 1.3.6.1.4.1.2636.4.2.3 7          0
+%tvar       jnxTemperatureOK jnxContentsContainerIndex
+%tvar       jnxTemperatureOK jnxContentsL1Index
+%tvar       jnxTemperatureOK jnxContentsL2Index
+%tvar       jnxTemperatureOK jnxContentsL3Index
+%tvar       jnxTemperatureOK jnxContentsDescr
+%tvar       jnxTemperatureOK jnxOperatingTemp
+%trap       jnxFruOK         1.3.6.1.4.1.2636.4.2.4 7          0
+%tvar       jnxFruOK         jnxFruContentsIndex
+%tvar       jnxFruOK         jnxFruL1Index
+%tvar       jnxFruOK         jnxFruL2Index
+%tvar       jnxFruOK         jnxFruL3Index
+%tvar       jnxFruOK         jnxFruName
+%tvar       jnxFruOK         jnxFruType
+%tvar       jnxFruOK         jnxFruSlot
+%trap       jnxExtSrcLockAcquired 1.3.6.1.4.1.2636.4.2.5 7          0
+%tvar       jnxExtSrcLockAcquired jnxFruContentsIndex
+%tvar       jnxExtSrcLockAcquired jnxFruL1Index
+%tvar       jnxExtSrcLockAcquired jnxFruL2Index
+%tvar       jnxExtSrcLockAcquired jnxFruL3Index
+%tvar       jnxExtSrcLockAcquired jnxFruName
+%tvar       jnxExtSrcLockAcquired jnxFruType
+%tvar       jnxExtSrcLockAcquired jnxFruSlot
+%trap       jnxHardDiskOK    1.3.6.1.4.1.2636.4.2.6 7          0
+%tvar       jnxHardDiskOK    jnxFruContentsIndex
+%tvar       jnxHardDiskOK    jnxFruL1Index
+%tvar       jnxHardDiskOK    jnxFruL2Index
+%tvar       jnxHardDiskOK    jnxFruL3Index
+%tvar       jnxHardDiskOK    jnxFruName
+%tvar       jnxHardDiskOK    jnxFruType
+%tvar       jnxHardDiskOK    jnxFruSlot
+%trap       jnxPowerSupplyInputOK 1.3.6.1.4.1.2636.4.2.7 7          0
+%tvar       jnxPowerSupplyInputOK jnxContentsContainerIndex
+%tvar       jnxPowerSupplyInputOK jnxContentsL1Index
+%tvar       jnxPowerSupplyInputOK jnxContentsL2Index
+%tvar       jnxPowerSupplyInputOK jnxContentsL3Index
+%tvar       jnxPowerSupplyInputOK jnxContentsDescr
+%tvar       jnxPowerSupplyInputOK jnxOperatingState
+%trap       jnxOpticsNotificationSet 1.3.6.1.4.1.2636.4.22.0.1 7          0
+%tvar       jnxOpticsNotificationSet jnxOpticsNotificationLocation
+%tvar       jnxOpticsNotificationSet jnxOpticsNotificationDirection
+%tvar       jnxOpticsNotificationSet ifDescr
+%tvar       jnxOpticsNotificationSet jnxOpticsLastNotificationId
+%tvar       jnxOpticsNotificationSet jnxOpticsNotificationSeverity
+%tvar       jnxOpticsNotificationSet jnxOpticsNotificationDate
+%trap       jnxOpticsNotificationCleared 1.3.6.1.4.1.2636.4.22.0.2 7          0
+%tvar       jnxOpticsNotificationCleared jnxOpticsNotificationLocation
+%tvar       jnxOpticsNotificationCleared jnxOpticsNotificationDirection
+%tvar       jnxOpticsNotificationCleared ifDescr
+%tvar       jnxOpticsNotificationCleared jnxOpticsLastNotificationId
+%tvar       jnxOpticsNotificationCleared jnxOpticsNotificationSeverity
+%tvar       jnxOpticsNotificationCleared jnxOpticsNotificationDate
+%trap       coldStart        1.3.6.1.6.3.1.1.5.1  7          0
+%trap       warmStart        1.3.6.1.6.3.1.1.5.2  7          0
+%trap       linkDown         1.3.6.1.6.3.1.1.5.3  7          0
+%tvar       linkDown         ifIndex
+%tvar       linkDown         ifAdminStatus
+%tvar       linkDown         ifOperStatus
+%trap       linkUp           1.3.6.1.6.3.1.1.5.4  7          0
+%tvar       linkUp           ifIndex
+%tvar       linkUp           ifAdminStatus
+%tvar       linkUp           ifOperStatus
+%trap       authenticationFailure 1.3.6.1.6.3.1.1.5.5  7          0
+%mib        hrMIBCompliance      1.3.6.1.2.1.25.7.2.1
+%group      HOST-RESOURCES-MIB hrSystemGroup        1.3.6.1.2.1.25.7.3.1
+%grmem      HOST-RESOURCES-MIB hrSystemGroup        hrSystemUptime
+%grmem      HOST-RESOURCES-MIB hrSystemGroup        hrSystemDate
+%grmem      HOST-RESOURCES-MIB hrSystemGroup        hrSystemInitialLoadDevice
+%grmem      HOST-RESOURCES-MIB hrSystemGroup        hrSystemInitialLoadParameters
+%grmem      HOST-RESOURCES-MIB hrSystemGroup        hrSystemNumUsers
+%grmem      HOST-RESOURCES-MIB hrSystemGroup        hrSystemProcesses
+%grmem      HOST-RESOURCES-MIB hrSystemGroup        hrSystemMaxProcesses
+%group      HOST-RESOURCES-MIB hrStorageGroup       1.3.6.1.2.1.25.7.3.2
+%grmem      HOST-RESOURCES-MIB hrStorageGroup       hrMemorySize
+%grmem      HOST-RESOURCES-MIB hrStorageGroup       hrStorageIndex
+%grmem      HOST-RESOURCES-MIB hrStorageGroup       hrStorageType
+%grmem      HOST-RESOURCES-MIB hrStorageGroup       hrStorageDescr
+%grmem      HOST-RESOURCES-MIB hrStorageGroup       hrStorageAllocationUnits
+%grmem      HOST-RESOURCES-MIB hrStorageGroup       hrStorageSize
+%grmem      HOST-RESOURCES-MIB hrStorageGroup       hrStorageUsed
+%grmem      HOST-RESOURCES-MIB hrStorageGroup       hrStorageAllocationFailures
+%group      HOST-RESOURCES-MIB hrDeviceGroup        1.3.6.1.2.1.25.7.3.3
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDeviceIndex
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDeviceType
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDeviceDescr
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDeviceID
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDeviceStatus
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDeviceErrors
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrProcessorFrwID
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrProcessorLoad
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrNetworkIfIndex
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrPrinterStatus
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrPrinterDetectedErrorState
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDiskStorageAccess
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDiskStorageMedia
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDiskStorageRemoveble
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrDiskStorageCapacity
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrPartitionIndex
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrPartitionLabel
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrPartitionID
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrPartitionSize
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrPartitionFSIndex
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrFSIndex
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrFSMountPoint
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrFSRemoteMountPoint
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrFSType
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrFSAccess
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrFSBootable
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrFSStorageIndex
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrFSLastFullBackupDate
+%grmem      HOST-RESOURCES-MIB hrDeviceGroup        hrFSLastPartialBackupDate
+%group      HOST-RESOURCES-MIB hrSWRunGroup         1.3.6.1.2.1.25.7.3.4
+%grmem      HOST-RESOURCES-MIB hrSWRunGroup         hrSWOSIndex
+%grmem      HOST-RESOURCES-MIB hrSWRunGroup         hrSWRunIndex
+%grmem      HOST-RESOURCES-MIB hrSWRunGroup         hrSWRunName
+%grmem      HOST-RESOURCES-MIB hrSWRunGroup         hrSWRunID
+%grmem      HOST-RESOURCES-MIB hrSWRunGroup         hrSWRunPath
+%grmem      HOST-RESOURCES-MIB hrSWRunGroup         hrSWRunParameters
+%grmem      HOST-RESOURCES-MIB hrSWRunGroup         hrSWRunType
+%grmem      HOST-RESOURCES-MIB hrSWRunGroup         hrSWRunStatus
+%group      HOST-RESOURCES-MIB hrSWRunPerfGroup     1.3.6.1.2.1.25.7.3.5
+%grmem      HOST-RESOURCES-MIB hrSWRunPerfGroup     hrSWRunPerfCPU
+%grmem      HOST-RESOURCES-MIB hrSWRunPerfGroup     hrSWRunPerfMem
+%group      HOST-RESOURCES-MIB hrSWInstalledGroup   1.3.6.1.2.1.25.7.3.6
+%grmem      HOST-RESOURCES-MIB hrSWInstalledGroup   hrSWInstalledLastChange
+%grmem      HOST-RESOURCES-MIB hrSWInstalledGroup   hrSWInstalledLastUpdateTime
+%grmem      HOST-RESOURCES-MIB hrSWInstalledGroup   hrSWInstalledIndex
+%grmem      HOST-RESOURCES-MIB hrSWInstalledGroup   hrSWInstalledName
+%grmem      HOST-RESOURCES-MIB hrSWInstalledGroup   hrSWInstalledID
+%grmem      HOST-RESOURCES-MIB hrSWInstalledGroup   hrSWInstalledType
+%grmem      HOST-RESOURCES-MIB hrSWInstalledGroup   hrSWInstalledDate
+%group      IF-MIB     ifGeneralGroup       ifMIB.2.1.1
+%grmem      IF-MIB     ifGeneralGroup       ifDescr
+%grmem      IF-MIB     ifGeneralGroup       ifType
+%grmem      IF-MIB     ifGeneralGroup       ifSpeed
+%grmem      IF-MIB     ifGeneralGroup       ifPhysAddress
+%grmem      IF-MIB     ifGeneralGroup       ifAdminStatus
+%grmem      IF-MIB     ifGeneralGroup       ifOperStatus
+%grmem      IF-MIB     ifGeneralGroup       ifLastChange
+%grmem      IF-MIB     ifGeneralGroup       ifLinkUpDownTrapEnable
+%grmem      IF-MIB     ifGeneralGroup       ifConnectorPresent
+%grmem      IF-MIB     ifGeneralGroup       ifHighSpeed
+%grmem      IF-MIB     ifGeneralGroup       ifName
+%group      IF-MIB     ifFixedLengthGroup   ifMIB.2.1.2
+%grmem      IF-MIB     ifFixedLengthGroup   ifInOctets
+%grmem      IF-MIB     ifFixedLengthGroup   ifOutOctets
+%grmem      IF-MIB     ifFixedLengthGroup   ifInUnknownProtos
+%grmem      IF-MIB     ifFixedLengthGroup   ifInErrors
+%grmem      IF-MIB     ifFixedLengthGroup   ifOutErrors
+%group      IF-MIB     ifHCFixedLengthGroup ifMIB.2.1.3
+%grmem      IF-MIB     ifHCFixedLengthGroup ifHCInOctets
+%grmem      IF-MIB     ifHCFixedLengthGroup ifHCOutOctets
+%grmem      IF-MIB     ifHCFixedLengthGroup ifInOctets
+%grmem      IF-MIB     ifHCFixedLengthGroup ifOutOctets
+%grmem      IF-MIB     ifHCFixedLengthGroup ifInUnknownProtos
+%grmem      IF-MIB     ifHCFixedLengthGroup ifInErrors
+%grmem      IF-MIB     ifHCFixedLengthGroup ifOutErrors
+%group      IF-MIB     ifPacketGroup        ifMIB.2.1.4
+%grmem      IF-MIB     ifPacketGroup        ifInOctets
+%grmem      IF-MIB     ifPacketGroup        ifOutOctets
+%grmem      IF-MIB     ifPacketGroup        ifInUnknownProtos
+%grmem      IF-MIB     ifPacketGroup        ifInErrors
+%grmem      IF-MIB     ifPacketGroup        ifOutErrors
+%grmem      IF-MIB     ifPacketGroup        ifMtu
+%grmem      IF-MIB     ifPacketGroup        ifInUcastPkts
+%grmem      IF-MIB     ifPacketGroup        ifInMulticastPkts
+%grmem      IF-MIB     ifPacketGroup        ifInBroadcastPkts
+%grmem      IF-MIB     ifPacketGroup        ifInDiscards
+%grmem      IF-MIB     ifPacketGroup        ifOutUcastPkts
+%grmem      IF-MIB     ifPacketGroup        ifOutMulticastPkts
+%grmem      IF-MIB     ifPacketGroup        ifOutBroadcastPkts
+%grmem      IF-MIB     ifPacketGroup        ifOutDiscards
+%grmem      IF-MIB     ifPacketGroup        ifPromiscuousMode
+%group      IF-MIB     ifHCPacketGroup      ifMIB.2.1.5
+%grmem      IF-MIB     ifHCPacketGroup      ifHCInOctets
+%grmem      IF-MIB     ifHCPacketGroup      ifHCOutOctets
+%grmem      IF-MIB     ifHCPacketGroup      ifInOctets
+%grmem      IF-MIB     ifHCPacketGroup      ifOutOctets
+%grmem      IF-MIB     ifHCPacketGroup      ifInUnknownProtos
+%grmem      IF-MIB     ifHCPacketGroup      ifInErrors
+%grmem      IF-MIB     ifHCPacketGroup      ifOutErrors
+%grmem      IF-MIB     ifHCPacketGroup      ifMtu
+%grmem      IF-MIB     ifHCPacketGroup      ifInUcastPkts
+%grmem      IF-MIB     ifHCPacketGroup      ifInMulticastPkts
+%grmem      IF-MIB     ifHCPacketGroup      ifInBroadcastPkts
+%grmem      IF-MIB     ifHCPacketGroup      ifInDiscards
+%grmem      IF-MIB     ifHCPacketGroup      ifOutUcastPkts
+%grmem      IF-MIB     ifHCPacketGroup      ifOutMulticastPkts
+%grmem      IF-MIB     ifHCPacketGroup      ifOutBroadcastPkts
+%grmem      IF-MIB     ifHCPacketGroup      ifOutDiscards
+%grmem      IF-MIB     ifHCPacketGroup      ifPromiscuousMode
+%group      IF-MIB     ifVHCPacketGroup     ifMIB.2.1.6
+%grmem      IF-MIB     ifVHCPacketGroup     ifHCInUcastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifHCInMulticastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifHCInBroadcastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifHCOutUcastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifHCOutMulticastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifHCOutBroadcastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifHCInOctets
+%grmem      IF-MIB     ifVHCPacketGroup     ifHCOutOctets
+%grmem      IF-MIB     ifVHCPacketGroup     ifInOctets
+%grmem      IF-MIB     ifVHCPacketGroup     ifOutOctets
+%grmem      IF-MIB     ifVHCPacketGroup     ifInUnknownProtos
+%grmem      IF-MIB     ifVHCPacketGroup     ifInErrors
+%grmem      IF-MIB     ifVHCPacketGroup     ifOutErrors
+%grmem      IF-MIB     ifVHCPacketGroup     ifMtu
+%grmem      IF-MIB     ifVHCPacketGroup     ifInUcastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifInMulticastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifInBroadcastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifInDiscards
+%grmem      IF-MIB     ifVHCPacketGroup     ifOutUcastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifOutMulticastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifOutBroadcastPkts
+%grmem      IF-MIB     ifVHCPacketGroup     ifOutDiscards
+%grmem      IF-MIB     ifVHCPacketGroup     ifPromiscuousMode
+%group      IF-MIB     ifRcvAddressGroup    ifMIB.2.1.7
+%grmem      IF-MIB     ifRcvAddressGroup    ifRcvAddressStatus
+%grmem      IF-MIB     ifRcvAddressGroup    ifRcvAddressType
+%group      IF-MIB     ifTestGroup          ifMIB.2.1.8
+%grmem      IF-MIB     ifTestGroup          ifTestId
+%grmem      IF-MIB     ifTestGroup          ifTestStatus
+%grmem      IF-MIB     ifTestGroup          ifTestType
+%grmem      IF-MIB     ifTestGroup          ifTestResult
+%grmem      IF-MIB     ifTestGroup          ifTestCode
+%grmem      IF-MIB     ifTestGroup          ifTestOwner
+%group      IF-MIB     ifStackGroup         ifMIB.2.1.9
+%grmem      IF-MIB     ifStackGroup         ifStackStatus
+%group      IF-MIB     ifGeneralInformationGroup ifMIB.2.1.10
+%grmem      IF-MIB     ifGeneralInformationGroup ifIndex
+%grmem      IF-MIB     ifGeneralInformationGroup ifDescr
+%grmem      IF-MIB     ifGeneralInformationGroup ifType
+%grmem      IF-MIB     ifGeneralInformationGroup ifSpeed
+%grmem      IF-MIB     ifGeneralInformationGroup ifPhysAddress
+%grmem      IF-MIB     ifGeneralInformationGroup ifAdminStatus
+%grmem      IF-MIB     ifGeneralInformationGroup ifOperStatus
+%grmem      IF-MIB     ifGeneralInformationGroup ifLastChange
+%grmem      IF-MIB     ifGeneralInformationGroup ifLinkUpDownTrapEnable
+%grmem      IF-MIB     ifGeneralInformationGroup ifConnectorPresent
+%grmem      IF-MIB     ifGeneralInformationGroup ifHighSpeed
+%grmem      IF-MIB     ifGeneralInformationGroup ifName
+%grmem      IF-MIB     ifGeneralInformationGroup ifNumber
+%grmem      IF-MIB     ifGeneralInformationGroup ifAlias
+%grmem      IF-MIB     ifGeneralInformationGroup ifTableLastChange
+%group      IF-MIB     ifStackGroup2        ifMIB.2.1.11
+%grmem      IF-MIB     ifStackGroup2        ifStackStatus
+%grmem      IF-MIB     ifStackGroup2        ifStackLastChange
+%group      IF-MIB     ifOldObjectsGroup    ifMIB.2.1.12
+%grmem      IF-MIB     ifOldObjectsGroup    ifInNUcastPkts
+%grmem      IF-MIB     ifOldObjectsGroup    ifOutNUcastPkts
+%grmem      IF-MIB     ifOldObjectsGroup    ifOutQLen
+%grmem      IF-MIB     ifOldObjectsGroup    ifSpecific
+%group      IF-MIB     ifCounterDiscontinuityGroup ifMIB.2.1.13
+%grmem      IF-MIB     ifCounterDiscontinuityGroup ifCounterDiscontinuityTime
+%trgroup    IF-MIB     linkUpDownNotificationsGroup ifMIB.2.1.14
+%trgrmem    IF-MIB     linkUpDownNotificationsGroup linkUp
+%trgrmem    IF-MIB     linkUpDownNotificationsGroup linkDown
+%mib        ifCompliance         ifMIB.2.2.1
+%mib        ifCompliance2        ifMIB.2.2.2
+%mib        ifCompliance3        ifMIB.2.2.3
+%mib        snmpBasicCompliance  snmpMIB.2.1.2
+%mib        snmpBasicComplianceRev2 snmpMIB.2.1.3
+%group      SNMPv2-MIB snmpSetGroup         snmpMIB.2.2.5
+%grmem      SNMPv2-MIB snmpSetGroup         snmpSetSerialNo
+%group      SNMPv2-MIB systemGroup          snmpMIB.2.2.6
+%grmem      SNMPv2-MIB systemGroup          sysDescr
+%grmem      SNMPv2-MIB systemGroup          sysObjectID
+%grmem      SNMPv2-MIB systemGroup          sysUpTime
+%grmem      SNMPv2-MIB systemGroup          sysContact
+%grmem      SNMPv2-MIB systemGroup          sysName
+%grmem      SNMPv2-MIB systemGroup          sysLocation
+%grmem      SNMPv2-MIB systemGroup          sysServices
+%grmem      SNMPv2-MIB systemGroup          sysORLastChange
+%grmem      SNMPv2-MIB systemGroup          sysORID
+%grmem      SNMPv2-MIB systemGroup          sysORUpTime
+%grmem      SNMPv2-MIB systemGroup          sysORDescr
+%trgroup    SNMPv2-MIB snmpBasicNotificationsGroup snmpMIB.2.2.7
+%trgrmem    SNMPv2-MIB snmpBasicNotificationsGroup coldStart
+%trgrmem    SNMPv2-MIB snmpBasicNotificationsGroup authenticationFailure
+%group      SNMPv2-MIB snmpGroup            snmpMIB.2.2.8
+%grmem      SNMPv2-MIB snmpGroup            snmpInPkts
+%grmem      SNMPv2-MIB snmpGroup            snmpInBadVersions
+%grmem      SNMPv2-MIB snmpGroup            snmpInASNParseErrs
+%grmem      SNMPv2-MIB snmpGroup            snmpSilentDrops
+%grmem      SNMPv2-MIB snmpGroup            snmpProxyDrops
+%grmem      SNMPv2-MIB snmpGroup            snmpEnableAuthenTraps
+%group      SNMPv2-MIB snmpCommunityGroup1  snmpMIB.2.2.9
+%grmem      SNMPv2-MIB snmpCommunityGroup1  snmpInBadCommunityNames
+%grmem      SNMPv2-MIB snmpCommunityGroup1  snmpInBadCommunityUses
+%group      SNMPv2-MIB snmpObsoleteGroup    snmpMIB.2.2.10
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutPkts
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInTooBigs
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInNoSuchNames
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInBadValues
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInReadOnlys
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInGenErrs
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInTotalReqVars
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInTotalSetVars
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInGetRequests
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInGetNexts
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInSetRequests
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInGetResponses
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpInTraps
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutTooBigs
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutNoSuchNames
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutBadValues
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutGenErrs
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutGetRequests
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutGetNexts
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutSetRequests
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutGetResponses
+%grmem      SNMPv2-MIB snmpObsoleteGroup    snmpOutTraps
+%trgroup    SNMPv2-MIB snmpWarmStartNotificationGroup snmpMIB.2.2.11
+%trgrmem    SNMPv2-MIB snmpWarmStartNotificationGroup warmStart
+%group      SNMPv2-MIB snmpNotificationGroup snmpMIB.2.2.12
+%grmem      SNMPv2-MIB snmpNotificationGroup snmpTrapOID
+%grmem      SNMPv2-MIB snmpNotificationGroup snmpTrapEnterprise
+%est                 ifInNUcastPkts   deprecated
+%est                 ifOutNUcastPkts  deprecated
+%est                 ifOutQLen        deprecated
+%est                 ifSpecific       deprecated
+%est                 snmpOutPkts      obsolete
+%est                 snmpInTooBigs    obsolete
+%est                 snmpInNoSuchNames obsolete
+%est                 snmpInBadValues  obsolete
+%est                 snmpInReadOnlys  obsolete
+%est                 snmpInGenErrs    obsolete
+%est                 snmpInTotalReqVars obsolete
+%est                 snmpInTotalSetVars obsolete
+%est                 snmpInGetRequests obsolete
+%est                 snmpInGetNexts   obsolete
+%est                 snmpInSetRequests obsolete
+%est                 snmpInGetResponses obsolete
+%est                 snmpInTraps      obsolete
+%est                 snmpOutTooBigs   obsolete
+%est                 snmpOutNoSuchNames obsolete
+%est                 snmpOutBadValues obsolete
+%est                 snmpOutGenErrs   obsolete
+%est                 snmpOutGetRequests obsolete
+%est                 snmpOutGetNexts  obsolete
+%est                 snmpOutSetRequests obsolete
+%est                 snmpOutGetResponses obsolete
+%est                 snmpOutTraps     obsolete
+%est                 ifTestTable      deprecated
+%est                 ifTestEntry      deprecated
+%est                 ifTestId         deprecated
+%est                 ifTestStatus     deprecated
+%est                 ifTestType       deprecated
+%est                 ifTestResult     deprecated
+%est                 ifTestCode       deprecated
+%est                 ifTestOwner      deprecated
+%ed                  ifRcvAddressType volatile
+%est                 jnxLEDLastChange deprecated
+%est                 jnxLEDTable      deprecated
+%est                 jnxLEDEntry      deprecated
+%est                 jnxLEDAssociateTable deprecated
+%est                 jnxLEDAssociateIndex deprecated
+%est                 jnxLEDL1Index    deprecated
+%est                 jnxLEDL2Index    deprecated
+%est                 jnxLEDL3Index    deprecated
+%est                 jnxLEDOriginator deprecated
+%est                 jnxLEDDescr      deprecated
+%est                 jnxLEDState      deprecated
+%est                 jnxLEDStateOrdered deprecated
+%est                 jnxOperatingDRAMSize deprecated
+%est                 jnxOperatingUpTime deprecated
+%est                 mplsLspList      deprecated
+%est                 mplsLspEntry     deprecated
+%est                 mplsLspName      deprecated
+%est                 mplsLspState     deprecated
+%est                 mplsLspOctets    deprecated
+%est                 mplsLspPackets   deprecated
+%est                 mplsLspAge       deprecated
+%est                 mplsLspTimeUp    deprecated
+%est                 mplsLspPrimaryTimeUp deprecated
+%est                 mplsLspTransitions deprecated
+%est                 mplsLspLastTransition deprecated
+%est                 mplsLspPathChanges deprecated
+%est                 mplsLspLastPathChange deprecated
+%est                 mplsLspConfiguredPaths deprecated
+%est                 mplsLspStandbyPaths deprecated
+%est                 mplsLspOperationalPaths deprecated
+%est                 mplsLspFrom      deprecated
+%est                 mplsLspTo        deprecated
+%est                 mplsPathName     deprecated
+%est                 mplsPathType     deprecated
+%est                 mplsPathExplicitRoute deprecated
+%est                 mplsPathRecordRoute deprecated
+%est                 mplsPathBandwidth deprecated
+%est                 mplsPathCOS      deprecated
+%est                 mplsPathInclude  deprecated
+%est                 mplsPathExclude  deprecated
+%est                 mplsPathSetupPriority deprecated
+%est                 mplsPathHoldPriority deprecated
+%est                 mplsPathProperties deprecated

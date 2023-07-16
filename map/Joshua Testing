@@ -1,0 +1,11 @@
+<DeviceMap
+	Release = "11.0"
+	Description = "Map generated using the optimize feature."
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	InterfaceName = ""
+	Separator = ""
+	StartInterfaceNum = "0"
+	Username = "">
+</DeviceMap>

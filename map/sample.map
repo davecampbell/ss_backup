@@ -1,0 +1,94 @@
+<DeviceMap
+	Release = "11.0"
+	Description = "Demo map with multiple IP addresses"
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	InterfaceName = ""
+	Separator = ":"
+	StartInterfaceNum = "0"
+	Username = "John Doe">
+	<Device>
+		<General
+			Name = "192.168.16.10"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = "switch-1"
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			LibraryDevice = "Catalyst 1900 Switch"
+			MibFile = ".\..\devices\cisco\cisco.cmf"
+			AgentFile = ".\..\devices\cisco\Cat1900.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+	<Device>
+		<General
+			Name = "192.168.16.11"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = "router-1"
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			LibraryDevice = "M5 Router"
+			MibFile = ".\..\devices\juniper\juniper.cmf"
+			AgentFile = ".\..\devices\juniper\m_5.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+	<Device>
+		<General
+			Name = "192.168.16.12"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "C:\apps\SimpleSoft\SimpleAgentPro\cmf\juniper-01.cmf"
+			AgentFile = "C:\apps\SimpleSoft\SimpleAgentPro\var\juniper-m_5-001.var"
+			TrapMgr = ""
+			SnmpStr = "V1V2V3"
+			ResponseDelay = "0"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			UserName = "noAuthUser"
+		/>
+	</Device>
+</DeviceMap>

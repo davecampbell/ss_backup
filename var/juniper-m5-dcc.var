@@ -1,0 +1,613 @@
+####################################################
+# Time:               Mon Jul 03 15:49:52 2023
+# Compiled MIB File:  C:\apps\SimpleSoft\SimpleAgentPro\cmf\juniper-01.cmf
+# Number of Rows:     2
+# Value type formats:                               
+#     fixed(current_value)                          
+#     lastset(initial_value)                        
+#     r_lastset(min, max,initial_value)            
+#     random(starting_value,max_delta)              
+#     randomup(starting_value,max_delta)            
+#     clock(starting_value)                         
+#     sequential(min_value,max_value)               
+#     seqinc(min_value,increment,max_value)         
+#     seqtimeinc(min_value,increment,max_value)     
+#     dfixed(current_value)                         
+#     rowstatus(current_value)                      
+#     testandinc(current_value)                     
+#     utilization(min_value,max_delta,max_value)    
+#     valuelist(a, b, c, d, e, ...)                 
+#     fastclock(starting_value, multiplier)         
+#     valueintlist(a, b, c, d, e, ...)              
+####################################################
+hrSystemUptime.0              , TimeTicks   , RO , clock(0)
+hrSystemDate.0                , OctetString , RW , r_lastset(8, 11,abc)
+hrSystemInitialLoadDevice.0   , Integer     , RW , r_lastset(1, 2147483647,1)
+hrSystemInitialLoadParameters.0, OctetString , RW , r_lastset(0, 128,abc)
+hrSystemNumUsers.0            , Gauge       , RO , fixed(1000)
+hrSystemProcesses.0           , Gauge       , RO , fixed(1000)
+hrSystemMaxProcesses.0        , Integer     , RO , fixed(1073741823)
+hrMemorySize.0                , Integer     , RO , fixed(1073741823)
+# columnar variable hrStorageIndex. Index = hrStorageIndex
+# sub ids in the instance are = n
+hrStorageIndex.1              , Integer     , RO , fixed(1)
+hrStorageIndex.2              , Integer     , RO , fixed(2)
+# columnar variable hrStorageType. Index = hrStorageIndex
+# sub ids in the instance are = n
+hrStorageType.1               , ObjectID    , RO , fixed(1.2.3)
+hrStorageType.2               , ObjectID    , RO , fixed(1.2.3)
+# columnar variable hrStorageDescr. Index = hrStorageIndex
+# sub ids in the instance are = n
+hrStorageDescr.1              , OctetString , RO , fixed(My_hrStorageDescr_string)
+hrStorageDescr.2              , OctetString , RO , fixed(My_hrStorageDescr_string)
+# columnar variable hrStorageAllocationUnits. Index = hrStorageIndex
+# sub ids in the instance are = n
+hrStorageAllocationUnits.1    , Integer     , RO , fixed(1)
+hrStorageAllocationUnits.2    , Integer     , RO , fixed(1)
+# columnar variable hrStorageSize. Index = hrStorageIndex
+# sub ids in the instance are = n
+hrStorageSize.1               , Integer     , RW , r_lastset(0, 2147483647,1073741823)
+hrStorageSize.2               , Integer     , RW , r_lastset(0, 2147483647,1073741823)
+# columnar variable hrStorageUsed. Index = hrStorageIndex
+# sub ids in the instance are = n
+hrStorageUsed.1               , Integer     , RO , fixed(1073741823)
+hrStorageUsed.2               , Integer     , RO , fixed(1073741823)
+# columnar variable hrStorageAllocationFailures. Index = hrStorageIndex
+# sub ids in the instance are = n
+hrStorageAllocationFailures.1 , Counter     , RO , randomup(1000, 100)
+hrStorageAllocationFailures.2 , Counter     , RO , randomup(1000, 100)
+# columnar variable hrDeviceIndex. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDeviceIndex.1               , Integer     , RO , fixed(1)
+hrDeviceIndex.2               , Integer     , RO , fixed(2)
+# columnar variable hrDeviceType. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDeviceType.1                , ObjectID    , RO , fixed(1.2.3)
+hrDeviceType.2                , ObjectID    , RO , fixed(1.2.3)
+# columnar variable hrDeviceDescr. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDeviceDescr.1               , OctetString , RO , fixed(My_hrDeviceDescr_string)
+hrDeviceDescr.2               , OctetString , RO , fixed(My_hrDeviceDescr_string)
+# columnar variable hrDeviceID. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDeviceID.1                  , ObjectID    , RO , fixed(1.2.3)
+hrDeviceID.2                  , ObjectID    , RO , fixed(1.2.3)
+# columnar variable hrDeviceStatus. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDeviceStatus.1              , Integer     , RO , fixed(1)
+hrDeviceStatus.2              , Integer     , RO , fixed(1)
+# columnar variable hrDeviceErrors. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDeviceErrors.1              , Counter     , RO , randomup(1000, 100)
+hrDeviceErrors.2              , Counter     , RO , randomup(1000, 100)
+# columnar variable hrProcessorFrwID. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrProcessorFrwID.1            , ObjectID    , RO , fixed(1.2.3)
+hrProcessorFrwID.2            , ObjectID    , RO , fixed(1.2.3)
+# columnar variable hrProcessorLoad. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrProcessorLoad.1             , Integer     , RO , fixed(50)
+hrProcessorLoad.2             , Integer     , RO , fixed(50)
+# columnar variable hrNetworkIfIndex. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrNetworkIfIndex.1            , Integer     , RO , fixed(1073741823)
+hrNetworkIfIndex.2            , Integer     , RO , fixed(1073741823)
+# columnar variable hrPrinterStatus. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrPrinterStatus.1             , Integer     , RO , fixed(1)
+hrPrinterStatus.2             , Integer     , RO , fixed(1)
+# columnar variable hrPrinterDetectedErrorState. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrPrinterDetectedErrorState.1 , OctetString , RO , fixed(abc)
+hrPrinterDetectedErrorState.2 , OctetString , RO , fixed(abc)
+# columnar variable hrDiskStorageAccess. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDiskStorageAccess.1         , Integer     , RO , fixed(1)
+hrDiskStorageAccess.2         , Integer     , RO , fixed(1)
+# columnar variable hrDiskStorageMedia. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDiskStorageMedia.1          , Integer     , RO , fixed(1)
+hrDiskStorageMedia.2          , Integer     , RO , fixed(1)
+# columnar variable hrDiskStorageRemoveble. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDiskStorageRemoveble.1      , Integer     , RO , fixed(1)
+hrDiskStorageRemoveble.2      , Integer     , RO , fixed(1)
+# columnar variable hrDiskStorageCapacity. Index = hrDeviceIndex
+# sub ids in the instance are = n
+hrDiskStorageCapacity.1       , Integer     , RO , fixed(1073741823)
+hrDiskStorageCapacity.2       , Integer     , RO , fixed(1073741823)
+# columnar variable hrPartitionIndex. Index = hrDeviceIndex hrPartitionIndex
+# sub ids in the instance are = n.n
+hrPartitionIndex.1.1          , Integer     , RO , fixed(1)
+hrPartitionIndex.1.2          , Integer     , RO , fixed(2)
+# columnar variable hrPartitionLabel. Index = hrDeviceIndex hrPartitionIndex
+# sub ids in the instance are = n.n
+hrPartitionLabel.1.1          , OctetString , RO , fixed(abc)
+hrPartitionLabel.1.2          , OctetString , RO , fixed(abc)
+# columnar variable hrPartitionID. Index = hrDeviceIndex hrPartitionIndex
+# sub ids in the instance are = n.n
+hrPartitionID.1.1             , OctetString , RO , fixed(abc)
+hrPartitionID.1.2             , OctetString , RO , fixed(abc)
+# columnar variable hrPartitionSize. Index = hrDeviceIndex hrPartitionIndex
+# sub ids in the instance are = n.n
+hrPartitionSize.1.1           , Integer     , RO , fixed(1073741823)
+hrPartitionSize.1.2           , Integer     , RO , fixed(1073741823)
+# columnar variable hrPartitionFSIndex. Index = hrDeviceIndex hrPartitionIndex
+# sub ids in the instance are = n.n
+hrPartitionFSIndex.1.1        , Integer     , RO , fixed(1073741823)
+hrPartitionFSIndex.1.2        , Integer     , RO , fixed(1073741823)
+# columnar variable hrFSIndex. Index = hrFSIndex
+# sub ids in the instance are = n
+hrFSIndex.1                   , Integer     , RO , fixed(1)
+hrFSIndex.2                   , Integer     , RO , fixed(2)
+# columnar variable hrFSMountPoint. Index = hrFSIndex
+# sub ids in the instance are = n
+hrFSMountPoint.1              , OctetString , RO , fixed(abc)
+hrFSMountPoint.2              , OctetString , RO , fixed(abc)
+# columnar variable hrFSRemoteMountPoint. Index = hrFSIndex
+# sub ids in the instance are = n
+hrFSRemoteMountPoint.1        , OctetString , RO , fixed(abc)
+hrFSRemoteMountPoint.2        , OctetString , RO , fixed(abc)
+# columnar variable hrFSType. Index = hrFSIndex
+# sub ids in the instance are = n
+hrFSType.1                    , ObjectID    , RO , fixed(1.2.3)
+hrFSType.2                    , ObjectID    , RO , fixed(1.2.3)
+# columnar variable hrFSAccess. Index = hrFSIndex
+# sub ids in the instance are = n
+hrFSAccess.1                  , Integer     , RO , fixed(1)
+hrFSAccess.2                  , Integer     , RO , fixed(1)
+# columnar variable hrFSBootable. Index = hrFSIndex
+# sub ids in the instance are = n
+hrFSBootable.1                , Integer     , RO , fixed(1)
+hrFSBootable.2                , Integer     , RO , fixed(1)
+# columnar variable hrFSStorageIndex. Index = hrFSIndex
+# sub ids in the instance are = n
+hrFSStorageIndex.1            , Integer     , RO , fixed(1073741823)
+hrFSStorageIndex.2            , Integer     , RO , fixed(1073741823)
+# columnar variable hrFSLastFullBackupDate. Index = hrFSIndex
+# sub ids in the instance are = n
+hrFSLastFullBackupDate.1      , OctetString , RW , r_lastset(8, 11,abc)
+hrFSLastFullBackupDate.2      , OctetString , RW , r_lastset(8, 11,abc)
+# columnar variable hrFSLastPartialBackupDate. Index = hrFSIndex
+# sub ids in the instance are = n
+hrFSLastPartialBackupDate.1   , OctetString , RW , r_lastset(8, 11,abc)
+hrFSLastPartialBackupDate.2   , OctetString , RW , r_lastset(8, 11,abc)
+hrSWOSIndex.0                 , Integer     , RO , fixed(1)
+# columnar variable hrSWRunIndex. Index = hrSWRunIndex
+# sub ids in the instance are = n
+hrSWRunIndex.1                , Integer     , RO , fixed(1)
+hrSWRunIndex.2                , Integer     , RO , fixed(2)
+# columnar variable hrSWRunName. Index = hrSWRunIndex
+# sub ids in the instance are = n
+hrSWRunName.1                 , OctetString , RO , fixed(abc)
+hrSWRunName.2                 , OctetString , RO , fixed(abc)
+# columnar variable hrSWRunID. Index = hrSWRunIndex
+# sub ids in the instance are = n
+hrSWRunID.1                   , ObjectID    , RO , fixed(1.2.3)
+hrSWRunID.2                   , ObjectID    , RO , fixed(1.2.3)
+# columnar variable hrSWRunPath. Index = hrSWRunIndex
+# sub ids in the instance are = n
+hrSWRunPath.1                 , OctetString , RO , fixed(abc)
+hrSWRunPath.2                 , OctetString , RO , fixed(abc)
+# columnar variable hrSWRunParameters. Index = hrSWRunIndex
+# sub ids in the instance are = n
+hrSWRunParameters.1           , OctetString , RO , fixed(abc)
+hrSWRunParameters.2           , OctetString , RO , fixed(abc)
+# columnar variable hrSWRunType. Index = hrSWRunIndex
+# sub ids in the instance are = n
+hrSWRunType.1                 , Integer     , RO , fixed(1)
+hrSWRunType.2                 , Integer     , RO , fixed(1)
+# columnar variable hrSWRunStatus. Index = hrSWRunIndex
+# sub ids in the instance are = n
+hrSWRunStatus.1               , Integer     , RW , r_lastset(1, 4,1)
+hrSWRunStatus.2               , Integer     , RW , r_lastset(1, 4,1)
+# columnar variable hrSWRunPerfCPU. Index = hrSWRunIndex
+# sub ids in the instance are = n
+hrSWRunPerfCPU.1              , Integer     , RO , fixed(1073741823)
+hrSWRunPerfCPU.2              , Integer     , RO , fixed(1073741823)
+# columnar variable hrSWRunPerfMem. Index = hrSWRunIndex
+# sub ids in the instance are = n
+hrSWRunPerfMem.1              , Integer     , RO , fixed(1073741823)
+hrSWRunPerfMem.2              , Integer     , RO , fixed(1073741823)
+hrSWInstalledLastChange.0     , TimeTicks   , RO , clock(0)
+hrSWInstalledLastUpdateTime.0 , TimeTicks   , RO , clock(0)
+# columnar variable hrSWInstalledIndex. Index = hrSWInstalledIndex
+# sub ids in the instance are = n
+hrSWInstalledIndex.1          , Integer     , RO , fixed(1)
+hrSWInstalledIndex.2          , Integer     , RO , fixed(2)
+# columnar variable hrSWInstalledName. Index = hrSWInstalledIndex
+# sub ids in the instance are = n
+hrSWInstalledName.1           , OctetString , RO , fixed(abc)
+hrSWInstalledName.2           , OctetString , RO , fixed(abc)
+# columnar variable hrSWInstalledID. Index = hrSWInstalledIndex
+# sub ids in the instance are = n
+hrSWInstalledID.1             , ObjectID    , RO , fixed(1.2.3)
+hrSWInstalledID.2             , ObjectID    , RO , fixed(1.2.3)
+# columnar variable hrSWInstalledType. Index = hrSWInstalledIndex
+# sub ids in the instance are = n
+hrSWInstalledType.1           , Integer     , RO , fixed(1)
+hrSWInstalledType.2           , Integer     , RO , fixed(1)
+# columnar variable hrSWInstalledDate. Index = hrSWInstalledIndex
+# sub ids in the instance are = n
+hrSWInstalledDate.1           , OctetString , RO , fixed(abc)
+hrSWInstalledDate.2           , OctetString , RO , fixed(abc)
+jnxBoxClass.0                 , ObjectID    , RO , fixed(1.2.3)
+jnxBoxDescr.0                 , OctetString , RO , fixed(My_jnxBoxDescr_string)
+jnxBoxSerialNo.0              , OctetString , RO , fixed(My_jnxBoxSerialNo_string)
+jnxBoxRevision.0              , OctetString , RO , fixed(My_jnxBoxRevision_string)
+jnxBoxInstalled.0             , TimeTicks   , RO , clock(0)
+# columnar variable jnxContainersIndex. Index = jnxContainersIndex
+# sub ids in the instance are = n
+jnxContainersIndex.1          , Integer     , RO , fixed(1)
+jnxContainersIndex.2          , Integer     , RO , fixed(2)
+# columnar variable jnxContainersView. Index = jnxContainersIndex
+# sub ids in the instance are = n
+jnxContainersView.1           , Integer     , RO , fixed(1)
+jnxContainersView.2           , Integer     , RO , fixed(1)
+# columnar variable jnxContainersLevel. Index = jnxContainersIndex
+# sub ids in the instance are = n
+jnxContainersLevel.1          , Integer     , RO , fixed(0)
+jnxContainersLevel.2          , Integer     , RO , fixed(0)
+# columnar variable jnxContainersWithin. Index = jnxContainersIndex
+# sub ids in the instance are = n
+jnxContainersWithin.1         , Integer     , RO , fixed(0)
+jnxContainersWithin.2         , Integer     , RO , fixed(0)
+# columnar variable jnxContainersType. Index = jnxContainersIndex
+# sub ids in the instance are = n
+jnxContainersType.1           , ObjectID    , RO , fixed(1.2.3)
+jnxContainersType.2           , ObjectID    , RO , fixed(1.2.3)
+# columnar variable jnxContainersDescr. Index = jnxContainersIndex
+# sub ids in the instance are = n
+jnxContainersDescr.1          , OctetString , RO , fixed(My_jnxContainersDescr_string)
+jnxContainersDescr.2          , OctetString , RO , fixed(My_jnxContainersDescr_string)
+# columnar variable jnxContainersCount. Index = jnxContainersIndex
+# sub ids in the instance are = n
+jnxContainersCount.1          , Integer     , RO , fixed(0)
+jnxContainersCount.2          , Integer     , RO , fixed(0)
+jnxContentsLastChange.0       , TimeTicks   , RO , clock(0)
+# columnar variable jnxContentsContainerIndex. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsContainerIndex.1.1.1.1, Integer     , RO , fixed(1)
+jnxContentsContainerIndex.1.1.1.2, Integer     , RO , fixed(1)
+# columnar variable jnxContentsL1Index. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsL1Index.1.1.1.1    , Integer     , RO , fixed(1)
+jnxContentsL1Index.1.1.1.2    , Integer     , RO , fixed(1)
+# columnar variable jnxContentsL2Index. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsL2Index.1.1.1.1    , Integer     , RO , fixed(1)
+jnxContentsL2Index.1.1.1.2    , Integer     , RO , fixed(1)
+# columnar variable jnxContentsL3Index. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsL3Index.1.1.1.1    , Integer     , RO , fixed(1)
+jnxContentsL3Index.1.1.1.2    , Integer     , RO , fixed(2)
+# columnar variable jnxContentsType. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsType.1.1.1.1       , ObjectID    , RO , fixed(1.2.3)
+jnxContentsType.1.1.1.2       , ObjectID    , RO , fixed(1.2.3)
+# columnar variable jnxContentsDescr. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsDescr.1.1.1.1      , OctetString , RO , fixed(My_jnxContentsDescr_string)
+jnxContentsDescr.1.1.1.2      , OctetString , RO , fixed(My_jnxContentsDescr_string)
+# columnar variable jnxContentsSerialNo. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsSerialNo.1.1.1.1   , OctetString , RO , fixed(My_jnxContentsSerialNo_string)
+jnxContentsSerialNo.1.1.1.2   , OctetString , RO , fixed(My_jnxContentsSerialNo_string)
+# columnar variable jnxContentsRevision. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsRevision.1.1.1.1   , OctetString , RO , fixed(My_jnxContentsRevision_string)
+jnxContentsRevision.1.1.1.2   , OctetString , RO , fixed(My_jnxContentsRevision_string)
+# columnar variable jnxContentsInstalled. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsInstalled.1.1.1.1  , TimeTicks   , RO , clock(0)
+jnxContentsInstalled.1.1.1.2  , TimeTicks   , RO , clock(0)
+# columnar variable jnxContentsPartNo. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsPartNo.1.1.1.1     , OctetString , RO , fixed(My_jnxContentsPartNo_string)
+jnxContentsPartNo.1.1.1.2     , OctetString , RO , fixed(My_jnxContentsPartNo_string)
+# columnar variable jnxContentsChassisId. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsChassisId.1.1.1.1  , Integer     , RO , fixed(1)
+jnxContentsChassisId.1.1.1.2  , Integer     , RO , fixed(1)
+# columnar variable jnxContentsChassisDescr. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsChassisDescr.1.1.1.1, OctetString , RO , fixed(My_jnxContentsChassisDescr_string)
+jnxContentsChassisDescr.1.1.1.2, OctetString , RO , fixed(My_jnxContentsChassisDescr_string)
+# columnar variable jnxContentsChassisCleiCode. Index = jnxContentsContainerIndex jnxContentsL1Index jnxContentsL2Index jnxContentsL3Index
+# sub ids in the instance are = n.n.n.n
+jnxContentsChassisCleiCode.1.1.1.1, OctetString , RO , fixed(My_jnxContentsChassisCleiCode_string)
+jnxContentsChassisCleiCode.1.1.1.2, OctetString , RO , fixed(My_jnxContentsChassisCleiCode_string)
+jnxLEDLastChange.0            , TimeTicks   , RO , clock(0)
+# columnar variable jnxLEDAssociateTable. Index = jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index
+# sub ids in the instance are = n.n.n.n.n
+jnxLEDAssociateTable.1.1.1.1.1, Integer     , RO , fixed(1)
+jnxLEDAssociateTable.1.1.1.1.2, Integer     , RO , fixed(1)
+# columnar variable jnxLEDAssociateIndex. Index = jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index
+# sub ids in the instance are = n.n.n.n.n
+jnxLEDAssociateIndex.1.1.1.1.1, Integer     , RO , fixed(1)
+jnxLEDAssociateIndex.1.1.1.1.2, Integer     , RO , fixed(1)
+# columnar variable jnxLEDL1Index. Index = jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index
+# sub ids in the instance are = n.n.n.n.n
+jnxLEDL1Index.1.1.1.1.1       , Integer     , RO , fixed(1)
+jnxLEDL1Index.1.1.1.1.2       , Integer     , RO , fixed(1)
+# columnar variable jnxLEDL2Index. Index = jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index
+# sub ids in the instance are = n.n.n.n.n
+jnxLEDL2Index.1.1.1.1.1       , Integer     , RO , fixed(1)
+jnxLEDL2Index.1.1.1.1.2       , Integer     , RO , fixed(1)
+# columnar variable jnxLEDL3Index. Index = jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index
+# sub ids in the instance are = n.n.n.n.n
+jnxLEDL3Index.1.1.1.1.1       , Integer     , RO , fixed(1)
+jnxLEDL3Index.1.1.1.1.2       , Integer     , RO , fixed(2)
+# columnar variable jnxLEDOriginator. Index = jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index
+# sub ids in the instance are = n.n.n.n.n
+jnxLEDOriginator.1.1.1.1.1    , ObjectID    , RO , fixed(1.2.3)
+jnxLEDOriginator.1.1.1.1.2    , ObjectID    , RO , fixed(1.2.3)
+# columnar variable jnxLEDDescr. Index = jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index
+# sub ids in the instance are = n.n.n.n.n
+jnxLEDDescr.1.1.1.1.1         , OctetString , RO , fixed(My_jnxLEDDescr_string)
+jnxLEDDescr.1.1.1.1.2         , OctetString , RO , fixed(My_jnxLEDDescr_string)
+# columnar variable jnxLEDState. Index = jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index
+# sub ids in the instance are = n.n.n.n.n
+jnxLEDState.1.1.1.1.1         , Integer     , RO , fixed(1)
+jnxLEDState.1.1.1.1.2         , Integer     , RO , fixed(1)
+# columnar variable jnxLEDStateOrdered. Index = jnxLEDAssociateTable jnxLEDAssociateIndex jnxLEDL1Index jnxLEDL2Index jnxLEDL3Index
+# sub ids in the instance are = n.n.n.n.n
+jnxLEDStateOrdered.1.1.1.1.1  , Integer     , RO , fixed(1)
+jnxLEDStateOrdered.1.1.1.1.2  , Integer     , RO , fixed(1)
+jnxFilledLastChange.0         , TimeTicks   , RO , clock(0)
+# columnar variable jnxFilledContainerIndex. Index = jnxFilledContainerIndex jnxFilledL1Index jnxFilledL2Index jnxFilledL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFilledContainerIndex.1.1.1.1, Integer     , RO , fixed(1)
+jnxFilledContainerIndex.1.1.1.2, Integer     , RO , fixed(1)
+# columnar variable jnxFilledL1Index. Index = jnxFilledContainerIndex jnxFilledL1Index jnxFilledL2Index jnxFilledL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFilledL1Index.1.1.1.1      , Integer     , RO , fixed(1)
+jnxFilledL1Index.1.1.1.2      , Integer     , RO , fixed(1)
+# columnar variable jnxFilledL2Index. Index = jnxFilledContainerIndex jnxFilledL1Index jnxFilledL2Index jnxFilledL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFilledL2Index.1.1.1.1      , Integer     , RO , fixed(1)
+jnxFilledL2Index.1.1.1.2      , Integer     , RO , fixed(1)
+# columnar variable jnxFilledL3Index. Index = jnxFilledContainerIndex jnxFilledL1Index jnxFilledL2Index jnxFilledL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFilledL3Index.1.1.1.1      , Integer     , RO , fixed(1)
+jnxFilledL3Index.1.1.1.2      , Integer     , RO , fixed(2)
+# columnar variable jnxFilledDescr. Index = jnxFilledContainerIndex jnxFilledL1Index jnxFilledL2Index jnxFilledL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFilledDescr.1.1.1.1        , OctetString , RO , fixed(My_jnxFilledDescr_string)
+jnxFilledDescr.1.1.1.2        , OctetString , RO , fixed(My_jnxFilledDescr_string)
+# columnar variable jnxFilledState. Index = jnxFilledContainerIndex jnxFilledL1Index jnxFilledL2Index jnxFilledL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFilledState.1.1.1.1        , Integer     , RO , fixed(1)
+jnxFilledState.1.1.1.2        , Integer     , RO , fixed(1)
+# columnar variable jnxFilledChassisId. Index = jnxFilledContainerIndex jnxFilledL1Index jnxFilledL2Index jnxFilledL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFilledChassisId.1.1.1.1    , Integer     , RO , fixed(1)
+jnxFilledChassisId.1.1.1.2    , Integer     , RO , fixed(1)
+# columnar variable jnxFilledChassisDescr. Index = jnxFilledContainerIndex jnxFilledL1Index jnxFilledL2Index jnxFilledL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFilledChassisDescr.1.1.1.1 , OctetString , RO , fixed(My_jnxFilledChassisDescr_string)
+jnxFilledChassisDescr.1.1.1.2 , OctetString , RO , fixed(My_jnxFilledChassisDescr_string)
+# columnar variable jnxOperatingContentsIndex. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingContentsIndex.1.1.1.1, Integer     , RO , fixed(1)
+jnxOperatingContentsIndex.1.1.1.2, Integer     , RO , fixed(1)
+# columnar variable jnxOperatingL1Index. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingL1Index.1.1.1.1   , Integer     , RO , fixed(1)
+jnxOperatingL1Index.1.1.1.2   , Integer     , RO , fixed(1)
+# columnar variable jnxOperatingL2Index. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingL2Index.1.1.1.1   , Integer     , RO , fixed(1)
+jnxOperatingL2Index.1.1.1.2   , Integer     , RO , fixed(1)
+# columnar variable jnxOperatingL3Index. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingL3Index.1.1.1.1   , Integer     , RO , fixed(1)
+jnxOperatingL3Index.1.1.1.2   , Integer     , RO , fixed(2)
+# columnar variable jnxOperatingDescr. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingDescr.1.1.1.1     , OctetString , RO , fixed(My_jnxOperatingDescr_string)
+jnxOperatingDescr.1.1.1.2     , OctetString , RO , fixed(My_jnxOperatingDescr_string)
+# columnar variable jnxOperatingState. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingState.1.1.1.1     , Integer     , RO , fixed(1)
+jnxOperatingState.1.1.1.2     , Integer     , RO , fixed(1)
+# columnar variable jnxOperatingTemp. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingTemp.1.1.1.1      , Gauge       , RO , fixed(1000)
+jnxOperatingTemp.1.1.1.2      , Gauge       , RO , fixed(1000)
+# columnar variable jnxOperatingCPU. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingCPU.1.1.1.1       , Gauge       , RO , fixed(1000)
+jnxOperatingCPU.1.1.1.2       , Gauge       , RO , fixed(1000)
+# columnar variable jnxOperatingISR. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingISR.1.1.1.1       , Gauge       , RO , fixed(1000)
+jnxOperatingISR.1.1.1.2       , Gauge       , RO , fixed(1000)
+# columnar variable jnxOperatingDRAMSize. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingDRAMSize.1.1.1.1  , Integer     , RO , fixed(0)
+jnxOperatingDRAMSize.1.1.1.2  , Integer     , RO , fixed(0)
+# columnar variable jnxOperatingBuffer. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingBuffer.1.1.1.1    , Gauge       , RO , fixed(1000)
+jnxOperatingBuffer.1.1.1.2    , Gauge       , RO , fixed(1000)
+# columnar variable jnxOperatingHeap. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingHeap.1.1.1.1      , Gauge       , RO , fixed(1000)
+jnxOperatingHeap.1.1.1.2      , Gauge       , RO , fixed(1000)
+# columnar variable jnxOperatingUpTime. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingUpTime.1.1.1.1    , Integer     , RO , fixed(1073741823)
+jnxOperatingUpTime.1.1.1.2    , Integer     , RO , fixed(1073741823)
+# columnar variable jnxOperatingLastRestart. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingLastRestart.1.1.1.1, TimeTicks   , RO , clock(0)
+jnxOperatingLastRestart.1.1.1.2, TimeTicks   , RO , clock(0)
+# columnar variable jnxOperatingMemory. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingMemory.1.1.1.1    , Integer     , RO , fixed(0)
+jnxOperatingMemory.1.1.1.2    , Integer     , RO , fixed(0)
+# columnar variable jnxOperatingStateOrdered. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingStateOrdered.1.1.1.1, Integer     , RO , fixed(1)
+jnxOperatingStateOrdered.1.1.1.2, Integer     , RO , fixed(1)
+# columnar variable jnxOperatingChassisId. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingChassisId.1.1.1.1 , Integer     , RO , fixed(1)
+jnxOperatingChassisId.1.1.1.2 , Integer     , RO , fixed(1)
+# columnar variable jnxOperatingChassisDescr. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingChassisDescr.1.1.1.1, OctetString , RO , fixed(My_jnxOperatingChassisDescr_string)
+jnxOperatingChassisDescr.1.1.1.2, OctetString , RO , fixed(My_jnxOperatingChassisDescr_string)
+# columnar variable jnxOperatingRestartTime. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperatingRestartTime.1.1.1.1, OctetString , RO , fixed(abc)
+jnxOperatingRestartTime.1.1.1.2, OctetString , RO , fixed(abc)
+# columnar variable jnxOperating1MinLoadAvg. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperating1MinLoadAvg.1.1.1.1, Gauge       , RO , fixed(1000)
+jnxOperating1MinLoadAvg.1.1.1.2, Gauge       , RO , fixed(1000)
+# columnar variable jnxOperating5MinLoadAvg. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperating5MinLoadAvg.1.1.1.1, Gauge       , RO , fixed(1000)
+jnxOperating5MinLoadAvg.1.1.1.2, Gauge       , RO , fixed(1000)
+# columnar variable jnxOperating15MinLoadAvg. Index = jnxOperatingContentsIndex jnxOperatingL1Index jnxOperatingL2Index jnxOperatingL3Index
+# sub ids in the instance are = n.n.n.n
+jnxOperating15MinLoadAvg.1.1.1.1, Gauge       , RO , fixed(1000)
+jnxOperating15MinLoadAvg.1.1.1.2, Gauge       , RO , fixed(1000)
+# columnar variable jnxRedundancyContentsIndex. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyContentsIndex.1.1.1.1, Integer     , RO , fixed(1)
+jnxRedundancyContentsIndex.1.1.1.2, Integer     , RO , fixed(1)
+# columnar variable jnxRedundancyL1Index. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyL1Index.1.1.1.1  , Integer     , RO , fixed(1)
+jnxRedundancyL1Index.1.1.1.2  , Integer     , RO , fixed(1)
+# columnar variable jnxRedundancyL2Index. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyL2Index.1.1.1.1  , Integer     , RO , fixed(1)
+jnxRedundancyL2Index.1.1.1.2  , Integer     , RO , fixed(1)
+# columnar variable jnxRedundancyL3Index. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyL3Index.1.1.1.1  , Integer     , RO , fixed(1)
+jnxRedundancyL3Index.1.1.1.2  , Integer     , RO , fixed(2)
+# columnar variable jnxRedundancyDescr. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyDescr.1.1.1.1    , OctetString , RO , fixed(My_jnxRedundancyDescr_string)
+jnxRedundancyDescr.1.1.1.2    , OctetString , RO , fixed(My_jnxRedundancyDescr_string)
+# columnar variable jnxRedundancyConfig. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyConfig.1.1.1.1   , Integer     , RO , fixed(1)
+jnxRedundancyConfig.1.1.1.2   , Integer     , RO , fixed(1)
+# columnar variable jnxRedundancyState. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyState.1.1.1.1    , Integer     , RO , fixed(1)
+jnxRedundancyState.1.1.1.2    , Integer     , RO , fixed(1)
+# columnar variable jnxRedundancySwitchoverCount. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancySwitchoverCount.1.1.1.1, Counter     , RO , randomup(1000, 100)
+jnxRedundancySwitchoverCount.1.1.1.2, Counter     , RO , randomup(1000, 100)
+# columnar variable jnxRedundancySwitchoverTime. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancySwitchoverTime.1.1.1.1, TimeTicks   , RO , clock(0)
+jnxRedundancySwitchoverTime.1.1.1.2, TimeTicks   , RO , clock(0)
+# columnar variable jnxRedundancySwitchoverReason. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancySwitchoverReason.1.1.1.1, Integer     , RO , fixed(1)
+jnxRedundancySwitchoverReason.1.1.1.2, Integer     , RO , fixed(1)
+# columnar variable jnxRedundancyKeepaliveHeartbeat. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyKeepaliveHeartbeat.1.1.1.1, Integer     , RO , fixed(0)
+jnxRedundancyKeepaliveHeartbeat.1.1.1.2, Integer     , RO , fixed(0)
+# columnar variable jnxRedundancyKeepaliveTimeout. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyKeepaliveTimeout.1.1.1.1, Integer     , RO , fixed(0)
+jnxRedundancyKeepaliveTimeout.1.1.1.2, Integer     , RO , fixed(0)
+# columnar variable jnxRedundancyKeepaliveElapsed. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyKeepaliveElapsed.1.1.1.1, Integer     , RO , fixed(0)
+jnxRedundancyKeepaliveElapsed.1.1.1.2, Integer     , RO , fixed(0)
+# columnar variable jnxRedundancyKeepaliveLoss. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyKeepaliveLoss.1.1.1.1, Counter     , RO , randomup(1000, 100)
+jnxRedundancyKeepaliveLoss.1.1.1.2, Counter     , RO , randomup(1000, 100)
+# columnar variable jnxRedundancyChassisId. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyChassisId.1.1.1.1, Integer     , RO , fixed(1)
+jnxRedundancyChassisId.1.1.1.2, Integer     , RO , fixed(1)
+# columnar variable jnxRedundancyChassisDescr. Index = jnxRedundancyContentsIndex jnxRedundancyL1Index jnxRedundancyL2Index jnxRedundancyL3Index
+# sub ids in the instance are = n.n.n.n
+jnxRedundancyChassisDescr.1.1.1.1, OctetString , RO , fixed(My_jnxRedundancyChassisDescr_string)
+jnxRedundancyChassisDescr.1.1.1.2, OctetString , RO , fixed(My_jnxRedundancyChassisDescr_string)
+# columnar variable jnxFruContentsIndex. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruContentsIndex.1.1.1.1   , Integer     , RO , fixed(1)
+jnxFruContentsIndex.1.1.1.2   , Integer     , RO , fixed(1)
+# columnar variable jnxFruL1Index. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruL1Index.1.1.1.1         , Integer     , RO , fixed(1)
+jnxFruL1Index.1.1.1.2         , Integer     , RO , fixed(1)
+# columnar variable jnxFruL2Index. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruL2Index.1.1.1.1         , Integer     , RO , fixed(1)
+jnxFruL2Index.1.1.1.2         , Integer     , RO , fixed(1)
+# columnar variable jnxFruL3Index. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruL3Index.1.1.1.1         , Integer     , RO , fixed(1)
+jnxFruL3Index.1.1.1.2         , Integer     , RO , fixed(2)
+# columnar variable jnxFruName. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruName.1.1.1.1            , OctetString , RO , fixed(My_jnxFruName_string)
+jnxFruName.1.1.1.2            , OctetString , RO , fixed(My_jnxFruName_string)
+# columnar variable jnxFruType. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruType.1.1.1.1            , Integer     , RO , fixed(1)
+jnxFruType.1.1.1.2            , Integer     , RO , fixed(1)
+# columnar variable jnxFruSlot. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruSlot.1.1.1.1            , Integer     , RO , fixed(1073741823)
+jnxFruSlot.1.1.1.2            , Integer     , RO , fixed(1073741823)
+# columnar variable jnxFruState. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruState.1.1.1.1           , Integer     , RO , fixed(1)
+jnxFruState.1.1.1.2           , Integer     , RO , fixed(1)
+# columnar variable jnxFruTemp. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruTemp.1.1.1.1            , Gauge       , RO , fixed(1000)
+jnxFruTemp.1.1.1.2            , Gauge       , RO , fixed(1000)
+# columnar variable jnxFruOfflineReason. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruOfflineReason.1.1.1.1   , Integer     , RO , fixed(1)
+jnxFruOfflineReason.1.1.1.2   , Integer     , RO , fixed(1)
+# columnar variable jnxFruLastPowerOff. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruLastPowerOff.1.1.1.1    , TimeTicks   , RO , clock(0)
+jnxFruLastPowerOff.1.1.1.2    , TimeTicks   , RO , clock(0)
+# columnar variable jnxFruLastPowerOn. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruLastPowerOn.1.1.1.1     , TimeTicks   , RO , clock(0)
+jnxFruLastPowerOn.1.1.1.2     , TimeTicks   , RO , clock(0)
+# columnar variable jnxFruPowerUpTime. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruPowerUpTime.1.1.1.1     , Integer     , RO , fixed(1073741823)
+jnxFruPowerUpTime.1.1.1.2     , Integer     , RO , fixed(1073741823)
+# columnar variable jnxFruChassisId. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruChassisId.1.1.1.1       , Integer     , RO , fixed(1)
+jnxFruChassisId.1.1.1.2       , Integer     , RO , fixed(1)
+# columnar variable jnxFruChassisDescr. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruChassisDescr.1.1.1.1    , OctetString , RO , fixed(My_jnxFruChassisDescr_string)
+jnxFruChassisDescr.1.1.1.2    , OctetString , RO , fixed(My_jnxFruChassisDescr_string)
+# columnar variable jnxFruPsdAssignment. Index = jnxFruContentsIndex jnxFruL1Index jnxFruL2Index jnxFruL3Index
+# sub ids in the instance are = n.n.n.n
+jnxFruPsdAssignment.1.1.1.1   , Integer     , RO , fixed(15)
+jnxFruPsdAssignment.1.1.1.2   , Integer     , RO , fixed(15)
+jnxBoxKernelMemoryUsedPercent.0, Integer     , RO , fixed(0)
+jnxBoxSystemDomainType.0      , Integer     , RO , fixed(1)
+jnxBoxPersonality.0           , ObjectID    , RO , fixed(1.2.3)
+# columnar variable jnxHrStoragePercentUsed. Index = hrStorageIndex
+# sub ids in the instance are = n
+jnxHrStoragePercentUsed.1     , Gauge       , RO , utilization(50, 10, 100, 30)
+jnxHrStoragePercentUsed.2     , Gauge       , RO , utilization(80, 2, 100, 75)
+jnxHrSystemOpenFiles.0        , Gauge       , RO , random(275, 20, 10)

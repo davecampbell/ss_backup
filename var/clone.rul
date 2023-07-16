@@ -1,0 +1,205 @@
+###############################################################################
+#
+# File:     clone.rul
+# Date:     12/1/2017
+# Purpose:  Rules file for sapw2var to create a variable file that will 
+#           distinguish each simulated device as unique when discovered by a 
+#           network management system.
+# Author:   SimpleSoft, Inc.
+#
+###############################################################################
+%IGNOREWALKERROR   YES
+
+%MAPIPADDRESS YES
+
+#uncomment the next line to use tokens for ipaddr table for routers
+#%MAPIPADDRTABLE YES
+
+# Replace value types for ifSpeed and ifLastChange in MIB2
+1.3.6.1.2.1.2.2.1.5         fixed(%s)
+1.3.6.1.2.1.2.2.1.9         fixed(%s)
+
+# Replace value types for cdpGlobalDeviceId, hostName, sysIpAddr, 
+# and managementDomainLastUpdater.1 in Cisco MIBs
+1.3.6.1.4.1.9.9.23.1.3.4.0      fixed(Cisco_$$MYIPADDRESS$$)
+1.3.6.1.4.1.9.2.1.3.0           fixed(Cisco_$$MYIPADDRESS$$)
+1.3.6.1.4.1.9.5.1.1.2.0         lastset($$MYIPADDRESS$$)
+1.3.6.1.4.1.9.9.46.1.2.1.1.5.1  fixed($$MYIPADDRESS$$)
+
+%tclscript 1.0.8802.1.1.2.1.3.2.0
+# MIB object: lldpLocChassisId.0
+#   Get the value type string
+#   Calculate the index where the last octet begin
+#   Extract the last octet and the closing parenthesis
+#   Extract the valuetype and first octet
+#   Append the first octet, token string, and last octet
+
+    set value $varValuetype
+    set index [expr [string length $value] - 3]
+    set lastOctet [string range $value $index end]
+    set firstOctet [string range $value 0 9]
+    set varValuetype "$firstOctet\$\$MYIPADDRHEX\$\$$lastOctet"
+%end
+
+%tclscript 1.3.6.1.2.1.1.5.0
+# MIB object: sysName.0
+#   Get the value type string
+#   Calculate the index where the last character of the name is
+#   Extract the value type except for the two last characters 
+#   If the string is not quoted, just remove the closing parenthesis
+#   Append the MYIP token to the end of the sysName value
+
+    set value $varValuetype
+    set index [expr [string length $value] - 3]
+    set sysNameValue [string range $value 0 $index]
+    if { [string first "\"" $sysNameValue] >= 0 } {
+        set varValuetype "$sysNameValue--\$\$MYIPADDRESS\$\$\")"
+    } else {    ;# String is not quoted
+        set index [expr [string length $value] - 2]
+        set sysNameValue [string range $value 0 $index]
+        set varValuetype "$sysNameValue--\$\$MYIPADDRESS\$\$)"
+    }
+%end
+
+%tclscript 1.3.6.1.2.1.2.2.1.6
+# MIB Object: ifPhysAddress
+#   Get the value type string
+#   Calculate the index where the last octet begin
+#   Extract the last octet and the closing parenthesis
+#   Extract the valuetype and first octet
+#   Append the first octet, token string, and last octet
+
+    set value $varValuetype
+    if { [string length $value] > 9 } { # This has a value specified
+        set index [expr [string length $value] - 3]
+        set lastOctet [string range $value $index end]
+        set firstOctet [string range $value 0 9]
+        set varValuetype "$firstOctet\$\$MYIPADDRHEX\$\$$lastOctet"
+    } else { # No value specified, so leave it that way
+    }
+%end
+
+%tclscript 1.3.6.1.2.1.17.1.1.0
+# MIB Object: dot1dBaseBridgeAddress.0
+#   Get the value type string
+#   Calculate the index where the last octet begin
+#   Extract the last octet and the closing parenthesis
+#   Extract the valuetype and first octet
+#   Append the first octet, token string, and last octet
+
+    set value $varValuetype
+    set index [expr [string length $value] - 3]
+    set lastOctet [string range $value $index end]
+    if { [string index $value 7] == "x" } {
+        set firstOctet [string range $value 0 9]
+    } else {
+        set beginning [string range $value 0 7]
+        set octet [string range $beginning 6 7]
+        set firstOctet "fixed(0x$octet"
+    }
+    set varValuetype "$firstOctet\$\$MYIPADDRHEX\$\$$lastOctet"
+%end
+
+%tclscript 1.3.6.1.2.1.47.1.1.1.1.11
+# MIB Object: entPhysicalSerialNum
+#   Get the value type string
+#   Calculate the index where the last 3 characters begin
+#   Extract the last 3 characters and the closing parenthesis
+#   Extract the valuetype and the first 3 characters
+#   Append the first 3 characters, token string, and last 3 characters
+
+    set value $varValuetype
+    set index [string first "(" $value]
+    set valIndex [expr $index + 1]
+    if { [string index $value $valIndex] != ")" } { # A value specified
+        set valType [string range $value 0 $index]
+        if { [string compare -length 9 "r_lastset" $valType] == 0 } {
+            set index [string last "," $value]
+            set valType [string range $value 0 $index]
+        }
+        set first2Char [string range $value $valIndex [expr $valIndex + 1]]
+        set index [expr [string length $value] - 4]
+        set last3Char [string range $value $index end]
+        if { $first2Char == "0x" } {
+            set first3Char [string range $value $valIndex [expr $valIndex + 4]]
+        } else {
+            set first3Char [string range $value $valIndex [expr $valIndex + 2]]
+        }
+        set varValuetype "$valType$first3Char\$\$MYIPADDRHEX\$\$$last3Char"
+    } else { # No value specified, so leave it that way
+    }
+%end
+
+%tclscript 1.3.6.1.4.1.9.3.6.3.0
+# MIB Object: chassisId.0
+#   Extract the valType
+#   Replace the value with the hex IP address of the device
+
+    set value $varValuetype
+    set index [string first "(" $value]
+    set valIndex [expr $index + 1]
+    if { [string index $value $valIndex] != ")" } { # A value specified
+        set valType [string range $value 0 $index]
+        set first2Char [string range $value $valIndex [expr $valIndex + 1]]
+        if { $first2Char == "0x" } {
+            set first3Char [string range $value $valIndex [expr $valIndex + 4]]
+        } else {
+            set first3Char [string range $value $valIndex [expr $valIndex + 2]]
+        }
+        set index [expr [string length $value] - 4]
+        set last3Char [string range $value $index end]
+        set varValuetype "$valType$first3Char\$\$MYIPADDRHEX\$\$$last3Char"
+    } else { # No value specified, so leave it that way
+    }
+%end
+
+%tclscript 1.3.6.1.4.1.9.9.92.1.1.1.2
+# MIB Object: ceAssetSerialNumber.1
+#   Extract the valType
+#   Replace the value with the hex IP address of the device
+
+    set value $varValuetype
+    set index [string first "(" $value]
+    set valIndex [expr $index + 1]
+    if { [string index $value $valIndex] != ")" } { # A value specified
+        set valType [string range $value 0 $index]
+        set first2Char [string range $value $valIndex [expr $valIndex + 1]]
+        if { $first2Char == "0x" } {
+            set first3Char [string range $value $valIndex [expr $valIndex + 4]]
+        } else {
+            set first3Char [string range $value $valIndex [expr $valIndex + 2]]
+        }
+        set index [expr [string length $value] - 4]
+        set last3Char [string range $value $index end]
+        set varValuetype "$valType$first3Char\$\$MYIPADDRHEX\$\$$last3Char"
+    } else { # No value specified, so leave it that way
+    }
+%end
+
+%tclscript 1.3.6.1.4.1.9.9.730.1.3.1.0
+# MIB Object: ctsDeviceId.0
+#   Extract the valType
+#   If the valType is r_lastset then include the range
+#   Replace the value with the hex IP address of the device
+
+    set value $varValuetype
+    set index [string first "(" $value]
+    set valIndex [expr $index + 1]
+    if { [string index $value $valIndex] != ")" } { # A value specified
+        set valType [string range $value 0 $index]
+        if { [string compare -length 9 "r_lastset" $valType] == 0 } {
+            set index [string last "," $value]
+            set valType [string range $value 0 $index]
+        }
+        set first2Char [string range $value $valIndex [expr $valIndex + 1]]
+        set index [expr [string length $value] - 4]
+        set last3Char [string range $value $index end]
+        if { $first2Char == "0x" } {
+            set first3Char [string range $value $valIndex [expr $valIndex + 4]]
+        } else {
+            set first3Char [string range $value $valIndex [expr $valIndex + 2]]
+        }
+        set varValuetype "$valType$first3Char\$\$MYIPADDRHEX\$\$$last3Char"
+    } else { # No value specified, so leave it that way
+    }
+%end

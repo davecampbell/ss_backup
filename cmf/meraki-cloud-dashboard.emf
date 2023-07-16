@@ -1,0 +1,158 @@
+StartOffSet 0000007199
+
+%edes        ifNumber                
+%edes        ifTable                 
+%edes        ifEntry                 
+%edes        ifIndex                 
+%edes        ifDescr                 
+%edes        ifType                  
+%edes        organizationName        Organization name.
+%edes        networkTable            Networks table.
+%edes        networkEntry            Describes each network.
+%edes        networkId               Network id, consists of 8 octets.  Remains the same even\n               if the name of the network changes
+%edes        networkName             Network name.
+%edes        networkAdmin            Name and email of a network admin.
+%edes        vpnPeer                 IP and port of a VPN peer connected to the network.
+%edes        ssidTable               SSID table.
+%edes        ssidEntry               Describes each SSID.
+%edes        ssidNetworkName         The name of the network the SSID is part of.
+%edes        ssidNumber              SSID number.
+%edes        ssidName                SSID name.
+%edes        userName                Name of user connected to SSID.
+%edes        userEmail               Email of user connected to SSID.
+%edes        radiusServerIp          IP address of RADIUS server used for authentication\n               on an SSID.
+%edes        radiusServerPort        Port associated with an IP address of RADIUS server\n               used for authentication on an SSID.
+%edes        devTable                Device table.
+%edes        devEntry                Describes each device.
+%edes        devMac                  The MAC address of the device.
+%edes        devName                 Device name.
+%edes        devStatus               The status of the device's connection to the Meraki Cloud Controller
+%edes        devContactedAt          The last time the device contacted the Cloud Controller.
+%edes        devClientCount          The number of clients currently associated with the device.
+%edes        devMeshStatus           Whether the device is currently acting as a gateway or a repeater.
+%edes        devPublicIp             Whether the device is currently acting as a gateway (as opposed to a repeater).
+%edes        devSerial               Device serial number.
+%edes        devProductCode          Device product code.
+%edes        devProductDescription   Device product description.
+%edes        devNetworkName          The name of the network this device is in.  Useful in tables.
+%edes        devLanIp                The LAN IP of the device. Useful for DHCP server alerts.
+%edes        devSubnet               The subnet the device is on. Useful for DHCP server alerts.
+%edes        devInterfaceTable       Device interfaces table.
+%edes        devInterfaceEntry       Describes each device.
+%edes        devInterfaceDevMac      The MAC address of the device.
+%edes        devInterfaceIndex       The index of this interface.
+%edes        devInterfaceName        The name of this interface.
+%edes        devInterfaceSentPkts    The number of packets sent on this interface.
+%edes        devInterfaceRecvPkts    The number of packets received on this interface.
+%edes        devInterfaceSentBytes   The number of bytes sent on this interface.
+%edes        devInterfaceRecvBytes   The number of bytes received on this interface.
+%edes        devInterfaceModel       The model of the interface. Useful for cellular interfaces.
+%edes        devInterfaceCarrier     The carrier for the interface. Useful for cellular interfaces.
+%edes        devInterfaceDescription Description for the interface. Useful for information\n               about ports
+%edes        devInterfacePortDescription Description for errors occuring on the interface.\n               Useful for information about ports
+%edes        vlanTable               VLAN table.
+%edes        vlanEntry               Describes each VLAN.
+%edes        vlanNetworkName         The name of the network the VLAN is part of.
+%edes        vlanNumber              VLAN number.
+%edes        vlanName                VLAN name.
+%edes        testTrap                A test trap to verify whether the receiving server is configured correctly.\n               The name of the network where the trap configuration resides will be sent as well. 
+%edes        deviceGoesDownTrap      Alert when a device becomes unreachable\n                 from the Meraki cloud. The device's mac address is\n                 enclosed.
+%edes        deviceComesOnline       Alert when a device reconnects to\n                 the Meraki cloud. The device's mac address is\n                 enclosed.
+%edes        foreignAPDetected       Alert when an unknown access point appears\n                 on the network.
+%edes        cellularNetworkUp       Alert when a network connects to a cellular\n                 network.
+%edes        cellularNetworkDown     Alert when a network disconnects from a cellular\n                 network.
+%edes        newDhcpServerAlert      Alert when a new dhcp server appears on the\n                 network.
+%edes        noDhcpLeases            Alert when DHCP leases are exhausted.
+%edes        uplinkStatusChanged     Alert when an uplink status changes.
+%edes        unreachableDevicesDetected Unreachable devices have been detected on the\n                 network. Adjust firewall settings accordingly.
+%edes        upcomingFirewallInformationChanges Upcoming firewall information changes. Adjust firewall\n                 settings accordingly.
+%edes        gatewayToRepeater       Alert when a gateway becomes a repeater.
+%edes        ipConflict              Alert if a client IP conflict is detected.
+%edes        newSplashSignup         Alert when a new splash user registers to an SSID.
+%edes        portCableError          Alert when a cable error is detected.
+%edes        portConnected           Alert when a switch port is connected.
+%edes        portDisconnected        Alert when a switch port is disconnected.
+%edes        portSpeedChange         Alert when a switch port link speed changed.
+%edes        rogueDhcpServer         Alert when a rogue DHCP server is detected. Contains the mac, IP,\n                 subnet and VLAN of the Rogue DHCP server.
+%edes        settingsChanged         Alert when Meraki Dashboard settings are changed. Includes\n                 information about the network admin that made the changes.
+%edes        unreachableRadiusServer Alert when a RADIUS authentication server becomes\n                 unreachable. Contains the IP of the RADIUS server,\n                 the IP of the Meraki server having trouble connecting to it\n                 and the name of the SSID that uses the RADIUS server.
+%edes        vpnConnectivityChange   Alert when VPN connectivity changed. Contains the IP and port of\n                 VPN peer, the mac address of the device used to VPN, and the status\n                 whether or not the VPN is on or offline
+%edes        vpnFailoverDetected     Alert when a VPN failover is detected.
+ifNumber                25
+ifTable                 65
+ifEntry                 105
+ifIndex                 145
+ifDescr                 185
+ifType                  225
+organizationName        265
+networkTable            323
+networkEntry            378
+networkId               441
+networkName             588
+networkAdmin            641
+vpnPeer                 715
+ssidTable               806
+ssidEntry               857
+ssidNetworkName         917
+ssidNumber              1001
+ssidName                1053
+userName                1103
+userEmail               1174
+radiusServerIp          1246
+radiusServerPort        1365
+devTable                1508
+devEntry                1561
+devMac                  1623
+devName                 1693
+devStatus               1745
+devContactedAt          1853
+devClientCount          1949
+devMeshStatus           2048
+devPublicIp             2154
+devSerial               2273
+devProductCode          2334
+devProductDescription   2394
+devNetworkName          2461
+devLanIp                2562
+devSubnet               2658
+devInterfaceTable       2757
+devInterfaceEntry       2821
+devInterfaceDevMac      2883
+devInterfaceIndex       2953
+devInterfaceName        3021
+devInterfaceSentPkts    3088
+devInterfaceRecvPkts    3173
+devInterfaceSentBytes   3262
+devInterfaceRecvBytes   3345
+devInterfaceModel       3432
+devInterfaceCarrier     3531
+devInterfaceDescription 3633
+devInterfacePortDescription 3754
+vlanTable               3898
+vlanEntry               3949
+vlanNetworkName         4009
+vlanNumber              4093
+vlanName                4145
+testTrap                4195
+deviceGoesDownTrap      4410
+deviceComesOnline       4586
+foreignAPDetected       4751
+cellularNetworkUp       4867
+cellularNetworkDown     4977
+newDhcpServerAlert      5092
+noDhcpLeases            5202
+uplinkStatusChanged     5279
+unreachableDevicesDetected 5355
+upcomingFirewallInformationChanges 5508
+gatewayToRepeater       5653
+ipConflict              5733
+newSplashSignup         5815
+portCableError          5905
+portConnected           5982
+portDisconnected        6060
+portSpeedChange         6141
+rogueDhcpServer         6225
+settingsChanged         6390
+unreachableRadiusServer 6565
+vpnConnectivityChange   6873
+vpnFailoverDetected     7121
